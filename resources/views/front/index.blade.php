@@ -80,9 +80,9 @@
             @foreach($products as $product)
                 <div class="row">
                     <div class="item">
-                        <div class="product-item col-md-4">{{$product->name}}</div>
-                        <div class="product-item col-md-4">{{$product->carat}}</div>
-                        <div class="sell-item col-md-4">{{$product->price}}</div>
+                        <div class="product-item col-4">{{$product->name}}</div>
+                        <div class="product-item col-4">{{$product->carat}}</div>
+                        <div class="sell-item col-4">{{$product->price}}</div>
                     </div>
                 </div>
             @endforeach
