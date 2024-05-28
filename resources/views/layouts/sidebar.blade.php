@@ -43,6 +43,24 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('update.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-dailymotion"></i>
+                        <p>
+                            Updates
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('bank.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-dailymotion"></i>
+                        <p>
+                            Banks
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
 {{--                     <a href="{{route('about.index')}}" class="nav-link">--}}
 {{--                        <i class="nav-icon 	fa fa-address-book"></i>--}}

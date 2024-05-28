@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\BankDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,8 +64,7 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('duplicate/{banner}',[BannerController::class,'duplicate'])->name('banner.duplicate');
     Route::post('update/{banner}',[BannerController::class,'update'])->name('banner.update');
 
-      //  about
-
+    //  about
 
     // Appointment
 
@@ -88,6 +89,26 @@ Route::group(['middleware' => ['auth']],function (){
         Route::post('store', [ProductController::class, 'store'])->name('store');
         Route::post('update/{product}', [ProductController::class, 'update'])->name('update');
     });
+
+    Route::prefix('update')->name('update.')->group(function(){
+        Route::get('/', [UpdateController::class, 'index'])->name('index');
+        Route::get('create', [UpdateController::class, 'create'])->name('create');
+        Route::get('edit/{update}', [UpdateController::class, 'edit'])->name('edit');
+        Route::get('delete/{update}', [UpdateController::class, 'delete'])->name('delete');
+        Route::post('update/{update}', [UpdateController::class, 'update'])->name('update');
+        Route::any('store', [UpdateController::class, 'store'])->name('store');
+    });
+
+    Route::prefix('bank')->name('bank.')->group(function(){
+        Route::get('/', [BankDetailController::class, 'index'])->name('index');
+        Route::get('create', [BankDetailController::class, 'create'])->name('create');
+        Route::get('edit/{bank}', [BankDetailController::class, 'edit'])->name('edit');
+        Route::get('delete/{bank}', [BankDetailController::class, 'delete'])->name('delete');
+        Route::post('update/{bank}', [BankDetailController::class, 'update'])->name('update');
+        Route::post('store', [BankDetailController::class, 'store'])->name('store');
+    });
+
+
 
 
 

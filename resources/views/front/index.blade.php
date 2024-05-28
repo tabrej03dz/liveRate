@@ -5,51 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Layout</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{asset('asset/css/main-style.css')}}">
 </head>
 
 <body>
 
 
+<!-- Header Top Container -->
 <div class="header-top container">
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
     <div class="logo">
-        <a href="index.html"><img src="{{asset('asset/images/logo.jpg')}}" alt="Logo" style="width: 300px; height: auto;"></a>
+        <a href="index.html"><img src="{{asset('asset/images/logo.jpg')}}" alt="Logo"></a>
     </div>
     <div class="contact-info">
         <h2><i class="fa fa-phone"></i> CONTACT NUMBER</h2>
         <p>
-            <a href="#"><span class="bookingno2">Gold - +91 562 4307887</span></a>
+            <a href="tel:+915624307887"><span class="bookingno2">Gold - +91 562 4307887</span></a>
         </p>
     </div>
 </div>
 
+<!-- Header Main -->
 <header class="header-main">
     <nav class="header-nav">
-        <div class="menu-icon" id="menu-icon">&#9776;</div>
+
         <ul class="header-ul" id="nav-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Live Rates</a></li>
-            <li><a href="#">Coins Rates</a></li>
-            <li><a href="#">Updates</a></li>
-            <li><a href="#">Bank Details</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="live-rates.html">Live Rates</a></li>
+            <li><a href="coins-rates.html">Coins Rates</a></li>
+            <li><a href="updates.html">Updates</a></li>
+            <li><a href="bank-details.html">Bank Details</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
 </header>
+
+<!-- Sidebar -->
 <aside id="sidebar">
-    <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Live Rates</a></li>
-        <li><a href="#">Coins Rates</a></li>
-        <li><a href="#">Updates</a></li>
-        <li><a href="#">Bank Details</a></li>
-        <li><a href="#">Calendar</a></li>
-        <li><a href="#">Contact Us</a></li>
+    <div class="sidebar-header">
+        <img src="logo.webp" alt="Logo" class="logo">
+    </div>
+    <ul class="sidebar-menu">
+        <li><a href="about.html"><i class="fa fa-info-circle"></i> About Us</a></li>
+        <li><a href="#"><i class="fa fa-diamond"></i> Jewellery</a></li>
+        <li><a href="live-rates.html"><i class="fa fa-line-chart"></i> Live Rate</a></li>
+        <li><a href="coins-rates.html"><i class="fa fa-money"></i> Coin Rate</a></li>
+        <li><a href="updates.html"><i class="fa fa-newspaper-o"></i> Updates</a></li>
+        <li><a href="bank-details.html"><i class="fa fa-bank"></i> Bank Detail</a></li>
+        <li><a href="calendar.html"><i class="fa fa-calendar"></i> Economic Calendar</a></li>
+        <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+        <li><a href="#"><i class="fa fa-globe"></i> Visit Our Website</a></li>
+        <li><a href="#"><i class="fa fa-share-alt"></i> Share</a></li>
+        <li><a href="#"><i class="fa fa-star"></i> Rate Our App</a></li>
     </ul>
+
+    <div class="social-media">
+        <p>Follow on Social Account</p>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
 </aside>
+
+<!-- Overlay -->
 <div id="overlay"></div>
+
+
+
+
+
 
 <div class="header-top-marquee">
     <div class="container-fluid">
@@ -68,27 +92,166 @@
 
 
 <div class="container">
+
     <div class="left-side">
-        <h2>PRODUCT &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Carat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp; SELL</h2>
-
-        <div class="content">
-            @foreach($products as $product)
-                <div class="row">
-                    <div class="item">
-                        <div class="product-item col-4">{{$product->name}}</div>
-                        <div class="product-item col-4">{{$product->carat}}</div>
-                        <div class="sell-item col-4">{{$product->price}}</div>
-                    </div>
+        <div class="main-product">
+            <div id="divHeader">
+                <table class="table">
+                    <tbody>
+                    <tr class="product-title-color">
+                        <td class="p-h p0"><span>PRODUCT</span></td>
+                        <td class="p-h ph text-center"><span>CARAT</span></td>
+                        <td class="p-h ph text-center"><span>SELL</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="divProduct" id="divProduct">
+                <div class="content-cover">
+                    <table class="left-side-table">
+                        <tbody>
+                        <tr class="ligh-white">
+                            <td class="p-h p0">
+                                <div class="main-product-cover">
+                                    <h3>Gold</h3>
+                                </div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">24K</span></div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">{{$goldPrice['price_gram_24k']}}</span></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-            @endforeach
 
+                <div class="content-cover">
+                    <table class="left-side-table">
+                        <tbody>
+                        <tr class="ligh-white">
+                            <td class="p-h p0">
+                                <div class="main-product-cover">
+                                    <h3>GOLD</h3>
+                                </div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">22K</span></div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">{{$goldPrice['price_gram_22k']}}</span></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-cover">
+                    <table class="left-side-table">
+                        <tbody>
+                        <tr class="ligh-white">
+                            <td class="p-h p0">
+                                <div class="main-product-cover">
+                                    <h3>GOLD</h3>
+                                </div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">21K</span></div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">{{$goldPrice['price_gram_21k']}}</span></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-cover">
+                    <table class="left-side-table">
+                        <tbody>
+                        <tr class="ligh-white">
+                            <td class="p-h p0">
+                                <div class="main-product-cover">
+                                    <h3>GOLD</h3>
+                                </div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">20K</span></div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">{{$goldPrice['price_gram_20k']}}</span></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-cover">
+                    <table class="left-side-table">
+                        <tbody>
+                        <tr class="ligh-white">
+                            <td class="p-h p0">
+                                <div class="main-product-cover">
+                                    <h3>GOLD</h3>
+                                </div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">18K</span></div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">{{$goldPrice['price_gram_18k']}}</span></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-cover">
+                    <table class="left-side-table">
+                        <tbody>
+                        <tr class="ligh-white">
+                            <td class="p-h p0">
+                                <div class="main-product-cover">
+                                    <h3>GOLD</h3>
+                                </div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">16K</span></div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">{{$goldPrice['price_gram_16k']}}</span></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="content-cover">
+                    <table class="left-side-table">
+                        <tbody>
+                        <tr class="ligh-white">
+                            <td class="p-h p0">
+                                <div class="main-product-cover">
+                                    <h3>GOLD</h3>
+                                </div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">14K</span></div>
+                            </td>
+                            <td class="p-h ph product-rate">
+                                <div class="mn-rate-cover"><span class="bgm e">{{$goldPrice['price_gram_14k']}}</span></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
     <div class="right-side">
         <div class="col-md-6">
             <div class="row">
@@ -112,15 +275,15 @@
                                     <tbody>
                                     <tr>
                                         <td><span>GOLD </span></td>
-                                        <td><span class="e">71744</span></td>
-                                        <td><span class="e">71757</span></td>
-                                        <td><span class="e">71760 / 71456</span></td>
+                                        <td><span class="e">{{$prices->ounce_price_bid}}</span></td>
+                                        <td><span class="e">{{$prices->ounce_price_ask}}</span></td>
+                                        <td><span class="e">{{$prices->ounce_price_usd_today_low}} / {{$prices->ounce_price_usd_today_high}}</span></td>
                                     </tr>
                                     <tr>
                                         <td><span>SILVER </span></td>
-                                        <td><span class="e">92135</span></td>
-                                        <td><span class="e">92158</span></td>
-                                        <td><span class="e">92189 / 91461</span></td>
+                                        <td><span class="e">{{round($prices->silver_ounce_price_bid_inr, 2)}}</span></td>
+                                        <td><span class="e">{{round($prices->silver_ounce_price_ask_inr, 2)}}</span></td>
+                                        <td><span class="e">{{round($prices->silver_ounce_price_inr_today_high, 2)}} / {{round($prices->silver_ounce_price_inr_today_low, 2)}}</span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -273,23 +436,22 @@
     </div>
 </footer>
 
+<script src="scripts.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var menuIcon = document.getElementById("menu-icon");
-        var sidebar = document.getElementById("sidebar");
-        var overlay = document.getElementById("overlay");
+    // JavaScript to handle sidebar toggle
+    const menuIcon = document.getElementById('menu-icon');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
 
-        menuIcon.addEventListener("click", function() {
-            sidebar.classList.toggle("open");
-            overlay.classList.toggle("show");
-        });
-
-        overlay.addEventListener("click", function() {
-            sidebar.classList.remove("open");
-            overlay.classList.remove("show");
-        });
+    menuIcon.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
     });
 
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
 </script>
 </body>
 

@@ -9,14 +9,29 @@ use App\Models\Plan;
 use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
+use App\Services\GoldApiService;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Http;
+use App\Services\PriceService;
 
 class HomeController extends Controller
 {
+    protected $priceService;
+    public function __construct(PriceService $priceService, GoldApiService $goldApiService){
+        $this->priceService = $priceService;
+        $this->goldApiService = $goldApiService;
+    }
     public function index(){
+
+        $response = $this->priceService->goldPrice();
+        $goldPrice = $this->goldApiService->goldPrice();
+//        dd($response);
+        $prices = json_decode($response);
+//        $goldPrice = json_decode($goldResponse);
+
         $products = Product::all();
-        return view('front.index', compact('products'));
+        return view('front.index', compact('products', 'prices', 'goldPrice'));
       }
       public function about(){
           $teams=Team::all();
