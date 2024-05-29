@@ -12,7 +12,7 @@ class GoldApiService{
 
 
     public function goldPrice(){
-        $apiKey = "goldapi-3w32fslw7pma8f-io";
+        $apiKey = "goldapi-4mmixslwrt3dkr-io";
         $symbol = 'XAU';
         $curr = 'INR';
         $date = Carbon::yesterday()->toDateTimeLocalString();
@@ -28,7 +28,7 @@ class GoldApiService{
     }
 
     public function silverPrice(){
-        $apiKey = "goldapi-3w32fslw7pma8f-io";
+        $apiKey = "goldapi-4mmixslwrt3dkr-io";
         $symbol = 'XAG';
         $curr = 'INR';
         $date = Carbon::yesterday()->toDateTimeLocalString();
