@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('account_holder_name');
             $table->string('account_number');
             $table->string('ifsc_code');
+            $table->string('swift_code')->nullable();
             $table->string('branch_name');
             $table->enum('status', ['0', '1'])->default('0');
             $table->timestamps();

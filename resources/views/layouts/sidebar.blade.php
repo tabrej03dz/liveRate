@@ -61,6 +61,15 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('contact.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-dailymotion"></i>
+                        <p>
+                            Contact
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
 {{--                     <a href="{{route('about.index')}}" class="nav-link">--}}
 {{--                        <i class="nav-icon 	fa fa-address-book"></i>--}}

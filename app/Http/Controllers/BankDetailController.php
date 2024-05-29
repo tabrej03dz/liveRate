@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Update;
 use Illuminate\Http\Request;
+use App\Models\BankDetail;
 
 class BankDetailController extends Controller
 {
@@ -19,11 +20,12 @@ class BankDetailController extends Controller
     public function store(Request $request){
 //        dd($request->all());
         $request->validate([
-            'bank_logo' => 'mimes:jpeg, jpg, png',
+            'bank_logo' => 'image|mimes:jpeg,jpg,png',
             'bank_name' => 'required',
             'account_holder_name' => 'required',
             'account_number' => 'required',
             'ifsc_code' => 'required',
+            'swift_code' => '',
             'branch_name' => 'required',
 
         ]);
@@ -32,7 +34,7 @@ class BankDetailController extends Controller
         $bank = BankDetail::create($request->except('bank_logo'));
         if($request->file('bank_logo')){
             $file = $request->file('bank_logo')->store('public/bankLogo');
-            $bank->bank_log = str_replace('public/', '', $file);
+            $bank->bank_logo = str_replace('public/', '', $file);
             $bank->save();
         }
         return redirect('bank')->with('success', 'bank detail created successfully');
@@ -44,7 +46,7 @@ class BankDetailController extends Controller
 
     public function update(Request $request, BankDetail $bank){
         $request->validate([
-            'bank_logo' => 'mimes:jpeg, jpg, png',
+            'bank_logo' => 'image|mimes:jpeg,jpg,png',
             'bank_name' => 'required',
             'account_holder_name' => 'required',
             'account_number' => 'required',
@@ -68,9 +70,15 @@ class BankDetailController extends Controller
 
     public function delete(BankDetail $bank){
         if($bank->bank_logo){
-            unlink('storage/'. $bank->bank_logo);
+            $filePath = 'storage/' . $bank->bank_logo;
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            } else {
+                // Log an error or handle the missing file scenario
+                \Log::error('File not found: ' . $filePath);
+            }
         }
         $bank->delete();
-        return bank()->with('success', 'BankDetail deleted successfully');
+        return back()->with('success', 'BankDetail deleted successfully');
     }
 }

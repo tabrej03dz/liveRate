@@ -118,7 +118,7 @@ body {
     padding-top: 60px;
     z-index: 200;
     overflow-y: auto;
-    transition: 0.3s;
+    transition: width 0.3s; /* Updated transition property */
 }
 
 #sidebar ul {
@@ -127,16 +127,19 @@ body {
 }
 
 #sidebar li {
-    margin: 2px 15px;
+    margin: 1px 15px;
 }
 
 #sidebar a {
     color: black;
+    text-decoration: none;
+    transition: color 0.3s; /* Added transition for text color */
 }
 
-/* Remove the transition from #sidebar a:hover */
+/* Hover effect on sidebar links */
 #sidebar a:hover {
-    color: #fff;
+    background-color: #dbaa49;
+    color: white;
 }
 
 /* Overlay */
@@ -173,6 +176,37 @@ body {
     }
 }
 
+/* Keep hover effect for smaller screens */
+@media (max-width: 480px) {
+    .sidebar-menu li:hover a {
+        background-color: #dbaa49;
+        color: white;
+    }
+}
+
+.sidebar-menu i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-media p {
+    color: black;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    color: black;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
 /* Sidebar styles */
 .sidebar-header {
     text-align: center;
@@ -183,7 +217,6 @@ body {
     width: 150px;
     height: auto;
 }
-
 
 .sidebar-menu {
     list-style: none;
@@ -206,17 +239,14 @@ body {
 }
 
 .sidebar-menu li a {
-    transition: none; /* Remove the global transition */
+    transition: none; /* Remove global transition for individual links */
 }
 
 .sidebar-menu li:hover a {
-    transition: color 0.2s ease; /* Keep the hover transition */
+    transition: color 0.2s ease;
     background-color: #dbaa49;
     color: white;
 }
-
-
-
 
 .sidebar-menu i {
     margin-right: 15px;
@@ -402,6 +432,7 @@ td span {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+
     .right-side,
     .left-side {
         width: 100%;
@@ -422,7 +453,8 @@ td span {
     }
 
     .sell-item {
-        text-align: left; /* Override right-align on smaller screens */
+        text-align: left;
+        /* Override right-align on smaller screens */
     }
 }
 
@@ -634,6 +666,20 @@ td span {
 }
 
 
+.detalis-footer a {
+    color: #b8860b;
+    /* Dark golden color */
+    text-decoration: none;
+    /* Remove underline */
+    transition: color 0.3s ease;
+    /* Smooth transition for color change */
+}
+
+/* Hover effect for links */
+.detalis-footer a:hover {
+    color: #ffd700;
+    /* Change text color to gold on hover */
+}
 
 
 
@@ -669,10 +715,11 @@ td span {
         max-width: 100%;
     }
 
-    .app-buttons img {
+    .app-buttons {
         max-width: 120px;
     }
 }
+
 @media (max-width: 480px) {
     .footer {
         display: none;

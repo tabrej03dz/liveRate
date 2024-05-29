@@ -15,6 +15,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\BankDetailController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,15 +29,14 @@ use App\Http\Controllers\BankDetailController;
 |
 */
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/about',[HomeController::class,'about'])->name('about');
-Route::get('/services',[HomeController::class,'services'])->name('services');
-Route::get('/contact',[HomeController::class,'contact'])->name('contact');
-Route::get('/team',[HomeController::class,'team'])->name('team');
-Route::get('/testimonial',[HomeController::class,'testimonial'])->name('testimonial');
-Route::get('/price',[HomeController::class,'price'])->name('price');
-Route::get('/appointment',[HomeController::class,'appointment'])->name('appointment');
-Route::get('/blog',[HomeController::class,'blog'])->name('blog');
-Route::get('/blog/{blog}',[HomeController::class,'blogDetails'])->name('blog-details');
+Route::get('/about',[FrontController::class,'about'])->name('about');
+Route::get('bankDetail', [FrontController::class, 'bankDetail'])->name('bankDetail');
+Route::get('calendar', [FrontController::class, 'calendar'])->name('calendar');
+Route::get('coinsRate', [FrontController::class, 'coinsRate'])->name('coinsRate');
+Route::get('updates', [FrontController::class, 'update'])->name('updates');
+Route::get('/contacts',[FrontController::class,'contact'])->name('contacts');
+Route::get('/blog',[FrontController::class,'blog'])->name('blog');
+Route::get('/blog/{blog}',[FrontController::class,'blogDetails'])->name('blog-details');
 
 Route::get('login-form',[AuthController::class,'index'])->name('login-form');
 Route::get('registration',[AuthController::class,'registration'])->name('registration');
@@ -109,7 +110,14 @@ Route::group(['middleware' => ['auth']],function (){
     });
 
 
-
+    Route::prefix('contact')->name('contact.')->group(function(){
+        Route::get('/', [ContactController::class, 'index'])->name('index');
+        Route::get('create', [ContactController::class, 'create'])->name('create');
+        Route::get('edit/{contact}', [ContactController::class, 'edit'])->name('edit');
+        Route::get('delete/{contact}', [ContactController::class, 'delete'])->name('delete');
+        Route::post('update/{contact}', [ContactController::class, 'update'])->name('update');
+        Route::post('store', [ContactController::class, 'store'])->name('store');
+    });
 
 
 });
