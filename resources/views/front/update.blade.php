@@ -233,7 +233,7 @@
                         <h2>{{$update->title}}</h2>
                     </div>
                     <span>{{ \Carbon\Carbon::parse($update->date)->format('F jS, Y') }}</span>
-                    <p>{{ $update->description }}</p>
+                    <p>{!! $update->description !!} </p>
                 </div>
             @endforeach
         </div>
