@@ -313,7 +313,7 @@
                     <img src="{{asset('asset/images/location-dot-solid.svg')}}" alt="Location Icon">
                 </div>
                 <h3>ADDRESS</h3>
-                <p>{!! $contact->full_address !!}}</p>
+                <p>{!! $contact->full_address !!}</p>
             </div>
             <div class="contact-box">
                 <div class="icon">

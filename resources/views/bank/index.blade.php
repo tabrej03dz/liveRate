@@ -57,7 +57,7 @@
                                 @forelse ($banks as $bank)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td><img src="{{asset('storage/'. $bank->bank_logo)}}" alt=""></td>
+                                        <td><img src="{{asset('storage/'. $bank->bank_logo)}}" alt="" style="width: 200px; height: auto;"></td>
                                         <td>{{ $bank->bank_name }}</td>
                                         <td>{{ $bank->account_holder_name }}</td>
                                         <td>{{$bank->account_number}}</td>
