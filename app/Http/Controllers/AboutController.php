@@ -8,59 +8,42 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index(Request $request){
-        $keyword = $request->input('keyword');
-        $about = About::query();
-
-        if (!empty($keyword)) {
-            $about->where('title', 'like', "%$keyword%");
-        }
-        $aboutData = $about->paginate(5);
-
-        return view('about.index',compact('aboutData'));
+    public function index(){
+        $abouts = About::all();
+        return view('about.index', compact('abouts'));
     }
 
     public function create(){
         return view('about.create');
     }
 
-    public function store(AboutRequest $request){
-//        dd($request);
-        $about=About::create($request->all());
-        $image = $request->file('image')->store('public/about');
-
-        $about->image = str_replace('public/', '', $image);
-        $about->save();
-        return redirect()->route('about.index')->with('success', 'About  created successfully.');
+    public function store(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        About::create($request->all());
+        return redirect('about')->with('success', 'About Created successfully');
     }
 
     public function edit(About $about){
-
-        return view('about.edit',compact('about'));
+        return view('about.edit', compact('about'));
     }
 
-    public function update(About $about , AboutRequest $request){
-        $aboutData = $request->all();
+    public function update(Request $request, About $about){
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('public/about');
-            $aboutData['image'] = str_replace('public/', '', $imagePath);
-        }
-
-        $about->update($aboutData);
-
-        return redirect()->route('about.index')->with('success', 'about item successfully updated');
+        $about->update($request->all());
+        return redirect('about')->with('success', 'Updated successfully');
     }
-
 
     public function delete(About $about){
         $about->delete();
-        return redirect()->route('about.index')->with('error','Successfully  about items deleted');
+        return back()->with('success', 'Deleted successfully');
+    }
 
-    }
-    public function duplicate(About $about){
-        $productDuplicate=$about->replicate();
-        $productDuplicate->save();
-        return redirect()->back();
-    }
+
 }

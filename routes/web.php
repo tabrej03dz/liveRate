@@ -17,6 +17,7 @@ use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\BankDetailController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\DiscountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,6 +118,16 @@ Route::group(['middleware' => ['auth']],function (){
         Route::get('delete/{contact}', [ContactController::class, 'delete'])->name('delete');
         Route::post('update/{contact}', [ContactController::class, 'update'])->name('update');
         Route::post('store', [ContactController::class, 'store'])->name('store');
+    });
+
+    Route::prefix('discount')->name('discount.')->group(function(){
+        Route::get('/', [DiscountController::class, 'index'])->name('index');
+        Route::get('create', [DiscountController::class, 'create'])->name('create');
+        Route::get('edit/{discount}', [DiscountController::class, 'edit'])->name('edit');
+        Route::get('delete/{discount}', [DiscountController::class, 'delete'])->name('delete');
+        Route::post('update/{discount}', [DiscountController::class, 'update'])->name('update');
+        Route::post('store', [DiscountController::class, 'store'])->name('store');
+        Route::get('status/{discount}', [DiscountController::class, 'status'])->name('status');
     });
 
 

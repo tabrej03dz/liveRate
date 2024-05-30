@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{asset('asset/css/main-style.css')}}">
 </head>
 
+
 <body>
 
 
@@ -24,6 +25,7 @@
         </p>
     </div>
 </div>
+
 
 <!-- Header Main -->
 <header class="header-main">

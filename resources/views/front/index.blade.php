@@ -12,13 +12,6 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
 <div class="container">
 
     <div class="left-side">
@@ -28,7 +21,7 @@
                     <tbody>
                     <tr class="product-title-color">
                         <td class="p-h p0"><span>PRODUCT</span></td>
-                        <td class="p-h ph text-center"><span>CARAT</span></td>
+{{--                        <td class="p-h ph text-center"><span>CARAT</span></td>--}}
                         <td class="p-h ph text-center"><span>SELL</span></td>
                     </tr>
                     </tbody>
@@ -45,214 +38,28 @@
                                 </div>
                             </td>
                             <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">24K</span></div>
+{{--                                <div class="mn-rate-cover"><span class="bgm e">24K</span></div>--}}
                             </td>
                             <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="24kGold">{{$goldPrice['price_gram_24k']}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="24kGold">{{round($prices->gram_in_inr, 2)}}</span></div>
                             </td>
                             <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$goldPrice['price_gram_24k']}} * this.value;
-                                    document.getElementById('24kGold').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>GOLD</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">22K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="22kGold">{{$goldPrice['price_gram_22k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$goldPrice['price_gram_22k']}} * this.value;
-                                    document.getElementById('22kGold').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>GOLD</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">21K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="21kGold">{{$goldPrice['price_gram_21k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$goldPrice['price_gram_21k']}} * this.value;
-                                    document.getElementById('21kGold').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>GOLD</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">20K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="20kGold">{{$goldPrice['price_gram_20k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$goldPrice['price_gram_20k']}} * this.value;
-                                    document.getElementById('20kGold').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>GOLD</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">18K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="18kGold">{{$goldPrice['price_gram_18k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$goldPrice['price_gram_18k']}} * this.value;
-                                    document.getElementById('18kGold').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>GOLD</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">16K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="16kGold">{{$goldPrice['price_gram_16k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$goldPrice['price_gram_16k']}} * this.value;
-                                    document.getElementById('16kGold').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>GOLD</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">14K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="14kGold">{{$goldPrice['price_gram_14k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$goldPrice['price_gram_14k']}} * this.value;
-                                    document.getElementById('14kGold').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
+                                @php
+                                    $percent = $discount?->percent;
+                                @endphp
+                                <input type="number" name="gram" min="1" onkeyup="
+                                    if(this.value == ''){
+                                        const price = {{$prices->gram_in_inr}} * 1;
+                                        const discount = (price * {{$percent}})/100;
+                                        const finalPrice = price - discount;
+                                        document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                    }else{
+                                        const price = {{$prices->gram_in_inr}} * this.value;
+                                        const discount = (price * {{$percent}})/100;
+                                        const finalPrice = price - discount;
+                                        document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                    }
+                                "/>
                             </td>
                         </tr>
                         </tbody>
@@ -269,157 +76,367 @@
                                 </div>
                             </td>
                             <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">24K</span></div>
+{{--                                <div class="mn-rate-cover"><span class="bgm e">22K</span></div>--}}
                             </td>
                             <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="24kSilver">{{$silverPrice['price_gram_24k']}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="22kGold">{{round($prices->silver_gram_in_inr, 2)}}</span></div>
                             </td>
                             <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$silverPrice['price_gram_24k']}} * this.value;
-                                    document.getElementById('24kSilver').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
+                                <input type="number" name="gram" min="1" onkeyup="
+                                    if(this.value == ''){
+                                        const price = {{$prices->silver_gram_in_inr}} * 1;
+                                        document.getElementById('22kGold').innerText = price.toFixed(2);
+                                    }else{
+                                        const price = {{$prices->silver_gram_in_inr}} * this.value;
+                                        document.getElementById('22kGold').innerText = price.toFixed(2);
+                                    }
+                                "/>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>Silver</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">22K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="22kSilver">{{$silverPrice['price_gram_22k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$silverPrice['price_gram_22k']}} * this.value;
-                                    document.getElementById('22kSilver').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
 
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>Silver</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">21K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="21kSilver">{{$silverPrice['price_gram_21k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$silverPrice['price_gram_21k']}} * this.value;
-                                    document.getElementById('21kSilver').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>GOLD</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">21K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="21kGold">{{$goldPrice['price_gram_21k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$goldPrice['price_gram_21k']}} * this.value;--}}
+{{--                                    document.getElementById('21kGold').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
 
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>Silver</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">20K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="20kSilver">{{$silverPrice['price_gram_20k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$silverPrice['price_gram_20k']}} * this.value;
-                                    document.getElementById('20kSilver').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="3">3 gram</option>
-                                    <option value="4">4 gram</option>
-                                    <option value="5">5 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>GOLD</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">20K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="20kGold">{{$goldPrice['price_gram_20k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$goldPrice['price_gram_20k']}} * this.value;--}}
+{{--                                    document.getElementById('20kGold').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
 
-                <div class="content-cover">
-                    <table class="left-side-table">
-                        <tbody>
-                        <tr class="ligh-white">
-                            <td class="p-h p0">
-                                <div class="main-product-cover">
-                                    <h3>Silver</h3>
-                                </div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e">18K</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <div class="mn-rate-cover"><span class="bgm e" id="18kSilver">{{$silverPrice['price_gram_18k']}}</span></div>
-                            </td>
-                            <td class="p-h ph product-rate">
-                                <select name="gram" onchange="
-                                    const price = {{$silverPrice['price_gram_18k']}} * this.value;
-                                    document.getElementById('18kSilver').innerText = price;
-                                ">
-                                    <option value="1">1 gram</option>
-                                    <option value="2">2 gram</option>
-                                    <option value="5">5 gram</option>
-                                    <option value="8">8 gram</option>
-                                    <option value="10">10 gram</option>
-                                    <option value="12">12 gram</option>
-                                    <option value="15">15 gram</option>
-                                </select>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>GOLD</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">18K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="18kGold">{{$goldPrice['price_gram_18k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$goldPrice['price_gram_18k']}} * this.value;--}}
+{{--                                    document.getElementById('18kGold').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>GOLD</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">16K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="16kGold">{{$goldPrice['price_gram_16k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$goldPrice['price_gram_16k']}} * this.value;--}}
+{{--                                    document.getElementById('16kGold').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>GOLD</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">14K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="14kGold">{{$goldPrice['price_gram_14k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$goldPrice['price_gram_14k']}} * this.value;--}}
+{{--                                    document.getElementById('14kGold').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>Silver</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">24K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="24kSilver">{{$silverPrice['price_gram_24k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$silverPrice['price_gram_24k']}} * this.value;--}}
+{{--                                    document.getElementById('24kSilver').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>Silver</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">22K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="22kSilver">{{$silverPrice['price_gram_22k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$silverPrice['price_gram_22k']}} * this.value;--}}
+{{--                                    document.getElementById('22kSilver').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>Silver</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">21K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="21kSilver">{{$silverPrice['price_gram_21k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$silverPrice['price_gram_21k']}} * this.value;--}}
+{{--                                    document.getElementById('21kSilver').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>Silver</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">20K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="20kSilver">{{$silverPrice['price_gram_20k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$silverPrice['price_gram_20k']}} * this.value;--}}
+{{--                                    document.getElementById('20kSilver').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+
+{{--                <div class="content-cover">--}}
+{{--                    <table class="left-side-table">--}}
+{{--                        <tbody>--}}
+{{--                        <tr class="ligh-white">--}}
+{{--                            <td class="p-h p0">--}}
+{{--                                <div class="main-product-cover">--}}
+{{--                                    <h3>Silver</h3>--}}
+{{--                                </div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e">18K</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <div class="mn-rate-cover"><span class="bgm e" id="18kSilver">{{$silverPrice['price_gram_18k']}}</span></div>--}}
+{{--                            </td>--}}
+{{--                            <td class="p-h ph product-rate">--}}
+{{--                                <select name="gram" onchange="--}}
+{{--                                    const price = {{$silverPrice['price_gram_18k']}} * this.value;--}}
+{{--                                    document.getElementById('18kSilver').innerText = price;--}}
+{{--                                ">--}}
+{{--                                    <option value="1">1 gram</option>--}}
+{{--                                    <option value="2">2 gram</option>--}}
+{{--                                    <option value="5">5 gram</option>--}}
+{{--                                    <option value="8">8 gram</option>--}}
+{{--                                    <option value="10">10 gram</option>--}}
+{{--                                    <option value="12">12 gram</option>--}}
+{{--                                    <option value="15">15 gram</option>--}}
+{{--                                </select>--}}
+{{--                            </td>--}}
+{{--                        </tr>--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>

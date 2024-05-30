@@ -70,6 +70,15 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{route('discount.index')}}" class="nav-link">
+                        <i class="nav-icon far fa-dailymotion"></i>
+                        <p>
+                            Discount
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
 {{--                     <a href="{{route('about.index')}}" class="nav-link">--}}
 {{--                        <i class="nav-icon 	fa fa-address-book"></i>--}}

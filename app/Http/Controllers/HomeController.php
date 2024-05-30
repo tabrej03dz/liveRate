@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Http;
 use App\Services\PriceService;
+use App\Models\Discount;
 
 class HomeController extends Controller
 {
@@ -25,14 +26,15 @@ class HomeController extends Controller
     public function index(){
 
         $response = $this->priceService->goldPrice();
-        $goldPrice = $this->goldApiService->goldPrice();
-        $silverPrice = $this->goldApiService->silverPrice();
-//        dd($silverPrice);
+//        $goldPrice = $this->goldApiService->goldPrice();
+//        $silverPrice = $this->goldApiService->silverPrice();
+//        dd($response);
         $prices = json_decode($response);
 //        $goldPrice = json_decode($goldResponse);
 
         $products = Product::all();
-        return view('front.index', compact('products', 'prices', 'goldPrice', 'silverPrice'));
+        $discount = Discount::where('status', '1')->first();
+        return view('front.index', compact('products', 'prices', 'discount'));
     }
 
 }
