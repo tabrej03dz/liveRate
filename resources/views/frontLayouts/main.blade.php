@@ -103,7 +103,7 @@
             <p><a href="tel:+919897201554">+91 9897 201554</a></p>
         </div>
         <div class="footer-section app-links">
-            <img src="{{asset('asset/images/mobile.webp')}}" alt="Phone" class="phone">
+{{--            <img src="{{asset('asset/images/mobile.webp')}}" alt="Phone" class="phone">--}}
             <div class="app-buttons">
                 <a href="#"><img src="{{asset('asset/images/android.webp')}}" alt="Get it on Google Play"></a>
                 <a href="#"><img src="{{asset('asset/images/ios.webp')}}" alt="Download on the App Store"></a>
