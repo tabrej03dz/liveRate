@@ -47,7 +47,7 @@
                                 @php
                                     $percent = $discount?->percent;
                                     $dis = ($prices->gram_in_inr * $percent)/100;
-                                    if($discount->type == 0){
+                                    if($discount?->type == 0){
                                         $finalPrice = $prices->gram_in_inr - $dis;
                                     }else{
                                         $finalPrice = $prices->gram_in_inr + $dis;
@@ -60,7 +60,7 @@
                                     if(this.value == ''){
                                         const price = {{$prices->gram_in_inr}} * 1;
                                         const discount = (price * {{$percent}})/100;
-                                        if({{$discount->type}} == 0){
+                                        if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
                                             document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
                                         }else{
@@ -73,7 +73,7 @@
                                         const price = {{$prices->gram_in_inr}} * this.value;
                                         const discount = (price * {{$percent}})/100;
 
-                                        if({{$discount->type}} == 0){
+                                        if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
                                             document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
                                         }else{
@@ -104,7 +104,7 @@
                                 @php
                                     $percent = $discount?->percent;
                                     $dis = ($prices->silver_gram_in_inr * $percent)/100;
-                                    if($discount->type == 0){
+                                    if($discount?->type == 0){
                                         $finalPrice = $prices->silver_gram_in_inr - $dis;
                                     }else{
                                         $finalPrice = $prices->silver_gram_in_inr + $dis;
@@ -117,7 +117,7 @@
                                 if(this.value == ''){
                                         const price = {{$prices->silver_gram_in_inr}} * 1;
                                         const discount = (price * {{$percent}})/100;
-                                        if({{$discount->type}} == 0){
+                                        if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
                                             document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
                                         }else{
@@ -130,7 +130,7 @@
                                         const price = {{$prices->silver_gram_in_inr}} * this.value;
                                         const discount = (price * {{$percent}})/100;
 
-                                        if({{$discount->type}} == 0){
+                                        if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
                                             document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
                                         }else{
