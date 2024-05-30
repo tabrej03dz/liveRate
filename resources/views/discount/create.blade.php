@@ -36,8 +36,8 @@
             <div class="form-group">
                 <label for="type">Type</label>
                 <select name="type" id="status" class="form-control">
-                    <option value="up">Up</option>
-                    <option value="down">Down</option>
+                    <option value="0">Down</option>
+                    <option value="1">Up</option>
                 </select>
             </div>
 

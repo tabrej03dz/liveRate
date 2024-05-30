@@ -16,7 +16,7 @@
 <div class="header-top container">
     <div class="menu-icon" id="menu-icon">&#9776;</div>
     <div class="logo">
-        <a href="index.html"><img src="{{asset('asset/images/logo.png')}}" alt="Logo"></a>
+        <a href="{{route('home')}}"><img src="{{asset('asset/images/logo.png')}}" alt="Logo"></a>
     </div>
     <div class="contact-info">
         <h2><i class="fa fa-phone"></i> CONTACT NUMBER</h2>
@@ -32,7 +32,7 @@
     <nav class="header-nav">
 
         <ul class="header-ul" id="nav-links">
-            <li><a href="{{route('about')}}">About Us</a></li>
+            <li><a href="{{route('abouts')}}">About Us</a></li>
             <li><a href="{{route('home')}}">Live Rates</a></li>
             <li><a href="{{route('coinsRate')}}">Coins Rates</a></li>
             <li><a href="{{route('updates')}}">Updates</a></li>
@@ -49,7 +49,7 @@
         <img src="{{asset('asset/images/logo.png')}}" alt="Logo" class="logo">
     </div>
     <ul class="sidebar-menu">
-        <li><a href="{{route('about')}}"><i class="fa fa-info-circle"></i> About Us</a></li>
+        <li><a href="{{route('abouts')}}"><i class="fa fa-info-circle"></i> About Us</a></li>
         <li><a href="#"><i class="fa fa-diamond"></i> Jewellery</a></li>
         <li><a href="{{route('home')}}"><i class="fa fa-line-chart"></i> Live Rate</a></li>
         <li><a href="{{route('coinsRate')}}"><i class="fa fa-money"></i> Coin Rate</a></li>
@@ -83,7 +83,7 @@
         <div class="footer-section menu">
             <h3>MENU</h3>
             <ul>
-                <li><a href="{{route('about')}}">About</a></li>
+                <li><a href="{{route('abouts')}}">About</a></li>
                 <li><a href="{{route('home')}}">Live Rate</a></li>
                 <li><a href="{{route('coinsRate')}}">Coins Rates</a></li>
                 <li><a href="{{route('updates')}}">Update</a></li>

@@ -80,12 +80,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-{{--                     <a href="{{route('about.index')}}" class="nav-link">--}}
-{{--                        <i class="nav-icon 	fa fa-address-book"></i>--}}
-{{--                        <p>--}}
-{{--                            About Us--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
+                     <a href="{{route('about.index')}}" class="nav-link">
+                        <i class="nav-icon 	fa fa-address-book"></i>
+                        <p>
+                            About
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-item">
 {{--                     <a href="{{route('appointment.index')}}" class="nav-link">--}}

@@ -76,7 +76,12 @@
 <main>
     <h1>ABOUT US</h1>
     <div class="about-content">
-        <P>Coming Soon.........</P>
+        @forelse($abouts as $about)
+            <h3>{{$about->title}}</h3>
+            <p>{!! $about->description !!}</p>
+        @empty
+            <P>Coming Soon.........</P>
+        @endforelse
     </div>
 </main>
 

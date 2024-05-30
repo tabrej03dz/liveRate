@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->decimal('percent');
-            $table->enum('status', ['0', '1'])->default('0');
-            $table->enum('type', ['up', 'down'])->default('down');
+            $table->enum('status', [0, 1])->default(0);
+            $table->enum('type', ['0', '1'])->default(0);
             $table->enum('metal', ['gold', 'silver'])->default('gold');
             $table->timestamps();
         });

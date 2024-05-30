@@ -36,8 +36,8 @@
             <div class="form-group">
                 <label for="type">Type</label>
                 <select name="type" id="status" class="form-control">
-                    <option value="up" {{$discount->type == 'up' ? 'selected' : ''}}>Up</option>
-                    <option value="down" {{$discount->type == 'down' ? 'selected' : ''}}>Down</option>
+                    <option value="0" {{$discount->type == 0 ? 'selected' : ''}}>Down</option>
+                    <option value="1" {{$discount->type == 1 ? 'selected' : ''}}>Up</option>
                 </select>
             </div>
 

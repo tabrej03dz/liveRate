@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\BankDetail;
 use App\Models\Blog;
 use App\Models\Contact;
@@ -12,8 +13,8 @@ use Illuminate\Http\Request;
 class FrontController extends Controller
 {
     public function about(){
-
-        return view('front.about');
+        $abouts = About::all();
+        return view('front.about', compact('abouts'));
     }
 
     public function bankDetail(){

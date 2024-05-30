@@ -30,7 +30,7 @@ use App\Http\Controllers\DiscountController;
 |
 */
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/about',[FrontController::class,'about'])->name('about');
+Route::get('/abouts',[FrontController::class,'about'])->name('abouts');
 Route::get('bankDetail', [FrontController::class, 'bankDetail'])->name('bankDetail');
 Route::get('calendar', [FrontController::class, 'calendar'])->name('calendar');
 Route::get('coinsRate', [FrontController::class, 'coinsRate'])->name('coinsRate');
@@ -129,6 +129,17 @@ Route::group(['middleware' => ['auth']],function (){
         Route::post('store', [DiscountController::class, 'store'])->name('store');
         Route::get('status/{discount}', [DiscountController::class, 'status'])->name('status');
     });
+
+    Route::prefix('about')->name('about.')->group(function(){
+        Route::get('/', [AboutController::class, 'index'])->name('index');
+        Route::get('create', [AboutController::class, 'create'])->name('create');
+        Route::get('edit/{about}', [AboutController::class, 'edit'])->name('edit');
+        Route::get('delete/{about}', [AboutController::class, 'delete'])->name('delete');
+        Route::post('update/{about}', [AboutController::class, 'update'])->name('update');
+        Route::post('store', [AboutController::class, 'store'])->name('store');
+    });
+
+
 
 
 });

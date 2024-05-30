@@ -26,8 +26,8 @@
                 <div class="card">
                     <div class="card-header bg-primary text-white">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h1>Contacts</h1>
-                            <a href="{{ route('discount.create') }}" class="btn btn-light">Add Contact</a>
+                            <h1>Abouts</h1>
+                            <a href="{{ route('about.create') }}" class="btn btn-light">Add About</a>
                         </div>
                     </div>
 
@@ -47,25 +47,19 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Title</th>
-                                    <th>Percent</th>
-                                    <th>Type</th>
-                                    <th>Status</th>
+                                    <th>Description</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @forelse ($discounts as $discount)
+                                @forelse ($abouts as $about)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $discount->title }}</td>
-                                        <td>{{ $discount->percent }}</td>
-                                        <td>{{ $discount->type }}</td>
+                                        <td>{{ $about->title }}</td>
+                                        <td>{!! $about->description !!}</td>
                                         <td>
-                                            <a href="{{ $discount->status == '0' ? route('discount.status', $discount) : '' }}" class="btn btn-{{$discount->status == '0' ? 'warning' : 'success' }}">{{$discount->status == 0 ? 'Inactive' : 'Active'}}</a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('discount.edit', $discount) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('discount.delete', $discount) }}" class="btn btn-danger">Remove</a>
+                                            <a href="{{ route('about.edit', $about) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('about.delete', $about) }}" class="btn btn-danger">Remove</a>
                                         </td>
                                     </tr>
                                 @empty

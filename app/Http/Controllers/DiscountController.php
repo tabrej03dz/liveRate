@@ -49,11 +49,14 @@ class DiscountController extends Controller
     }
 
     public function status(Discount $discount){
-        if($discount->status == '0'){
-            $discount->update(['status' => '1']);
-        }else{
-            $discount->update(['status' => '0']);
+        $discounts = Discount::all();
+        foreach ($discounts as $dic){
+            $dic->update(['status' => '0']);
         }
+
+
+        $discount->status = '1';
+        $discount->save();
 
         return back()->with('success', 'Status updated successfully');
     }
