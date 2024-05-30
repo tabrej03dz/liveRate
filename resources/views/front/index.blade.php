@@ -102,7 +102,11 @@
                             </td>
                             <td class="p-h ph product-rate">
                                 @php
+                                    if ($discount?->percent){
                                     $percent = $discount?->percent;
+                                    }else{
+                                        $percent = 0;
+                                    }
                                     $dis = ($prices->silver_gram_in_inr * $percent)/100;
                                     if($discount?->type == 0){
                                         $finalPrice = $prices->silver_gram_in_inr - $dis;
@@ -114,30 +118,36 @@
                             </td>
                             <td class="p-h ph product-rate">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                if(this.value == ''){
-                                        const price = {{$prices->silver_gram_in_inr}} * 1;
-                                        const discount = (price * {{$percent}})/100;
-                                        if({{$discount?->type}} == 0){
-                                            let finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
-                                        }else{
-                                            let finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
-                                        }
 
-                                        document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                    if(this.value == ''){
+                                        const price = {{$prices->silver_gram_in_inr}} * 1;
+
+                                            const discount = (price * {{$percent}})/100;
+                                            if({{$discount?->type}} == 0){
+                                                let finalPrice = price - discount;
+                                                document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            }else{
+                                                let finalPrice = price + discount;
+                                                document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            }
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+
+
                                     }else{
                                         const price = {{$prices->silver_gram_in_inr}} * this.value;
-                                        const discount = (price * {{$percent}})/100;
+                                            const discount = (price * {{$percent}})/100;
 
-                                        if({{$discount?->type}} == 0){
-                                            const finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
-                                        }else{
-                                            const finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
-                                        }
+                                            if({{$discount?->type}} == 0){
+                                                const finalPrice = price - discount;
+                                                document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            }else{
+                                                const finalPrice = price + discount;
+                                                document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            }
+
+
                                     }
+
 
 
                                 "/>

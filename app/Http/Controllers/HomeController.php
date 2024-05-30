@@ -34,6 +34,9 @@ class HomeController extends Controller
 
         $products = Product::all();
         $discount = Discount::where('status', '1')->first();
+        if ($discount == null){
+            $discount = Discount::where('percent', 0)->first();
+        }
         return view('front.index', compact('products', 'prices', 'discount'));
     }
 
