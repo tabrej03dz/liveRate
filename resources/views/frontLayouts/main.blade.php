@@ -77,7 +77,7 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-section about">
-            <img src="{{asset('asset/images/logo.png')}}" alt="Radhika Jewellers Logo" class="footer-logo">
+            <img src="{{asset('asset/images/logo.png')}}" alt="Shristi Jewellers Logo" class="footer-logo">
             <p>About Company</p>
         </div>
         <div class="footer-section menu">
@@ -94,12 +94,12 @@
         </div>
         <div class="footer-section contact">
             <h3>Contact Us</h3>
-            <p><strong>Radhika Jewellers</strong><br>
+            <p><strong>Shristi Jewellers</strong><br>
                 Namak Ki Mandi,<br>
                 Kinari Bazar,<br>
                 Agra, Uttar Pradesh,<br>
                 India - 282002</p>
-            <p><a href="mailto:info@radhikajewellers.in">info@radhikajewellers.in</a></p>
+            <p><a href="mailto:info@shristijewellers.in">info@shristijewellers.in</a></p>
             <p><a href="tel:+919897201554">+91 9897 201554</a></p>
         </div>
         <div class="footer-section app-links">
@@ -111,8 +111,8 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy;2023 Radhika Jewellers</p>
-        <p>Design & Develop By <a href="#">SL</a></p>
+        <p>&copy;2023 Sristi Jewellers</p>
+        <p>Design & Develop By <a href="https://realvictorygroups.com/">Real Victory Groups</a></p>
     </div>
 </footer>
 

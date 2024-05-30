@@ -587,6 +587,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-12 col-sm-12 mt-2">
                     <div class="mheader" id="divNextHd">
@@ -630,7 +631,7 @@
 </div>
 
 
-<marquee class="marquee2">Radhika Jewellers Live Rates provides Gold &amp; Silver prices obtained from various
+<marquee class="marquee2">Shristi Jewellers Live Rates provides Gold &amp; Silver prices obtained from various
     sources believed to be reliable, but we do not guarantee their accuracy. Our gold &amp; silver price data are
     provided without warranty or claim of reliability. It is accepted by the site visitor on the condition that
     errors or omissions shall not be made the basis for any claim, demand or cause for action. </marquee>
