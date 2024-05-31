@@ -94,7 +94,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
@@ -156,7 +156,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
@@ -217,7 +217,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
@@ -278,7 +278,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
@@ -341,7 +341,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
@@ -402,7 +402,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
@@ -465,7 +465,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
@@ -527,7 +527,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
@@ -589,7 +589,7 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0" style="width: 25%; text-align: center;">
+                            <td class="p-h p0" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
@@ -647,175 +647,8 @@
                 </div>
 
 
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>GOLD</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">21K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="21kGold">{{$goldPrice['price_gram_21k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$goldPrice['price_gram_21k']}} * this.value;--}}
-{{--                                    document.getElementById('21kGold').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
 
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>GOLD</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">20K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="20kGold">{{$goldPrice['price_gram_20k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$goldPrice['price_gram_20k']}} * this.value;--}}
-{{--                                    document.getElementById('20kGold').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
 
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>GOLD</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">18K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="18kGold">{{$goldPrice['price_gram_18k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$goldPrice['price_gram_18k']}} * this.value;--}}
-{{--                                    document.getElementById('18kGold').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>GOLD</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">16K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="16kGold">{{$goldPrice['price_gram_16k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$goldPrice['price_gram_16k']}} * this.value;--}}
-{{--                                    document.getElementById('16kGold').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>GOLD</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">14K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="14kGold">{{$goldPrice['price_gram_14k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$goldPrice['price_gram_14k']}} * this.value;--}}
-{{--                                    document.getElementById('14kGold').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
 
 {{--                <div class="content-cover">--}}
 {{--                    <table class="left-side-table">--}}
