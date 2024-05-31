@@ -36,15 +36,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p" style="width: 28%; text-align: center;">
                                 <div class="main-product-cover">
-                                    <h3>Gold</h3>
+                                    <h3 >Gold</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">24K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     $percent = $discount?->percent;
                                     $dis = ($prices->gram_in_inr * $percent)/100;
@@ -56,7 +56,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="24kGold">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = {{$prices->gram_in_inr}} * 1;
@@ -82,7 +82,7 @@
                                             document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -94,15 +94,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">22K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     $percent = $discount?->percent;
 
@@ -117,7 +117,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="22kGold">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8.1)/100)) * 1;
@@ -143,7 +143,7 @@
                                             document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -156,15 +156,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">20K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     $percent = $discount?->percent;
 
@@ -179,7 +179,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="20kGold">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 16.7)/100)) * 1;
@@ -205,7 +205,7 @@
                                             document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -217,15 +217,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">18K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     $percent = $discount?->percent;
 
@@ -240,7 +240,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="18kGold">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 24.9)/100)) * 1;
@@ -266,7 +266,7 @@
                                             document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -278,15 +278,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Gold</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">16K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     $percent = $discount?->percent;
 
@@ -301,7 +301,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="16kGold">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 33.1)/100)) * 1;
@@ -327,7 +327,7 @@
                                             document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -341,15 +341,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">24K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     if ($discount?->percent){
                                     $percent = $discount?->percent;
@@ -365,7 +365,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="24Silver">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = {{$prices->silver_gram_in_inr}} * 1;
@@ -390,7 +390,7 @@
                                             document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -402,15 +402,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">22K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     if ($discount?->percent){
                                     $percent = $discount?->percent;
@@ -427,7 +427,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="22Silver">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100) * 1;
@@ -452,7 +452,7 @@
                                             document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -464,15 +464,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">20K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     if ($discount?->percent){
                                     $percent = $discount?->percent;
@@ -489,7 +489,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="20Silver">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100) * 1;
@@ -514,7 +514,7 @@
                                             document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -526,15 +526,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">18K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     if ($discount?->percent){
                                     $percent = $discount?->percent;
@@ -551,7 +551,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="18Silver">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100) * 1;
@@ -576,7 +576,7 @@
                                             document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
@@ -588,15 +588,15 @@
                     <table class="left-side-table">
                         <tbody>
                         <tr class="ligh-white">
-                            <td class="p-h p0">
+                            <td class="p-h p0" style="width: 25%; text-align: center;">
                                 <div class="main-product-cover">
                                     <h3>Silver</h3>
                                 </div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <div class="mn-rate-cover"><span class="bgm e">16K</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
                                     if ($discount?->percent){
                                     $percent = $discount?->percent;
@@ -613,7 +613,7 @@
                                 @endphp
                                 <div class="mn-rate-cover"><span class="bgm e" id="16Silver">{{round($finalPrice, 2)}}</span></div>
                             </td>
-                            <td class="p-h ph product-rate">
+                            <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
                                         const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100) * 1;
@@ -638,7 +638,7 @@
                                             document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
                                         }
                                     }
-                                "/>
+                                " style="width: 100%;"/>
                             </td>
                         </tr>
                         </tbody>
