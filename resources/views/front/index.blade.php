@@ -377,7 +377,7 @@
                                             let finalPrice = price + discount;
                                             document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
                                         }
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
+                                            // document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
                                     }else{
                                         const price = {{$prices->silver_gram_in_inr}} * this.value;
                                         const discount = (price * {{$percent}})/100;
@@ -430,7 +430,7 @@
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100) * 1;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
@@ -439,9 +439,10 @@
                                             let finalPrice = price + discount;
                                             document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
                                         }
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
+
+                                        document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100)) * this.value;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
@@ -492,7 +493,7 @@
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100) * 1;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
@@ -501,9 +502,9 @@
                                             let finalPrice = price + discount;
                                             document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
                                         }
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
+                                            // document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100)) * this.value;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
@@ -554,7 +555,7 @@
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100) * 1;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
@@ -565,7 +566,7 @@
                                         }
                                             document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100)) * this.value;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
@@ -616,7 +617,7 @@
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
                                     if(this.value == ''){
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100) * 1;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
@@ -627,7 +628,7 @@
                                         }
                                             document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = {{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100)) * this.value;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
