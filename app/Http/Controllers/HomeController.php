@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Contact;
 use App\Models\Plan;
 use App\Models\Service;
 use App\Models\Team;
@@ -32,12 +33,12 @@ class HomeController extends Controller
         $prices = json_decode($response);
 //        $goldPrice = json_decode($goldResponse);
 
-        $products = Product::all();
+//        $products = Product::all();
         $discount = Discount::where('status', '1')->first();
         if ($discount == null){
             $discount = Discount::where('percent', 0)->first();
         }
-        return view('front.index', compact('products', 'prices', 'discount'));
+        return view('front.index', compact( 'prices', 'discount'));
     }
 
 }

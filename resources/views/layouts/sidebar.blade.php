@@ -37,7 +37,7 @@
                 </li>
                 <li class="nav-item">
                      <a href="{{route('banner.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-dailymotion"></i>
+                        <i class="nav-icon fas fa-images"></i>
                         <p>
                             Banner
                         </p>
@@ -46,7 +46,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('update.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-dailymotion"></i>
+                        <i class="nav-icon fas fa-sync"></i>
                         <p>
                             Updates
                         </p>
@@ -55,7 +55,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('bank.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-dailymotion"></i>
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
                             Banks
                         </p>
@@ -64,7 +64,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('contact.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-dailymotion"></i>
+                        <i class="nav-icon fas fa-comment-dots"></i>
                         <p>
                             Contact
                         </p>
@@ -73,7 +73,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('discount.index')}}" class="nav-link">
-                        <i class="nav-icon far fa-dailymotion"></i>
+                        <i class="nav-icon fas fa-tags"></i>
                         <p>
                             Discount
                         </p>

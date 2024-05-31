@@ -10,8 +10,9 @@
 
 
 <body>
-
-
+@php
+    $contact = \App\Models\Contact::first();
+@endphp
 <!-- Header Top Container -->
 <div class="header-top container">
     <div class="menu-icon" id="menu-icon">&#9776;</div>
@@ -21,7 +22,7 @@
     <div class="contact-info">
         <h2><i class="fa fa-phone"></i> CONTACT NUMBER</h2>
         <p>
-            <a href="tel:+919414400331"><span class="bookingno2">+91-9414400331<br>+91-7014137278</span></a>
+            <a href="tel:+91{{$contact?->phone ?? '9414400331'}}"><span class="bookingno2">+91-{{$contact?->phone ?? '9414400331'}}<br>+91-7014137278</span></a>
         </p>
     </div>
 </div>
@@ -99,8 +100,8 @@
                 Kinari Bazar,<br>
                 Agra, Uttar Pradesh,<br>
                 India - 282002</p>
-            <p><a href="mailto:info@shristijewellers.in">info@shristijewellers.in</a></p>
-            <p><a href="tel:+919897201554">+91 9897 201554</a></p>
+            <p><a href="mailto:{{$contact?->email ?? ''}}">{{$contact?->email ?? ''}}</a></p>
+            <p><a href="tel:+91{{$contact?->phone ?? '9414400331'}}">+91 {{$contact?->phone ?? '9414400331'}}</a></p>
         </div>
         <div class="footer-section app-links">
 {{--            <img src="{{asset('asset/images/mobile.webp')}}" alt="Phone" class="phone">--}}
@@ -111,7 +112,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy;2023 Sristi Jewellers</p>
+        <p>&copy;2023 Shristi Jewellers</p>
         <p>Design & Develop By <a href="https://realvictorygroups.com/">Real Victory Groups</a></p>
     </div>
 </footer>
