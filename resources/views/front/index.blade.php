@@ -126,10 +126,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
 
                                         // document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
@@ -139,10 +139,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -189,10 +189,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
 
                                         // document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
@@ -202,10 +202,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + grma + 'gm';
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + '/' + grma + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -251,10 +251,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
 
                                         // document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
@@ -264,10 +264,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -313,10 +313,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
 
                                         // document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
@@ -326,10 +326,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -378,10 +378,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                             // document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
                                     }else{
@@ -390,10 +390,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -441,10 +441,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
 
                                         // document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
@@ -454,10 +454,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -505,10 +505,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                             // document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
                                     }else{
@@ -517,10 +517,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -568,10 +568,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                             // document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
                                     }else{
@@ -580,10 +580,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -631,10 +631,10 @@
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                             // document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
                                     }else{
@@ -643,10 +643,10 @@
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
