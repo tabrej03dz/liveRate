@@ -26,8 +26,8 @@
                 <div class="card">
                     <div class="card-header bg-primary text-white">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h1>Contacts</h1>
-                            <a href="{{ route('discount.create') }}" class="btn btn-light">Add Contact</a>
+                            <h1>Offers</h1>
+                            <a href="{{ route('discount.create') }}" class="btn btn-light">Create</a>
                         </div>
                     </div>
 
