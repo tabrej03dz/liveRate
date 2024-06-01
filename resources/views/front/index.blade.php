@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="text-center ">
-    <p style="text-align: center; margin-top: 10px; margin-bottom: -10px; font-size: 30px;">
+    <p style="text-align: center; margin-top: 10px; margin-bottom: -10px; font-size: 26px;">
 {{--        {{\Carbon\Carbon::today()->format('l, F j, Y')}}--}}
 
 {{--            [<span id="hours">00</span>--}}
