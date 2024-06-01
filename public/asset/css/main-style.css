@@ -329,7 +329,7 @@ body {
 
 .right-side,
 .left-side {
-    width: 48%;
+    width: 100%;
     box-sizing: border-box;
 }
 
