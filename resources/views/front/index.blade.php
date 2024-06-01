@@ -116,7 +116,7 @@
                                         $finalPrice = $caretWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="22kGold">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="22kGold">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -179,7 +179,7 @@
                                         $finalPrice = $caretWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="20kGold">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="20kGold">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -241,7 +241,7 @@
                                         $finalPrice = $caretWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="18kGold">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="18kGold">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -303,7 +303,7 @@
                                         $finalPrice = $caretWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="16kGold">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="16kGold">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -368,7 +368,7 @@
                                         $finalPrice = $prices->silver_gram_in_inr + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="24Silver">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="24Silver">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -431,7 +431,7 @@
                                         $finalPrice = $caratWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="22Silver">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="22Silver">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -495,7 +495,7 @@
                                         $finalPrice = $caratWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="20Silver">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="20Silver">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -558,7 +558,7 @@
                                         $finalPrice = $caratWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="18Silver">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="18Silver">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
@@ -621,7 +621,7 @@
                                         $finalPrice = $caratWisePrice + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="16Silver">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="16Silver">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
