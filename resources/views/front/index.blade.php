@@ -54,32 +54,33 @@
                                         $finalPrice = $prices->gram_in_inr + $dis;
                                     }
                                 @endphp
-                                <div class="mn-rate-cover"><span class="bgm e" id="24kGold">{{round($finalPrice, 2)}}</span></div>
+                                <div class="mn-rate-cover"><span class="bgm e" id="24kGold">{{round($finalPrice, 2)}}/gm</span></div>
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                        let gram = this.value;
+                                    if(gram == ''){
                                         const price = {{$prices->gram_in_inr}} * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2) + ' / ' + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
 
-                                        document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                        // document.getElementById('24kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                     }else{
-                                        const price = {{$prices->gram_in_inr}} * this.value;
+                                        const price = {{$prices->gram_in_inr}} * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -119,28 +120,29 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8.1)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
 
-                                        document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                        // document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8.1)/100)) * this.value;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8.1)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -181,28 +183,29 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 16.7)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
 
-                                        document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
+                                        // document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 16.7)/100)) * this.value;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 16.7)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + grma + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -242,28 +245,29 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 24.9)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
 
-                                        document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
+                                        // document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 24.9)/100)) * this.value;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 24.9)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -303,28 +307,29 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 33.1)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
 
-                                        document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
+                                        // document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 33.1)/100)) * this.value;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 33.1)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16kGold').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -367,27 +372,28 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = {{$prices->silver_gram_in_inr}} * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                             // document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = {{$prices->silver_gram_in_inr}} * this.value;
+                                        const price = {{$prices->silver_gram_in_inr}} * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -429,28 +435,29 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
 
-                                        document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
+                                        // document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100)) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 8)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('22Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -492,27 +499,28 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                             // document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100)) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 17)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('20Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -554,27 +562,28 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
+                                            // document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100)) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 25)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('18Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -616,27 +625,28 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 <input type="number" name="gram" min="1" onkeyup="
-                                    if(this.value == ''){
+                                    let gram = this.value;
+                                    if(gram == ''){
                                         const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
                                         if({{$discount?->type}} == 0){
                                             let finalPrice = price - discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             let finalPrice = price + discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
+                                            // document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100)) * this.value;
+                                        const price = ({{$prices->silver_gram_in_inr}} - (({{$prices->silver_gram_in_inr}} * 33)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
                                         if({{$discount?->type}} == 0){
                                             const finalPrice = price - discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }else{
                                             const finalPrice = price + discount;
-                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2);
+                                            document.getElementById('16Silver').innerText = finalPrice.toFixed(2) + gram + 'gm';
                                         }
                                     }
                                 " style="width: 100%;"/>
@@ -645,184 +655,9 @@
                         </tbody>
                     </table>
                 </div>
-
-
-
-
-
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>Silver</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">24K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="24kSilver">{{$silverPrice['price_gram_24k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$silverPrice['price_gram_24k']}} * this.value;--}}
-{{--                                    document.getElementById('24kSilver').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>Silver</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">22K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="22kSilver">{{$silverPrice['price_gram_22k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$silverPrice['price_gram_22k']}} * this.value;--}}
-{{--                                    document.getElementById('22kSilver').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>Silver</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">21K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="21kSilver">{{$silverPrice['price_gram_21k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$silverPrice['price_gram_21k']}} * this.value;--}}
-{{--                                    document.getElementById('21kSilver').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>Silver</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">20K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="20kSilver">{{$silverPrice['price_gram_20k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$silverPrice['price_gram_20k']}} * this.value;--}}
-{{--                                    document.getElementById('20kSilver').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-
-{{--                <div class="content-cover">--}}
-{{--                    <table class="left-side-table">--}}
-{{--                        <tbody>--}}
-{{--                        <tr class="ligh-white">--}}
-{{--                            <td class="p-h p0">--}}
-{{--                                <div class="main-product-cover">--}}
-{{--                                    <h3>Silver</h3>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e">18K</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <div class="mn-rate-cover"><span class="bgm e" id="18kSilver">{{$silverPrice['price_gram_18k']}}</span></div>--}}
-{{--                            </td>--}}
-{{--                            <td class="p-h ph product-rate">--}}
-{{--                                <select name="gram" onchange="--}}
-{{--                                    const price = {{$silverPrice['price_gram_18k']}} * this.value;--}}
-{{--                                    document.getElementById('18kSilver').innerText = price;--}}
-{{--                                ">--}}
-{{--                                    <option value="1">1 gram</option>--}}
-{{--                                    <option value="2">2 gram</option>--}}
-{{--                                    <option value="5">5 gram</option>--}}
-{{--                                    <option value="8">8 gram</option>--}}
-{{--                                    <option value="10">10 gram</option>--}}
-{{--                                    <option value="12">12 gram</option>--}}
-{{--                                    <option value="15">15 gram</option>--}}
-{{--                                </select>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
             </div>
         </div>
     </div>
-
 
 
     <div class="right-side">
