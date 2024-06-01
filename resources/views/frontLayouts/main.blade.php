@@ -95,11 +95,7 @@
         </div>
         <div class="footer-section contact">
             <h3>Contact Us</h3>
-            <p><strong>Shristi Jewellers</strong><br>
-                Namak Ki Mandi,<br>
-                Kinari Bazar,<br>
-                Agra, Uttar Pradesh,<br>
-                India - 282002</p>
+            <p class="text-dark">{!! $contact?->full_address ?? '' !!}</p>
             <p><a href="mailto:{{$contact?->email ?? ''}}">{{$contact?->email ?? ''}}</a></p>
             <p><a href="tel:+91{{$contact?->phone ?? '9414400331'}}">+91 {{$contact?->phone ?? '9414400331'}}</a></p>
         </div>
@@ -112,7 +108,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy;2023 Shristi Jewellers</p>
+        <p>&copy; {{Carbon\Carbon::today()->format('Y')}} Shristi Jewellers</p>
         <p>Design & Develop By <a href="https://realvictorygroups.com/">Real Victory Groups</a></p>
     </div>
 </footer>

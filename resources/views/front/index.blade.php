@@ -4,6 +4,13 @@
 <div class="text-center ">
     <p style="text-align: center; margin-top: 10px; margin-bottom: -10px; font-size: 30px;">
         {{\Carbon\Carbon::today()->format('l, F j, Y')}}
+
+            [<span id="hours">00</span>
+            <span id="dots">:</span>
+            <span id="minutes">00</span>
+            <span id="dots">:</span>
+            <span id="seconds">00</span>
+            <span id="period">00</span>]
     </p>
 </div>
 <div class="header-top-marquee">
@@ -793,6 +800,40 @@
     provided without warranty or claim of reliability. It is accepted by the site visitor on the condition that
     errors or omissions shall not be made the basis for any claim, demand or cause for action. </marquee>
 
+<script>
+    function clock(){
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minutes');
+        let period = document.getElementById('period');
+        let seconds = document.getElementById('seconds');
+
+        let d = new Date();
+
+        let h = d.getHours();
+        let m = d.getMinutes();
+        let s = d.getSeconds();
+
+
+
+        let ampm = h >= 12 ? "PM" : "AM";
+
+        if( h > 12 ){
+            h = h - 12;
+        }
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+
+        hours.innerHTML = h;
+        minutes.innerHTML = m;
+        seconds.innerHTML = s;
+        period.innerHTML = ampm;
+    };
+    setInterval(clock,1000);
+
+
+</script>
 
 @endsection
 
