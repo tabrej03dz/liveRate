@@ -219,11 +219,11 @@
     <div class="update-container">
         <div class="update-us">
             <h1>UPDATES</h1>
-            <div class="date-search">
-                <input type="text" placeholder="28/05/2024">
-                <input type="text" placeholder="28/05/2024">
-                <button>Search</button>
-            </div>
+{{--            <div class="date-search">--}}
+{{--                <input type="text" placeholder="28/05/2024">--}}
+{{--                <input type="text" placeholder="28/05/2024">--}}
+{{--                <button>Search</button>--}}
+{{--            </div>--}}
         </div>
         <div class="updates">
 
