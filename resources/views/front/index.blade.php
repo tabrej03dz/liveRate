@@ -698,11 +698,19 @@
                                         <td><span class="e">{{$prices->ounce_price_usd_today_low}} / {{$prices->ounce_price_usd_today_high}}</span></td>
                                     </tr>
                                     <tr>
-                                        <td><span>SILVER </span></td>
-                                        <td><span class="e">{{round($prices->silver_ounce_price_bid_inr, 2)}}</span></td>
-                                        <td><span class="e">{{round($prices->silver_ounce_price_ask_inr, 2)}}</span></td>
-                                        <td><span class="e">{{round($prices->silver_ounce_price_inr_today_high, 2)}} / {{round($prices->silver_ounce_price_inr_today_low, 2)}}</span></td>
+                                        <td><span>SILVER $</span></td>
+                                        <td><span class="e">{{round($silverPrices->silver_ounce_price_bid_usd, 2)}}</span></td>
+                                        <td><span class="e">{{round($silverPrices->silver_ounce_price_ask_usd, 2)}}</span></td>
+                                        <td><span class="e">{{round($silverPrices->silver_ounce_price_usd_today_high_usd, 2)}} / {{round($silverPrices->silver_ounce_price_usd_today_low_usd, 2)}}</span></td>
                                     </tr>
+
+                                    <tr>
+                                        <td><span>INR ₹ </span></td>
+                                        <td><span class="e" colspan="2">{{$prices->usd_to_inr}}</span></td>
+                                        <td><span class="e">{{$prices->gram_in_usd}}</span></td>
+                                        <td><span class="e">{{$prices->usd_to_inr}}/{{$prices->gram_in_usd}}</span></td>
+                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>

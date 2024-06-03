@@ -17,7 +17,7 @@
 <div class="header-top container">
     <div class="menu-icon" id="menu-icon">&#9776;</div>
     <div class="logo">
-        <a href="{{route('home')}}"><img src="{{asset('asset/images/logo.png')}}" alt="Logo"></a>
+        <a href="{{route('home')}}"><img src="{{asset('asset/images/logo.png')}}" style="margin-left: -65%;" alt="Logo"></a>
     </div>
     <div class="contact-info">
         <h2><i class="fa fa-phone"></i> CONTACT NUMBER</h2>
@@ -33,7 +33,7 @@
     <nav class="header-nav">
 
         <ul class="header-ul" id="nav-links">
-            <li><a href="{{route('abouts')}}">About Us</a></li>
+            <li><a href="{{route('abouts')}}" style="text-color: #ffffff;">About Us</a></li>
             <li><a href="{{route('home')}}">Live Rates</a></li>
             <li><a href="{{route('coinsRate')}}">Coins Rates</a></li>
             <li><a href="{{route('updates')}}">Updates</a></li>

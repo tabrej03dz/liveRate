@@ -28,17 +28,18 @@ class HomeController extends Controller
 
         $response = $this->priceService->goldPrice();
 //        $goldPrice = $this->goldApiService->goldPrice();
-//        $silverPrice = $this->goldApiService->silverPrice();
-//        dd($response);
-        $prices = json_decode($response);
-//        $goldPrice = json_decode($goldResponse);
+        $silverResponse = $this->priceService->silverPriceUSD();
 
-//        $products = Product::all();
+//        dd($response);
+
+        $silverPrices = json_decode($silverResponse);
+        $prices = json_decode($response);
+
         $discount = Discount::where('status', '1')->first();
         if ($discount == null){
             $discount = Discount::where('percent', 0)->first();
         }
-        return view('front.index', compact( 'prices', 'discount'));
+        return view('front.index', compact( 'prices', 'discount', 'silverPrices'));
     }
 
 }
