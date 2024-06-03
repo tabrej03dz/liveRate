@@ -186,7 +186,7 @@
     <div class="container-fluid">
         <marquee class="marquee1">विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर
             वा चांदी की ज्वेलरी पायल मूर्ति बर्तन सिक्के संपूर्ण रेंज एवं विशाल संग्रह के साथ ( बहुत ही उचित मूल्य )
-            पर उपलब्ध हैं हमेशा की तरह आपके साथ और सहयोग की कामना करते हैं | Working Hours: 11:30 AM - 08:00 PM
+            पर उपलब्ध हैं हमेशा की तरह आपके साथ और सहयोग की कामना करते हैं | Working Hours: 10:00 AM - 08:00 PM
         </marquee>
     </div>
 </div>
@@ -199,111 +199,112 @@
 
 <main>
     <div class="notice-container-main">
-        <div class="notice-container">
-            <p class="notice-text">विषय - आपको सेवा ही हमारे एक तरफ कुछी और जाड़े दी है सोने के 20k/ 18K Hallmark
-                जेवर वा चांदी की जेवरी पायेज मुहि बनने सिरफ सोपुर ऊपर एवं विशाल सोंग के साथ (बहुत ही जटिल परम) पर
-                उपलब्ध है हमेशा को तरह आपके साथ और सहयोग की कामना करते हैं।</p>
-            <p class="working-hours">Working Hours: 11:30 AM - 08:00 PM</p>
+        <div class="notice-container text-center" >
+{{--            <p class="notice-text">विषय - आपको सेवा ही हमारे एक तरफ कुछी और जाड़े दी है सोने के 20k/ 18K Hallmark--}}
+{{--                जेवर वा चांदी की जेवरी पायेज मुहि बनने सिरफ सोपुर ऊपर एवं विशाल सोंग के साथ (बहुत ही जटिल परम) पर--}}
+{{--                उपलब्ध है हमेशा को तरह आपके साथ और सहयोग की कामना करते हैं।</p>--}}
+{{--            <p class="working-hours">Working Hours: 11:30 AM - 08:00 PM</p>--}}
+            Coming Soon
         </div>
     </div>
 
 
     <!--Table Strat-->
 
-    <div class="product-cover">
-        <div class="coin-container">
-            <div class="coin-cover">
-                <div class="left-section" id="goldcoin">
-                    <div class="lf-cvr">
-                        <div class="pn head">
-                            <span class="l-w">GOLD COIN</span>
-                            <span class="text-center r-w">RATE (<i class="fa fa-inr"></i>)</span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">1 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>7183</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">2 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>14206</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">4 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>28112</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">8 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>55776</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">1 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>7589</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">2 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>15178</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">5 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>37570</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">10 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>75140</p>
-                                </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-section" id="silvercoin">
-                    <div class="lf-cvr">
-                        <div class="pn head">
-                            <span class="l-w">SILVER COIN</span>
-                            <span class="text-center r-w">RATE (<i class="fa fa-inr"></i>)</span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">10 Gm 99.99%</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>974</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">100 Gm Coin 99.99%</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>9739</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">500 Gm Coin 99.99%</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>48692</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">Silver 99.99</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>95810</p>
-                                </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="product-cover">--}}
+{{--        <div class="coin-container">--}}
+{{--            <div class="coin-cover">--}}
+{{--                <div class="left-section" id="goldcoin">--}}
+{{--                    <div class="lf-cvr">--}}
+{{--                        <div class="pn head">--}}
+{{--                            <span class="l-w">GOLD COIN</span>--}}
+{{--                            <span class="text-center r-w">RATE (<i class="fa fa-inr"></i>)</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">1 Gm 22K Ginni</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>7183</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">2 Gm 22K Ginni</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>14206</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">4 Gm 22K Ginni</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>28112</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">8 Gm 22K Ginni</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>55776</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">1 Gm 24K Coin</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>7589</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">2 Gm 24K Coin</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>15178</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">5 Gm 24K Coin</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>37570</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">10 Gm 24K Coin</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>75140</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="right-section" id="silvercoin">--}}
+{{--                    <div class="lf-cvr">--}}
+{{--                        <div class="pn head">--}}
+{{--                            <span class="l-w">SILVER COIN</span>--}}
+{{--                            <span class="text-center r-w">RATE (<i class="fa fa-inr"></i>)</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">10 Gm 99.99%</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>974</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">100 Gm Coin 99.99%</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>9739</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">500 Gm Coin 99.99%</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>48692</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="pn rat coin-rate">--}}
+{{--                            <span class="l-w">Silver 99.99</span>--}}
+{{--                            <span class="text-center r-w">--}}
+{{--                                    <p class="e"><i class="fa fa-inr"></i>95810</p>--}}
+{{--                                </span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 </main>
 

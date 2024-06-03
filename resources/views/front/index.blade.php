@@ -12,14 +12,14 @@
 {{--            <span id="seconds">00</span>--}}
 {{--            <span id="period">00</span>]--}}
 
-        [10:00 am to 08:00 pm]
+        Shristi Jewellers
     </p>
 </div>
 <div class="header-top-marquee">
     <div class="container-fluid">
         <marquee class="marquee1">विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर
             वा चांदी की ज्वेलरी पायल मूर्ति बर्तन सिक्के संपूर्ण रेंज एवं विशाल संग्रह के साथ ( बहुत ही उचित मूल्य )
-            पर उपलब्ध हैं हमेशा की तरह आपके साथ और सहयोग की कामना करते हैं | Working Hours: 11:30 AM - 08:00 PM
+            पर उपलब्ध हैं हमेशा की तरह आपके साथ और सहयोग की कामना करते हैं | Working Hours: 10:00 AM - 08:00 PM
         </marquee>
     </div>
 </div>
@@ -670,46 +670,46 @@
     </div>
 
 
-{{--    <div class="right-side">--}}
-{{--        <div class="col-md-6">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-12 col-sm-12 mt-2">--}}
-{{--                    <div class="mheader" id="divFutureHd">--}}
-{{--                        <table class="p-title-cover">--}}
-{{--                            <tbody>--}}
-{{--                            <tr>--}}
-{{--                                <td><span>MCX</span></td>--}}
-{{--                                <td><span>BID</span></td>--}}
-{{--                                <td><span>ASK</span></td>--}}
-{{--                                <td><span>HIGH / LOW</span></td>--}}
-{{--                            </tr>--}}
-{{--                            </tbody>--}}
-{{--                        </table>--}}
-{{--                    </div>--}}
-{{--                    <div id="divFuture">--}}
-{{--                        <div class="mrt">--}}
-{{--                            <div class="pp">--}}
-{{--                                <table>--}}
-{{--                                    <tbody>--}}
-{{--                                    <tr>--}}
-{{--                                        <td><span>GOLD </span></td>--}}
-{{--                                        <td><span class="e">{{$prices->ounce_price_bid}}</span></td>--}}
-{{--                                        <td><span class="e">{{$prices->ounce_price_ask}}</span></td>--}}
-{{--                                        <td><span class="e">{{$prices->ounce_price_usd_today_low}} / {{$prices->ounce_price_usd_today_high}}</span></td>--}}
-{{--                                    </tr>--}}
-{{--                                    <tr>--}}
-{{--                                        <td><span>SILVER </span></td>--}}
-{{--                                        <td><span class="e">{{round($prices->silver_ounce_price_bid_inr, 2)}}</span></td>--}}
-{{--                                        <td><span class="e">{{round($prices->silver_ounce_price_ask_inr, 2)}}</span></td>--}}
-{{--                                        <td><span class="e">{{round($prices->silver_ounce_price_inr_today_high, 2)}} / {{round($prices->silver_ounce_price_inr_today_low, 2)}}</span></td>--}}
-{{--                                    </tr>--}}
-{{--                                    </tbody>--}}
-{{--                                </table>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+    <div class="right-side">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 mt-2">
+                    <div class="mheader" id="divFutureHd">
+                        <table class="p-title-cover">
+                            <tbody>
+                            <tr>
+                                <td><span>Spot</span></td>
+                                <td><span>BID</span></td>
+                                <td><span>ASK</span></td>
+                                <td><span>HIGH / LOW</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="divFuture">
+                        <div class="mrt">
+                            <div class="pp">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td><span>GOLD </span></td>
+                                        <td><span class="e">{{$prices->ounce_price_bid}}</span></td>
+                                        <td><span class="e">{{$prices->ounce_price_ask}}</span></td>
+                                        <td><span class="e">{{$prices->ounce_price_usd_today_low}} / {{$prices->ounce_price_usd_today_high}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span>SILVER </span></td>
+                                        <td><span class="e">{{round($prices->silver_ounce_price_bid_inr, 2)}}</span></td>
+                                        <td><span class="e">{{round($prices->silver_ounce_price_ask_inr, 2)}}</span></td>
+                                        <td><span class="e">{{round($prices->silver_ounce_price_inr_today_high, 2)}} / {{round($prices->silver_ounce_price_inr_today_low, 2)}}</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 {{--            <div class="row">--}}
 {{--                <div class="col-md-12 col-sm-12 mt-2">--}}
 {{--                    <div class="mheader" id="divSpotHd">--}}
@@ -793,8 +793,8 @@
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+        </div>
+    </div>
 </div>
 
 
