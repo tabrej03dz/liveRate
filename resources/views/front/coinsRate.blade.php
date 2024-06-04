@@ -220,54 +220,15 @@
                             <span class="l-w">GOLD COIN</span>
                             <span class="text-center r-w">RATE (<i class="fa fa-inr"></i>)</span>
                         </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">1 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>7183</p>
+                        @foreach($goldCoins as $coin)
+                            <div class="pn rat coin-rate">
+                                <span class="l-w">{{$coin->weight. ' Gm '. $coin->carat.' K '.ucfirst($coin->type)}}</span>
+                                <span class="text-center r-w">
+                                    <p class="e"><i class="fa fa-inr"></i>{{$coin->price}}</p>
                                 </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">2 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>14206</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">4 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>28112</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">8 Gm 22K Ginni</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>55776</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">1 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>7589</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">2 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>15178</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">5 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>37570</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">10 Gm 24K Coin</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>75140</p>
-                                </span>
-                        </div>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
                 <div class="right-section" id="silvercoin">
@@ -276,30 +237,15 @@
                             <span class="l-w">SILVER COIN</span>
                             <span class="text-center r-w">RATE (<i class="fa fa-inr"></i>)</span>
                         </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">10 Gm 99.99%</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>974</p>
+                        @foreach($silverCoins as $coin)
+                            <div class="pn rat coin-rate">
+                                <span class="l-w">{{$coin->weight. ' Gm '. $coin->carat.' K '.ucfirst($coin->type)}}</span>
+                                <span class="text-center r-w">
+                                    <p class="e"><i class="fa fa-inr"></i>{{$coin->price}}</p>
                                 </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">100 Gm Coin 99.99%</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>9739</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">500 Gm Coin 99.99%</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>48692</p>
-                                </span>
-                        </div>
-                        <div class="pn rat coin-rate">
-                            <span class="l-w">Silver 99.99</span>
-                            <span class="text-center r-w">
-                                    <p class="e"><i class="fa fa-inr"></i>95810</p>
-                                </span>
-                        </div>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>

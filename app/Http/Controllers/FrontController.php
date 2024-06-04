@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\BankDetail;
 use App\Models\Blog;
+use App\Models\Coin;
 use App\Models\Contact;
 use App\Models\Plan;
 use App\Models\Update;
@@ -27,7 +28,9 @@ class FrontController extends Controller
     }
 
     public function coinsRate(){
-        return view('front.coinsRate');
+        $silverCoins = Coin::where('metal', 'silver')->get();
+        $goldCoins = Coin::where('metal', 'gold')->get();
+        return view('front.coinsRate', compact('goldCoins', 'silverCoins'));
     }
 
     public function update(){

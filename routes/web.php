@@ -18,6 +18,7 @@ use App\Http\Controllers\BankDetailController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\CoinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -139,7 +140,14 @@ Route::group(['middleware' => ['auth']],function (){
         Route::post('store', [AboutController::class, 'store'])->name('store');
     });
 
-
+    Route::prefix('coin')->name('coin.')->group(function(){
+       Route::get('/', [CoinController::class, 'index'])->name('index');
+       Route::get('create', [CoinController::class, 'create'])->name('create');
+       Route::post('store', [CoinController::class, 'store'])->name('store');
+       Route::get('edit/{coin}',[CoinController::class, 'edit'])->name('edit');
+       Route::post('update/{coin}', [CoinController::class, 'update'])->name('update');
+       Route::get('delete/{coin}', [CoinController::class, 'delete'])->name('delete');
+    });
 
 
 });

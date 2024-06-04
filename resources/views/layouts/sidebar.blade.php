@@ -122,12 +122,12 @@
 {{--                    </a>--}}
                 </li>
                 <li class="nav-item">
-{{--                     <a href="{{route('team.index')}}" class="nav-link">--}}
-{{--                        <i class="nav-icon fa fa-group"></i>--}}
-{{--                        <p>--}}
-{{--                            Team Member--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
+                     <a href="{{route('coin.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-group"></i>
+                        <p>
+                            Coin
+                        </p>
+                    </a>
                 </li>
 
                 <li class="nav-item">
