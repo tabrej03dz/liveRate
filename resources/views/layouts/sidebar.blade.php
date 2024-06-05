@@ -88,12 +88,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-{{--                     <a href="{{route('appointment.index')}}" class="nav-link">--}}
-{{--                        <i class="nav-icon fa fa-american-sign-language-interpreting"></i>--}}
-{{--                        <p>--}}
-{{--                            Appointment--}}
-{{--                        </p>--}}
-{{--                    </a>--}}
+                     <a href="{{route('inquiry.index')}}" class="nav-link">
+                        <i class="nav-icon fa fa-american-sign-language-interpreting"></i>
+                        <p>
+                            Inquiry
+                        </p>
+                    </a>
                 </li>
 
                 <li class="nav-item">

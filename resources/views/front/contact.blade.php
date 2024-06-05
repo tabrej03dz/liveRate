@@ -331,33 +331,42 @@
         <div class="form-container">
             <div class="form-header">INQUIRY FORM</div>
             <div class="form-body">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" placeholder="Please enter your Name" class="form-input" required>
-                        <span class="form-label">Name *</span>
+                <form action="{{route('inquiry.store')}}" method="POST">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Please enter your Name" class="form-input" required>
+                            <span class="form-label">Name *</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Please enter your email" class="form-input" required>
+                            <span class="form-label">Email *</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Please enter your phone" class="form-input" required>
+                            <span class="form-label">Phone *</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Please enter Subject" class="form-input">
+                            <span class="form-label">Subject</span>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Please enter your email" class="form-input" required>
-                        <span class="form-label">Email *</span>
+                        <textarea placeholder="Message for me *" name="message" class="form-textarea" required></textarea>
+                        <span class="form-label">Message *</span>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="tel" placeholder="Please enter your phone" class="form-input" required>
-                        <span class="form-label">Phone *</span>
+                    <div class="form-row">
+                        <button type="submit" class="form-submit">Submit</button>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Please enter Subject" class="form-input">
-                        <span class="form-label">Subject</span>
+                </form>
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Message for me *" class="form-textarea" required></textarea>
-                    <span class="form-label">Message *</span>
-                </div>
-                <div class="form-row">
-                    <button type="submit" class="form-submit">Submit</button>
-                </div>
+                @endif
             </div>
         </div>
     </div>

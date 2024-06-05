@@ -19,6 +19,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\CoinController;
+use App\Http\Controllers\InquiryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,12 @@ Route::get('forget',[AuthController::class,'forget'])->name('auth.forget');
 Route::post('forget',[AuthController::class,'forget_pass'])->name('auth.forget_pass');
 Route::get('reset-password',[AuthController::class,'reset_password'])->name('reset-password');
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
+
+Route::prefix('inquiry')->name('inquiry.')->group(function(){
+    Route::get('/', [InquiryController::class, 'index'])->name('index');
+    Route::post('store', [InquiryController::class, 'store'])->name('store');
+    Route::get('delete/{inquiry}', [InquiryController::class, 'delete'])->name('delete');
+});
 
 Route::post('appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
 
