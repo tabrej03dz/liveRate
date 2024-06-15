@@ -35,14 +35,14 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                     <a href="{{route('banner.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-images"></i>
-                        <p>
-                            Banner
-                        </p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                     <a href="{{route('banner.index')}}" class="nav-link">--}}
+{{--                        <i class="nav-icon fas fa-images"></i>--}}
+{{--                        <p>--}}
+{{--                            Banner--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="nav-item">
                     <a href="{{route('update.index')}}" class="nav-link">
@@ -130,14 +130,14 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                     <a href="{{route('blogs.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-asterisk"></i>
-                        <p>
-                            Blog
-                        </p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                     <a href="{{route('blogs.index')}}" class="nav-link">--}}
+{{--                        <i class="nav-icon fa fa-asterisk"></i>--}}
+{{--                        <p>--}}
+{{--                            Blog--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 {{--                <li class="nav-item">--}}
 {{--                     <a href="{{route('blog.create')}}" class="nav-link">--}}
 {{--                        <i class="nav-icon fa fa-cog"></i>--}}
@@ -166,14 +166,14 @@
                         </p>
                     </a> --}}
                 </li>
-                <li class="nav-item">
-                     <a href="{{route('product.index')}}" class="nav-link">
-                        <i class="nav-icon fa fa-bug"></i>
-                        <p>
-                          Product
-                        </p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                     <a href="{{route('product.index')}}" class="nav-link">--}}
+{{--                        <i class="nav-icon fa fa-bug"></i>--}}
+{{--                        <p>--}}
+{{--                          Product--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
                 <li class="nav-item">
                     <a href="{{route('logout')}}" class="nav-link">
