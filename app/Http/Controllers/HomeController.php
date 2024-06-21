@@ -35,11 +35,12 @@ class HomeController extends Controller
         $silverPrices = json_decode($silverResponse);
         $prices = json_decode($response);
 
-        $discount = Discount::where('status', '1')->first();
-        if ($discount == null){
-            $discount = Discount::where('percent', 0)->first();
+        $goldDiscount = Discount::where(['status' => '1', 'metal' => 'gold'])->first();
+        if ($goldDiscount == null){
+            $goldDiscount = Discount::where('percent', 0)->first();
         }
-        return view('front.index', compact( 'prices', 'discount', 'silverPrices'));
+        $silverDiscount = Discount::where(['status' => '1', 'metal' => 'silver'])->first();
+        return view('front.index', compact( 'prices', 'goldDiscount', 'silverDiscount', 'silverPrices'));
     }
 
 }

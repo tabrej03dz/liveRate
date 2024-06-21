@@ -38,6 +38,7 @@ class DiscountController extends Controller
             'status' => 'required',
             'type' => 'required',
         ]);
+//        dd($discount->metal);
 
         $discount->update($request->all());
         return redirect('discount')->with('success', 'Discount Updated successfully');
@@ -49,12 +50,10 @@ class DiscountController extends Controller
     }
 
     public function status(Discount $discount){
-        $discounts = Discount::all();
+        $discounts = Discount::where('metal' , $discount->metal)->get();
         foreach ($discounts as $dic){
             $dic->update(['status' => '0']);
         }
-
-
         $discount->status = '1';
         $discount->save();
 

@@ -41,6 +41,14 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                <label for="metal">Metal</label>
+                <select name="metal"  class="form-control">
+                    <option value="gold" {{$discount->metal == 'gold' ? 'selected' : ''}}>Gold</option>
+                    <option value="silver" {{$discount->metal == 'silver' ? 'selected' : ''}}>Silver</option>
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

@@ -115,12 +115,12 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
-                                    $percent = $discount?->percent;
+                                    $percent = $goldDiscount?->percent;
 
-                                    $caretWisePrice = $prices->gram_in_inr - (($prices->gram_in_inr * 8.1)/100);
+                                    $caretWisePrice = $prices->gram_in_inr - (($prices->gram_in_inr * 8)/100);
 
                                     $dis = ($caretWisePrice * $percent)/100;
-                                    if($discount?->type == 0){
+                                    if($goldDiscount?->type == 0){
                                         $finalPrice = $caretWisePrice - $dis;
                                     }else{
                                         $finalPrice = $caretWisePrice + $dis;
@@ -132,9 +132,9 @@
                                 <input type="number" name="gram" min="1" onkeyup="
                                     let gram = this.value;
                                     if(gram == ''){
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8.1)/100)) * 1;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
-                                        if({{$discount?->type}} == 0){
+                                        if({{$goldDiscount?->type}} == 0){
                                             let finalPrice = price - discount;
                                             document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
@@ -144,10 +144,10 @@
 
                                         // document.getElementById('22kGold').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8.1)/100)) * gram;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 8)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
-                                        if({{$discount?->type}} == 0){
+                                        if({{$goldDiscount?->type}} == 0){
                                             const finalPrice = price - discount;
                                             document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
@@ -178,12 +178,12 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
-                                    $percent = $discount?->percent;
+                                    $percent = $goldDiscount?->percent;
 
                                     $caretWisePrice = $prices->gram_in_inr - (($prices->gram_in_inr * 16.7)/100);
 
                                     $dis = ($caretWisePrice * $percent)/100;
-                                    if($discount?->type == 0){
+                                    if($goldDiscount?->type == 0){
                                         $finalPrice = $caretWisePrice - $dis;
                                     }else{
                                         $finalPrice = $caretWisePrice + $dis;
@@ -197,7 +197,7 @@
                                     if(gram == ''){
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 16.7)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
-                                        if({{$discount?->type}} == 0){
+                                        if({{$goldDiscount?->type}} == 0){
                                             let finalPrice = price - discount;
                                             document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
@@ -210,7 +210,7 @@
                                         const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 16.7)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
-                                        if({{$discount?->type}} == 0){
+                                        if({{$goldDiscount?->type}} == 0){
                                             const finalPrice = price - discount;
                                             document.getElementById('20kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
@@ -240,12 +240,12 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
-                                    $percent = $discount?->percent;
+                                    $percent = $goldDiscount?->percent;
 
-                                    $caretWisePrice = $prices->gram_in_inr - (($prices->gram_in_inr * 24.9)/100);
+                                    $caretWisePrice = $prices->gram_in_inr - (($prices->gram_in_inr * 21)/100);
 
                                     $dis = ($caretWisePrice * $percent)/100;
-                                    if($discount?->type == 0){
+                                    if($goldDiscount?->type == 0){
                                         $finalPrice = $caretWisePrice - $dis;
                                     }else{
                                         $finalPrice = $caretWisePrice + $dis;
@@ -257,9 +257,9 @@
                                 <input type="number" name="gram" min="1" onkeyup="
                                     let gram = this.value;
                                     if(gram == ''){
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 24.9)/100)) * 1;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 21)/100)) * 1;
                                         const discount = (price * {{$percent}})/100;
-                                        if({{$discount?->type}} == 0){
+                                        if({{$goldDiscount?->type}} == 0){
                                             let finalPrice = price - discount;
                                             document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
@@ -269,10 +269,10 @@
 
                                         // document.getElementById('18kGold').innerText = finalPrice.toFixed(2);
                                     }else{
-                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 24.9)/100)) * gram;
+                                        const price = ({{$prices->gram_in_inr}} - (({{$prices->gram_in_inr}} * 21)/100)) * gram;
                                         const discount = (price * {{$percent}})/100;
 
-                                        if({{$discount?->type}} == 0){
+                                        if({{$goldDiscount?->type}} == 0){
                                             const finalPrice = price - discount;
                                             document.getElementById('18kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
@@ -366,13 +366,13 @@
                             </td>
                             <td class="p-h ph product-rate" style="width: 25%; text-align: center;">
                                 @php
-                                    if ($discount?->percent){
-                                    $percent = $discount?->percent;
+                                    if ($silverDiscount?->percent){
+                                    $percent = $silverDiscount?->percent;
                                     }else{
                                         $percent = 0;
                                     }
                                     $dis = ($prices->silver_gram_in_inr * $percent)/100;
-                                    if($discount?->type == 0){
+                                    if($silverDiscount?->type == 0){
                                         $finalPrice = $prices->silver_gram_in_inr - $dis;
                                     }else{
                                         $finalPrice = $prices->silver_gram_in_inr + $dis;
@@ -386,7 +386,7 @@
                                     if(gram == ''){
                                         const price = {{$prices->silver_gram_in_inr}} * 1;
                                         const discount = (price * {{$percent}})/100;
-                                        if({{$discount?->type}} == 0){
+                                        if({{$silverDiscount?->type}} == 0){
                                             let finalPrice = price - discount;
                                             document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{
@@ -398,7 +398,7 @@
                                         const price = {{$prices->silver_gram_in_inr}} * gram;
                                         const discount = (price * {{$percent}})/100;
 
-                                        if({{$discount?->type}} == 0){
+                                        if({{$silverDiscount?->type}} == 0){
                                             const finalPrice = price - discount;
                                             document.getElementById('24Silver').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
                                         }else{

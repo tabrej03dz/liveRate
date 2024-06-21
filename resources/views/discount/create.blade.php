@@ -41,9 +41,14 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                <label for="metal">Metal</label>
+                <select name="metal" id="status" class="form-control">
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                </select>
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-
-
 @endsection
