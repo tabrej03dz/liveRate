@@ -49,6 +49,7 @@
                                     <th>Title</th>
                                     <th>Percent</th>
                                     <th>Type</th>
+                                    <th>Metal</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -59,7 +60,8 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $discount->title }}</td>
                                         <td>{{ $discount->percent }}</td>
-                                        <td>{{ $discount->type }}</td>
+                                        <td>{{ $discount->type == '1' ? 'Up' : 'down' }}</td>
+                                        <td>{{ $discount->metal }}</td>
                                         <td>
                                             <a href="{{ $discount->status == '0' ? route('discount.status', $discount) : '' }}" class="btn btn-{{$discount->status == '0' ? 'warning' : 'success' }}">{{$discount->status == 0 ? 'Inactive' : 'Active'}}</a>
                                         </td>

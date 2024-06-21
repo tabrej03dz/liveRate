@@ -23,7 +23,7 @@
 
             <div class="form-group">
                 <label for="title">percent</label>
-                <input type="number" class="form-control" id="percent" name="percent" value="{{ old('percent') }}" required>
+                <input type="text" class="form-control" id="percent" name="percent" value="{{ old('percent') }}" required>
             </div>
             <div class="form-group">
                 <label for="status">Status</label>

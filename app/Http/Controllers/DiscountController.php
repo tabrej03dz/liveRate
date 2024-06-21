@@ -19,7 +19,7 @@ class DiscountController extends Controller
     public function store(Request $request){
         $request->validate([
             'title' => 'required',
-            'percent' => 'required',
+            'percent' => 'required|numeric',
             'status' => 'required',
             'type' => 'required',
         ]);
@@ -34,9 +34,10 @@ class DiscountController extends Controller
     public function update(Request $request, Discount $discount){
         $request->validate([
             'title' => 'required',
-            'percent' => 'required',
+            'percent' => 'required|numeric',
             'status' => 'required',
             'type' => 'required',
+            'metal' => 'required',
         ]);
 //        dd($discount->metal);
 
