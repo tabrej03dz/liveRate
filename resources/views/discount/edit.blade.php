@@ -25,6 +25,16 @@
                 <label for="title">percent</label>
                 <input type="text" class="form-control" id="percent" name="percent" value="{{ $discount->percent }}" required>
             </div>
+
+            <div class="form-group">
+                <label for="metal">Carat</label>
+                <select name="carat" id="carat" class="form-control">
+                    <option value="18" {{$discount->carat == '18' ? 'selected' : ''}}>18K</option>
+                    <option value="20" {{$discount->carat == '20' ? 'selected' : ''}}>20K</option>
+                    <option value="22" {{$discount->carat == '22' ? 'selected' : ''}}>22K</option>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label for="status">Status</label>
                 <select name="status" id="status" class="form-control">

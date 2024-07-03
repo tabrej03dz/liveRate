@@ -35,12 +35,25 @@ class HomeController extends Controller
         $silverPrices = json_decode($silverResponse);
         $prices = json_decode($response);
 
-        $goldDiscount = Discount::where(['status' => '1', 'metal' => 'gold'])->first();
-        if ($goldDiscount == null){
-            $goldDiscount = Discount::where('percent', 0)->first();
+        $goldDiscount22k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '22'])->first();
+        if ($goldDiscount22k == null){
+            $goldDiscount22k = Discount::where('percent', 0)->first();
+        }
+
+        $goldDiscount20k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '20'])->first();
+        if ($goldDiscount20k == null){
+            $goldDiscount20k = Discount::where('percent', 0)->first();
+        }
+
+        $goldDiscount18k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '18'])->first();
+        if ($goldDiscount18k == null){
+            $goldDiscount18k = Discount::where('percent', 0)->first();
         }
         $silverDiscount = Discount::where(['status' => '1', 'metal' => 'silver'])->first();
-        return view('front.index', compact( 'prices', 'goldDiscount', 'silverDiscount', 'silverPrices'));
+        if ($silverDiscount == null){
+            $silverDiscount = Discount::where('percent', 0)->first();
+        }
+        return view('front.index', compact( 'prices', 'goldDiscount22k', 'goldDiscount20k', 'goldDiscount18k', 'silverDiscount', 'silverPrices'));
     }
 
 }
