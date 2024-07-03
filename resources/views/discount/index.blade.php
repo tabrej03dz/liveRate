@@ -61,7 +61,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $discount->title }}</td>
                                         <td>{{ $discount->percent }}</td>
-                                        <td>{{ $discount->carat }}</td>
+                                        <td>{{ $discount->carat }}K</td>
                                         <td>{{ $discount->type == '1' ? 'Up' : 'down' }}</td>
                                         <td>{{ $discount->metal }}</td>
                                         <td>
