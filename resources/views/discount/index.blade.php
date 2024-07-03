@@ -48,6 +48,7 @@
                                     <th>#</th>
                                     <th>Title</th>
                                     <th>Percent</th>
+                                    <th>Carat</th>
                                     <th>Type</th>
                                     <th>Metal</th>
                                     <th>Status</th>
@@ -60,6 +61,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $discount->title }}</td>
                                         <td>{{ $discount->percent }}</td>
+                                        <td>{{ $discount->carat }}</td>
                                         <td>{{ $discount->type == '1' ? 'Up' : 'down' }}</td>
                                         <td>{{ $discount->metal }}</td>
                                         <td>
