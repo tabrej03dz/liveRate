@@ -29,9 +29,11 @@
             <div class="form-group">
                 <label for="metal">Carat</label>
                 <select name="carat" id="carat" class="form-control">
+                    <option value="">Choose Carat</option>
                     <option value="18" {{$discount->carat == '18' ? 'selected' : ''}}>18K</option>
                     <option value="20" {{$discount->carat == '20' ? 'selected' : ''}}>20K</option>
                     <option value="22" {{$discount->carat == '22' ? 'selected' : ''}}>22K</option>
+                    <option value="22" {{$discount->carat == '24' ? 'selected' : ''}}>24K</option>
                 </select>
             </div>
 

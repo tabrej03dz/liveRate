@@ -29,9 +29,11 @@
             <div class="form-group">
                 <label for="metal">Carat</label>
                 <select name="carat" id="carat" class="form-control">
+                    <option value="">Choose Carat</option>
                     <option value="18">18K</option>
                     <option value="20">20K</option>
                     <option value="22">22K</option>
+                    <option value="24">24K</option>
                 </select>
             </div>
 

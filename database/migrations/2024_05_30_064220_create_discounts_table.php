@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('status', [0, 1])->default(0);
             $table->enum('type', ['0', '1'])->default(0);
             $table->enum('metal', ['gold', 'silver'])->default('gold');
-            $table->enum('carat', ['18', '20', '22'])->default('22');
+            $table->enum('carat', ['18', '20', '22', '24'])->default('22');
             $table->timestamps();
         });
     }
