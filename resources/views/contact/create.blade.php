@@ -30,7 +30,7 @@
                 <textarea class="form-control textarea" id="full_address" name="full_address">{{ old('full_address') }}</textarea>
             </div>
             <div class="form-group">
-                <label for="email">Phone 2</label>
+                <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
             </div>
 
