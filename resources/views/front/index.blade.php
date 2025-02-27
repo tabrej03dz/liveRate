@@ -378,80 +378,94 @@
 
 
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
 
-const priceElements = [
-    { id: '22kGold', basePrice: null, currentPrice: null },
-    { id: '20kGold', basePrice: null, currentPrice: null },
-    { id: '18kGold', basePrice: null, currentPrice: null },
-    { id: '24Silver', basePrice: null, currentPrice: null }
-];
+            const priceElements = [{
+                    id: '22kGold',
+                    basePrice: null,
+                    currentPrice: null
+                },
+                {
+                    id: '20kGold',
+                    basePrice: null,
+                    currentPrice: null
+                },
+                {
+                    id: '18kGold',
+                    basePrice: null,
+                    currentPrice: null
+                },
+                {
+                    id: '24Silver',
+                    basePrice: null,
+                    currentPrice: null
+                }
+            ];
 
-// Initialize prices (read initial prices from HTML)
-priceElements.forEach(item => {
-    const priceElement = document.getElementById(item.id);
-    if (priceElement) {
-        let initialText = priceElement.innerText.trim();
-        let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
-        item.basePrice = initialPrice;    // Actual starting price
-        item.currentPrice = initialPrice; // Price that will fluctuate
-    }
-});
+            // Initialize prices (read initial prices from HTML)
+            priceElements.forEach(item => {
+                const priceElement = document.getElementById(item.id);
+                if (priceElement) {
+                    let initialText = priceElement.innerText.trim();
+                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
+                    item.basePrice = initialPrice; // Actual starting price
+                    item.currentPrice = initialPrice; // Price that will fluctuate
+                }
+            });
 
-// Function to randomly decide increase or decrease (5 to 10 Rs only)
-function getRandomPriceChange() {
-    return Math.floor(Math.random() * (10 - 5 + 1)) + 5;
-}
+            // Function to randomly decide increase or decrease (5 to 10 Rs only)
+            function getRandomPriceChange() {
+                return Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+            }
 
-// Update price logic — stays within ±10 Rs of actual price
-function updatePrices() {
-    priceElements.forEach(item => {
-        const priceElement = document.getElementById(item.id);
-        if (!priceElement) return;
+            // Update price logic — stays within ±10 Rs of actual price
+            function updatePrices() {
+                priceElements.forEach(item => {
+                    const priceElement = document.getElementById(item.id);
+                    if (!priceElement) return;
 
-        const priceChange = getRandomPriceChange();
-        const isIncrease = Math.random() > 0.5;
+                    const priceChange = getRandomPriceChange();
+                    const isIncrease = Math.random() > 0.5;
 
-        // Apply the price change (either add or subtract 5-10 Rs)
-        if (isIncrease) {
-            item.currentPrice += priceChange;
-        } else {
-            item.currentPrice -= priceChange;
-        }
+                    // Apply the price change (either add or subtract 5-10 Rs)
+                    if (isIncrease) {
+                        item.currentPrice += priceChange;
+                    } else {
+                        item.currentPrice -= priceChange;
+                    }
 
-        // Constrain the price so it doesn't move more than ±10 Rs from the base price
-        const maxPrice = item.basePrice + 10;
-        const minPrice = item.basePrice - 10;
+                    // Constrain the price so it doesn't move more than ±10 Rs from the base price
+                    const maxPrice = item.basePrice + 2;
+                    const minPrice = item.basePrice - 2;
 
-        if (item.currentPrice > maxPrice) {
-            item.currentPrice = maxPrice;
-        } else if (item.currentPrice < minPrice) {
-            item.currentPrice = minPrice;
-        }
+                    if (item.currentPrice > maxPrice) {
+                        item.currentPrice = maxPrice;
+                    } else if (item.currentPrice < minPrice) {
+                        item.currentPrice = minPrice;
+                    }
 
-        // Change color based on price movement
-        if (item.currentPrice > item.basePrice) {
-            priceElement.style.color = "green"; // price went up
-        } else if (item.currentPrice < item.basePrice) {
-            priceElement.style.color = "red"; // price went down
-        } else {
-            priceElement.style.color = "black"; // unchanged
-        }
+                    // Change color based on price movement
+                    if (item.currentPrice > item.basePrice) {
+                        priceElement.style.color = "green"; // price went up
+                    } else if (item.currentPrice < item.basePrice) {
+                        priceElement.style.color = "red"; // price went down
+                    } else {
+                        priceElement.style.color = "black"; // unchanged
+                    }
 
-        // Update displayed price (preserve /gm)
-        priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
+                    // Update displayed price (preserve /gm)
+                    priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
 
-        // Add a unique class if needed for CSS tracking
-        const uniqueClass = `price-update-${Date.now()}`;
-        priceElement.className = `bgm e ${uniqueClass}`;
-    });
-}
+                    // Add a unique class if needed for CSS tracking
+                    const uniqueClass = `price-update-${Date.now()}`;
+                    priceElement.className = `bgm e ${uniqueClass}`;
+                });
+            }
 
-// Set interval to update prices every 5 seconds
-setInterval(updatePrices, 5000);
+            // Set interval to update prices every 5 seconds
+            setInterval(updatePrices, 5000);
 
-});
-
+        });
     </script>
 
     <script>
