@@ -378,74 +378,80 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function() {
 
-            // List of all price elements with correct IDs
-            const priceElements = [{
-                    id: '22kGold',
-                    currentPrice: null
-                },
-                {
-                    id: '20kGold',
-                    currentPrice: null
-                },
-                {
-                    id: '18kGold',
-                    currentPrice: null
-                },
-                {
-                    id: '24Silver',
-                    currentPrice: null
-                } // Make sure the ID matches your HTML (fixed here)
-            ];
+const priceElements = [
+    { id: '22kGold', basePrice: null, currentPrice: null },
+    { id: '20kGold', basePrice: null, currentPrice: null },
+    { id: '18kGold', basePrice: null, currentPrice: null },
+    { id: '24Silver', basePrice: null, currentPrice: null }
+];
 
-            // Initialize prices by reading initial values from the page
-            priceElements.forEach(item => {
-                const priceElement = document.getElementById(item.id);
-                if (priceElement) {
-                    let initialText = priceElement.innerText.trim();
-                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
-                    item.currentPrice = initialPrice; // Store initial price for each element
-                }
-            });
+// Initialize prices (read initial prices from HTML)
+priceElements.forEach(item => {
+    const priceElement = document.getElementById(item.id);
+    if (priceElement) {
+        let initialText = priceElement.innerText.trim();
+        let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
+        item.basePrice = initialPrice;    // Actual starting price
+        item.currentPrice = initialPrice; // Price that will fluctuate
+    }
+});
 
-            // Function to generate random price change between 5-10 Rs
-            function getRandomPriceChange() {
-                return Math.floor(Math.random() * (10 - 5 + 1)) + 5;
-            }
+// Function to randomly decide increase or decrease (5 to 10 Rs only)
+function getRandomPriceChange() {
+    return Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+}
 
-            // Function to update prices for all elements
-            function updatePrices() {
-                priceElements.forEach(item => {
-                    const priceElement = document.getElementById(item.id);
-                    if (!priceElement) return;
+// Update price logic — stays within ±10 Rs of actual price
+function updatePrices() {
+    priceElements.forEach(item => {
+        const priceElement = document.getElementById(item.id);
+        if (!priceElement) return;
 
-                    const oldPrice = item.currentPrice;
-                    const priceChange = getRandomPriceChange();
-                    const isIncrease = Math.random() > 0.5;
+        const priceChange = getRandomPriceChange();
+        const isIncrease = Math.random() > 0.5;
 
-                    // Apply the change
-                    if (isIncrease) {
-                        item.currentPrice += priceChange;
-                        priceElement.style.color = "green";
-                    } else {
-                        item.currentPrice -= priceChange;
-                        priceElement.style.color = "red";
-                    }
+        // Apply the price change (either add or subtract 5-10 Rs)
+        if (isIncrease) {
+            item.currentPrice += priceChange;
+        } else {
+            item.currentPrice -= priceChange;
+        }
 
-                    // Optional: Add a unique class for each update
-                    const uniqueClass = `price-update-${Date.now()}`;
-                    priceElement.className = `bgm e ${uniqueClass}`;
+        // Constrain the price so it doesn't move more than ±10 Rs from the base price
+        const maxPrice = item.basePrice + 10;
+        const minPrice = item.basePrice - 10;
 
-                    // Update the element text (keep the "/gm" part)
-                    priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
-                });
-            }
+        if (item.currentPrice > maxPrice) {
+            item.currentPrice = maxPrice;
+        } else if (item.currentPrice < minPrice) {
+            item.currentPrice = minPrice;
+        }
 
-            // Run every 5 seconds
-            setInterval(updatePrices, 5000);
+        // Change color based on price movement
+        if (item.currentPrice > item.basePrice) {
+            priceElement.style.color = "green"; // price went up
+        } else if (item.currentPrice < item.basePrice) {
+            priceElement.style.color = "red"; // price went down
+        } else {
+            priceElement.style.color = "black"; // unchanged
+        }
 
-        });
+        // Update displayed price (preserve /gm)
+        priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
+
+        // Add a unique class if needed for CSS tracking
+        const uniqueClass = `price-update-${Date.now()}`;
+        priceElement.className = `bgm e ${uniqueClass}`;
+    });
+}
+
+// Set interval to update prices every 5 seconds
+setInterval(updatePrices, 5000);
+
+});
+
     </script>
 
     <script>
