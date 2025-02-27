@@ -38,10 +38,12 @@ class FrontController extends Controller
         return view('front.update', compact('updates'));
     }
 
-    public function contact(){
-        $contact = Contact::first();
+    public function contact() {
+        $contact = Contact::first();  // This might return null if no record exists.
         return view('front.contact', compact('contact'));
     }
+    
+    
 
     public function blog(){
         $blogs=Blog::all();

@@ -299,30 +299,33 @@
 
     <div class="contact-us">
         <h2>CONTACT US</h2>
-        <div class="contact-container">
-            <div class="contact-box">
-                <div class="icon">
-                    <img src="{{asset('asset/images/phone-solid.svg')}}" alt="Phone Icon">
-                </div>
-                <h3>NUMBER</h3>
-                <p>{{ $contact->phone }}</p>
-                <p>{{ $contact->phone1 }}</p>
+        @if ($contact)
+        <div class="contact-box">
+            <div class="icon">
+                <img src="{{asset('asset/images/phone-solid.svg')}}" alt="Phone Icon">
             </div>
-            <div class="contact-box">
-                <div class="icon">
-                    <img src="{{asset('asset/images/location-dot-solid.svg')}}" alt="Location Icon">
-                </div>
-                <h3>ADDRESS</h3>
-                <p>{!! $contact->full_address !!}</p>
-            </div>
-            <div class="contact-box">
-                <div class="icon">
-                    <img src="{{asset('asset/images/envelope-solid.svg')}}" alt="Email Icon">
-                </div>
-                <h3>E-MAIL</h3>
-                <p>{{ $contact->email }}</p>
-            </div>
+            <h3>NUMBER</h3>
+            <p>{{ $contact->phone }}</p>
+            <p>{{ $contact->phone1 }}</p>
         </div>
+        <div class="contact-box">
+            <div class="icon">
+                <img src="{{asset('asset/images/location-dot-solid.svg')}}" alt="Location Icon">
+            </div>
+            <h3>ADDRESS</h3>
+            <p>{!! $contact->full_address !!}</p>
+        </div>
+        <div class="contact-box">
+            <div class="icon">
+                <img src="{{asset('asset/images/envelope-solid.svg')}}" alt="Email Icon">
+            </div>
+            <h3>E-MAIL</h3>
+            <p>{{ $contact->email }}</p>
+        </div>
+    @else
+        <p>No contact information available.</p>
+    @endif
+    
     </div>
 
     <!--Form Start-->
