@@ -112,6 +112,7 @@
         <p>Design & Develop By <a href="https://realvictorygroups.com/">Real Victory Groups</a></p>
     </div>
 </footer>
+@include('frontLayouts.footer')
 
 <script src="{{asset('asset/js/script.js')}}"></script>
 
