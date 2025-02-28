@@ -1,12 +1,11 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
     .bottom-nav {
-        display: none; /* Hidden by default */
+        display: none; /* Hidden by default on all screens */
         position: fixed;
         bottom: 0;
         width: 100%;
         background-color: #dbaa49;
-        display: flex;
         justify-content: space-around;
         align-items: center;
         padding: 10px 0;
