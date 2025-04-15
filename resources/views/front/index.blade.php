@@ -376,83 +376,100 @@
         provided without warranty or claim of reliability. It is accepted by the site visitor on the condition that
         errors or omissions shall not be made the basis for any claim, demand or cause for action. </marquee>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-        
-                const priceElements = [
-                    { id: '22kGold', basePrice: null, currentPrice: null },
-                    { id: '20kGold', basePrice: null, currentPrice: null },
-                    { id: '18kGold', basePrice: null, currentPrice: null },
-                    { id: '24Silver', basePrice: null, currentPrice: null }
-                ];
-        
-                // Initialize prices (read initial prices from HTML)
+            const priceElements = [{
+                    id: '22kGold',
+                    basePrice: null,
+                    currentPrice: null
+                },
+                {
+                    id: '20kGold',
+                    basePrice: null,
+                    currentPrice: null
+                },
+                {
+                    id: '18kGold',
+                    basePrice: null,
+                    currentPrice: null
+                },
+                {
+                    id: '24Silver',
+                    basePrice: null,
+                    currentPrice: null
+                }
+            ];
+
+            // Initialize prices (read initial prices from HTML)
+            priceElements.forEach(item => {
+                const priceElement = document.getElementById(item.id);
+                if (priceElement) {
+                    let initialText = priceElement.innerText.trim();
+                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
+                    item.basePrice = initialPrice; // Actual starting price
+                    item.currentPrice = initialPrice; // Price that will fluctuate
+                }
+            });
+
+            // Function to randomly decide increase or decrease (1 to 2 Rs only)
+            function getRandomPriceChange() {
+                return Math.floor(Math.random() * (2 - 1 + 1)) + 1; // 1 to 2 Rs change
+            }
+
+            // Update price logic — stays within ±2 Rs of actual price
+            function updatePrices() {
+                const today = new Date().getDay();
+                if (today === 0 || today === 6) return; // Stop updates on Sunday (0) or Saturday (6)
+
                 priceElements.forEach(item => {
                     const priceElement = document.getElementById(item.id);
-                    if (priceElement) {
-                        let initialText = priceElement.innerText.trim();
-                        let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
-                        item.basePrice = initialPrice; // Actual starting price
-                        item.currentPrice = initialPrice; // Price that will fluctuate
+                    if (!priceElement) return;
+
+                    const priceChange = getRandomPriceChange();
+                    const isIncrease = Math.random() > 0.5;
+
+                    // Apply the price change (either add or subtract 1-2 Rs)
+                    if (isIncrease) {
+                        item.currentPrice += priceChange;
+                    } else {
+                        item.currentPrice -= priceChange;
                     }
+
+                    // Constrain the price so it doesn't move more than ±2 Rs from the base price
+                    const maxPrice = item.basePrice + 2;
+                    const minPrice = item.basePrice - 2;
+
+                    if (item.currentPrice > maxPrice) {
+                        item.currentPrice = maxPrice;
+                    } else if (item.currentPrice < minPrice) {
+                        item.currentPrice = minPrice;
+                    }
+
+                    // Change color based on price movement
+                    if (item.currentPrice > item.basePrice) {
+                        priceElement.style.color = "green"; // price went up
+                    } else if (item.currentPrice < item.basePrice) {
+                        priceElement.style.color = "red"; // price went down
+                    } else {
+                        priceElement.style.color = "black"; // unchanged
+                    }
+
+                    // Update displayed price (preserve /gm)
+                    priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
+
+                    // Add a unique class if needed for CSS tracking
+                    const uniqueClass = `price-update-${Date.now()}`;
+                    priceElement.className = `bgm e ${uniqueClass}`;
                 });
-        
-                // Function to randomly decide increase or decrease (1 to 2 Rs only)
-                function getRandomPriceChange() {
-                    return Math.floor(Math.random() * (2 - 1 + 1)) + 1;  // 1 to 2 Rs change
-                }
-        
-                // Update price logic — stays within ±2 Rs of actual price
-                function updatePrices() {
-                    priceElements.forEach(item => {
-                        const priceElement = document.getElementById(item.id);
-                        if (!priceElement) return;
-        
-                        const priceChange = getRandomPriceChange();
-                        const isIncrease = Math.random() > 0.5;
-        
-                        // Apply the price change (either add or subtract 1-2 Rs)
-                        if (isIncrease) {
-                            item.currentPrice += priceChange;
-                        } else {
-                            item.currentPrice -= priceChange;
-                        }
-        
-                        // Constrain the price so it doesn't move more than ±2 Rs from the base price
-                        const maxPrice = item.basePrice + 2;
-                        const minPrice = item.basePrice - 2;
-        
-                        if (item.currentPrice > maxPrice) {
-                            item.currentPrice = maxPrice;
-                        } else if (item.currentPrice < minPrice) {
-                            item.currentPrice = minPrice;
-                        }
-        
-                        // Change color based on price movement
-                        if (item.currentPrice > item.basePrice) {
-                            priceElement.style.color = "green"; // price went up
-                        } else if (item.currentPrice < item.basePrice) {
-                            priceElement.style.color = "red"; // price went down
-                        } else {
-                            priceElement.style.color = "black"; // unchanged
-                        }
-        
-                        // Update displayed price (preserve /gm)
-                        priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
-        
-                        // Add a unique class if needed for CSS tracking
-                        const uniqueClass = `price-update-${Date.now()}`;
-                        priceElement.className = `bgm e ${uniqueClass}`;
-                    });
-                }
-        
-                // Set interval to update prices every 5 seconds
-                setInterval(updatePrices, 5000);
-        
-            });
-        </script>
-        
+            }
+
+            // Set interval to update prices every 5 seconds
+            setInterval(updatePrices, 5000);
+
+        });
+    </script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -501,13 +518,15 @@
                 const element = document.querySelector(item.selector);
                 if (element) {
                     const text = element.innerText.trim();
-                    const price = parseFloat(text.split('/')[0].replace(/[^0-9.]/g, '')) ||
-                        100; // Handle high/low pairs
+                    const price = parseFloat(text.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
                     item.value = price;
                 }
             });
 
             function updatePrices() {
+                const today = new Date().getDay();
+                if (today === 0 || today === 6) return; // Skip update on weekends
+
                 priceElements.forEach(item => {
                     const element = document.querySelector(item.selector);
                     if (!element) return;
@@ -563,6 +582,7 @@
             setInterval(updatePrices, 3000);
         });
     </script>
+
     {{-- <script>
         document.addEventListener("DOMContentLoaded", function() {
 
