@@ -6,8 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Layout</title>
     <link rel="stylesheet" href="{{asset('asset/css/main-style.css')}}">
+      <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
+<style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .marquee-gold {
+            background: linear-gradient(90deg, #FFD700, #D4AF37, #FFD700);
+            color: #000;
+            font-weight: 600;
+        }
+        .marquee-silver {
+            background: linear-gradient(90deg, #C0C0C0, #E5E4E2, #C0C0C0);
+            color: #000;
+            font-weight: 600;
+        }
+        .gold-card {
+            background: linear-gradient(135deg, #FFD700, #D4AF37);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        .silver-card {
+            background: linear-gradient(135deg, #E5E4E2, #C0C0C0);
+            box-shadow: 0 4px 15px rgba(192, 192, 192, 0.3);
+        }
+        .rate-change-up {
+            animation: pulseGreen 2s infinite;
+        }
+        .rate-change-down {
+            animation: pulseRed 2s infinite;
+        }
+        @keyframes pulseGreen {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+        }
+        @keyframes pulseRed {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
+        .header-glow {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+        }
+    </style>
 
 <body>
 @php
@@ -15,7 +58,7 @@
 @endphp
 <!-- Header Top Container -->
 <div class="header-top container">
-    <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <div class="menu-icon  bg-gradient-to-r from-[#E29938] via-[#FAF3BC] to-[#E29938] rounded-full p-3" id="menu-icon">&#9776;</div>
     <div class="logo">
         <a href="{{route('home')}}"><img src="{{asset('asset/images/logo.png')}}" style="margin-left: -65%;" alt="Logo"></a>
     </div>
