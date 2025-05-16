@@ -749,7 +749,7 @@
                                 </tbody>
                             </table>
                         </div>
-                       
+
                         <div id="divFuture">
                             <div class="mrt">
                                 <div class="pp">
@@ -863,70 +863,69 @@
             </div> --}}
 
             {{-- test --}}
-<div class="right-side px-4 py-6">
-    <div class="max-w-4xl mx-auto">
-        <div class="space-y-6">
-          
+            <div class="right-side px-4 py-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-6">
+                        <!-- Header Table -->
+                        <div id="divFutureHd"
+                            class="bg-gradient-to-r from-amber-600 via-[#FAF3BC] to-amber-600 text-black border border-yellow-200 rounded-xl shadow-md overflow-hidden">
+                            <table class="w-full text-center text-sm md:text-base font-semibold text-gray-800">
+                                <thead>
+                                    <th class="py-3 px-4">Spot</th>
+                                    <th class="py-3 px-4">Bid</th>
+                                    <th class="py-3 px-4">Ask</th>
+                                    <th class="py-3 px-4">High / Low</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
 
-            <!-- Price Details Card -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
-                <div class="bg-gradient-to-r from-amber-600 to-amber-500 px-4 py-3">
-                    <h3 class="text-white font-bold text-lg">Live Precious Metals Prices</h3>
-                </div>
-                
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm md:text-base">
-                        <thead class="bg-amber-50">
-                            <tr>
-                                <th class="py-3 px-4 text-left text-amber-800 font-semibold">Commodity</th>
-                                <th class="py-3 px-4 text-right text-amber-800 font-semibold">Bid</th>
-                                <th class="py-3 px-4 text-right text-amber-800 font-semibold">Ask</th>
-                                <th class="py-3 px-4 text-right text-amber-800 font-semibold">High / Low</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr class="hover:bg-amber-50/50">
-                                <td class="py-3 px-4 font-semibold text-amber-800 flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                    </svg>
-                                    Gold
-                                </td>
-                                <td class="py-3 px-4 text-right font-mono text-green-600">{{ $prices->ounce_price_bid }}</td>
-                                <td class="py-3 px-4 text-right font-mono text-red-600">{{ $prices->ounce_price_ask }}</td>
-                                <td class="py-3 px-4 text-right font-mono text-gray-700">{{ $prices->ounce_price_usd_today_low }} / {{ $prices->ounce_price_usd_today_high }}</td>
-                            </tr>
-                            <tr class="hover:bg-amber-50/50">
-                                <td class="py-3 px-4 font-semibold text-amber-800 flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.736 6.979C9.208 6.193 9.696 6 10 6c.304 0 .792.193 1.264.979a1 1 0 001.715-1.029C12.279 4.784 11.232 4 10 4s-2.279.784-2.979 1.95c-.285.475-.507 1-.67 1.55H6a1 1 0 000 2h.013a9.358 9.358 0 000 1H6a1 1 0 100 2h.351c.163.55.385 1.075.67 1.55C7.721 15.216 8.768 16 10 16s2.279-.784 2.979-1.95a1 1 0 10-1.715-1.029c-.472.786-.96.979-1.264.979-.304 0-.792-.193-1.264-.979a4.265 4.265 0 01-.264-.521H10a1 1 0 100-2H8.017a7.36 7.36 0 010-1H10a1 1 0 100-2H8.472c.08-.185.167-.36.264-.521z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    Silver
-                                </td>
-                                <td class="py-3 px-4 text-right font-mono text-green-600">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</td>
-                                <td class="py-3 px-4 text-right font-mono text-red-600">{{ round($silverPrices->silver_ounce_price_ask_usd, 2) }}</td>
-                                <td class="py-3 px-4 text-right font-mono text-gray-700">{{ round($silverPrices->silver_ounce_price_usd_today_low_usd, 2) }} / {{ round($silverPrices->silver_ounce_price_usd_today_high_usd, 2) }}</td>
-                            </tr>
-                            <tr class="hover:bg-amber-50/50">
-                                <td class="py-3 px-4 font-semibold text-amber-800 flex items-center">
-                                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    INR ₹
-                                </td>
-                                <td colspan="2" class="py-3 px-4 text-right font-mono text-blue-600">{{ $prices->usd_to_inr }}</td>
-                                <td class="py-3 px-4 text-right">
-                                    <span class="font-mono text-gray-700">{{ $prices->gram_in_usd }}</span><br>
-                                    <span class="text-xs text-gray-500">{{ $prices->usd_to_inr }}/{{ $prices->gram_in_usd }}</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <!-- Price Details -->
+                        <div id="divFuture" class="bg-white border border-gray-200 rounded-xl shadow-md p-4">
+                            <table class="w-full text-sm md:text-base text-center text-gray-700">
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-3 font-semibold text-yellow-800">Gold</td>
+                                        <td><span
+                                                class="e gold-bid font-mono text-green-600">{{ $prices->ounce_price_bid }}</span>
+                                        </td>
+                                        <td><span
+                                                class="e gold-ask font-mono text-red-600">{{ $prices->ounce_price_ask }}</span>
+                                        </td>
+                                        <td><span class="e gold-high-low">{{ $prices->ounce_price_usd_today_low }} /
+                                                {{ $prices->ounce_price_usd_today_high }}</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-3 font-semibold text-yellow-800">Silver $</td>
+                                        <td><span
+                                                class="e silver-bid font-mono text-green-600">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</span>
+                                        </td>
+                                        <td><span
+                                                class="e silver-ask font-mono text-red-600">{{ round($silverPrices->silver_ounce_price_ask_usd, 2) }}</span>
+                                        </td>
+                                        <td><span
+                                                class="e silver-high-low">{{ round($silverPrices->silver_ounce_price_usd_today_low_usd, 2) }}
+                                                /
+                                                {{ round($silverPrices->silver_ounce_price_usd_today_high_usd, 2) }}</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-3 font-semibold text-yellow-800">INR ₹</td>
+                                        <td colspan="2"><span
+                                                class="e inr-usd font-mono">{{ $prices->usd_to_inr }}</span>
+                                        </td>
+                                        <td>
+                                            <span class="e gram-usd">{{ $prices->gram_in_usd }}</span><br>
+                                            <span
+                                                class="e inr-gram-pair text-sm text-gray-500">{{ $prices->usd_to_inr }}/{{ $prices->gram_in_usd }}</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
             <!-- Contact Card -->
             <div class="bg-white rounded-2xl overflow-hidden card-shadow w-full">
@@ -1408,7 +1407,7 @@
     </scrip> --}}
 
         <script>
-            // date time of header 
+            // date time of header
             // Example: update timestamp dynamically
             const updateTimeElement = document.getElementById('update-time');
             const now = new Date();
