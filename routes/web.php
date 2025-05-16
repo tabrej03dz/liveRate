@@ -31,6 +31,7 @@ use App\Http\Controllers\InquiryController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/test', [HomeController::class, 'test'])->name('test');
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/abouts',[FrontController::class,'about'])->name('abouts');
 Route::get('bankDetail', [FrontController::class, 'bankDetail'])->name('bankDetail');
