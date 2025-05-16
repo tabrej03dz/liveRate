@@ -1,12 +1,12 @@
 @extends('frontLayouts.main', ['title' => 'Live Rate'])
 @section('content')
-    
+
         {{-- <div class="text-center px-4 py-4 font-bold text-2xl">
             Shristi Jewellers
         </div> --}}
 
          <header class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 py-4 shadow-md">
-        
+
         <!-- Header -->
         <div class="mb-10 text-center">
             <div class="flex items-center justify-center mb-3">
@@ -27,7 +27,7 @@
 
     </header>
 
-   
+
     {{-- <div class="header-top-marquee">
         <div class="container-fluid">
             <marquee class="marquee1">विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर
@@ -37,7 +37,7 @@
         </div>
     </div> --}}
     <!-- Top Marquee -->
-    <div class="marquee-gold py-2 overflow-hidden px-4">
+    <div class="bg-amber-800 py-2 overflow-hidden px-4">
         <marquee class="text-sm md:text-base">
             विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर वा चांदी की ज्वेलरी पायल
             मूर्ति बर्तन सिक्के संपूर्ण रेंज एवं विशाल संग्रह के साथ ( बहुत ही उचित मूल्य ) पर उपलब्ध हैं हमेशा की तरह आपके
@@ -782,7 +782,7 @@
                                 </tbody>
                             </table>
                         </div>
-                       
+
                         <div id="divFuture">
                             <div class="mrt">
                                 <div class="pp">
@@ -1225,7 +1225,7 @@
             const now = new Date();
             const day = now.getDay(); // 0 (Sunday) to 6 (Saturday)
             const hours = now.getHours();
-            
+
             // Check if it's a weekday (1-5) and between 9 AM (9) and 5 PM (17)
             return (day >= 1 && day <= 5) && (hours >= 9 && hours < 18);
         }
