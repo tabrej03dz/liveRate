@@ -5,8 +5,9 @@
 
         <!-- Header -->
         <div class="mb-10 text-center">
-            <div class="flex items-center justify-center mb-3">
-                <img src="{{ asset('logo.jpg') }}" alt="Logo" class="h-16 w-16 rounded-full shadow-lg">
+            <div class="flex items-center justify-center mb-3 ">
+                <img src="{{ asset('asset/images/logo.png') }}" alt="Logo"
+                    class="h-16 w-16 rounded-full shadow-lg border border-black">
             </div>
             <h1 class="logo-text text-4xl md:text-5xl font-bold text-gray-800 mb-2">
                 <span class="bg-clip-text text-transparent bg-black">Shristi Jewellers</span>
@@ -34,9 +35,9 @@
     </header>
 
     <!-- Top Marquee -->
-    <div class="bg-amber-800 text-yellow-100 py-2 overflow-hidden shadow-sm">
+    <div class="bg-[#A16207] text-yellow-100 py-1 overflow-hidden shadow-sm">
         <div class="container mx-auto px-4">
-            <marquee class="text-sm md:text-base font-medium">
+            <marquee class="text-md md:text-base font-medium">
                 विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर वा चांदी की ज्वेलरी
                 पायल
                 मूर्ति बर्तन सिक्के संपूर्ण रेंज एवं विशाल संग्रह के साथ ( बहुत ही उचित मूल्य ) पर उपलब्ध हैं हमेशा की
@@ -449,60 +450,45 @@
 
                 <div class="divProduct" id="divProduct">
                     <!-- Gold Rate Cards -->
-                    <div class="mb-6">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                    <div class="mb-6 mt-4">
+                        <span class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
                             <i class="fas fa-coins text-yellow-500 mr-3"></i>
                             Gold Rates
                             <span class="text-sm font-normal text-gray-500 ml-2">(Per Gram)</span>
-                        </h2>
+                        </span>
 
-                        <div
-                            class="bg-gradient-to-r from-yellow-50 to-white shadow-xl rounded-2xl p-2 mb-6 border border-yellow-200 overflow-auto">
-                            <table class="w-full text-sm sm:text-base">
-                                <tbody>
-                                    <tr
-                                        class="border-b border-yellow-200 hover:bg-yellow-100 transition duration-200 ease-in-out rounded-2xl">
-                                        <!-- Product Name -->
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <div
-                                                class="text-2xl font-bold text-yellow-700 flex items-center justify-center gap-2">
-                                                {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4m16 0l-4 4m4-4l-4-4" />
-                        </svg> --}}
-                                                Gold <span class="text-yellow-900">₹</span>
-                                            </div>
-                                        </td>
+                        <!-- Gold 22K Card -->
+                        <div class="rounded-2xl overflow-hidden card-shadow bg-white border-2 border-yellow-400 mb-4">
+                            <div class="gold-gradient p-4">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold text-gray-900">Gold 22K</h3>
+                                    <span class="bg-white text-gray-900 text-xs rounded-full px-2 py-1 font-semibold">
+                                        Hallmark
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-5 text-center">
+                                <td class="p-h ph product-rate border border-yellow-900"
+                                    style="width: 25%; text-align: center;">
+                                    @php
+                                        $percent = $goldDiscount22k?->percent;
 
-                                        <!-- Carat -->
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <span
-                                                class="inline-block bg-yellow-100 text-yellow-900 text-sm font-semibold px-1 py-1 rounded-full shadow-md tracking-wide">
-                                                22K
-                                            </span>
-                                        </td>
+                                        $caretWisePrice = $prices->gram_in_inr - ($prices->gram_in_inr * 8) / 100;
 
-                                        <td class="p-h ph product-rate border border-yellow-900"
-                                            style="width: 25%; text-align: center;">
-                                            @php
-                                                $percent = $goldDiscount22k?->percent;
-
-                                                $caretWisePrice =
-                                                    $prices->gram_in_inr - ($prices->gram_in_inr * 8) / 100;
-
-                                                $dis = ($caretWisePrice * $percent) / 100;
-                                                if ($goldDiscount22k?->type == 0) {
-                                                    $finalPrice = $caretWisePrice - $dis;
-                                                } else {
-                                                    $finalPrice = $caretWisePrice + $dis;
-                                                }
-                                            @endphp
-                                            <div class="mn-rate-cover"><span class="bgm e"
-                                                    id="22kGold">{{ round($finalPrice, 2) }}/gm</span></div>
-                                        </td>
-                                        <td class="p-h ph product-rate border-b" style="width: 25%; text-align: center;">
-                                            <input type="number" class="border border-yellow-600" name="gram"
-                                                min="1"
-                                                onkeyup="
+                                        $dis = ($caretWisePrice * $percent) / 100;
+                                        if ($goldDiscount22k?->type == 0) {
+                                            $finalPrice = $caretWisePrice - $dis;
+                                        } else {
+                                            $finalPrice = $caretWisePrice + $dis;
+                                        }
+                                    @endphp
+                                    <div class="mn-rate-cover"><span class="bgm e"
+                                            id="22kGold">{{ round($finalPrice, 2) }}/gm</span></div>
+                                </td>
+                                <td class="p-h ph product-rate border-b ">
+                                    <input type="number" class="border border-yellow-600 rounded-xl py-2" name="gram"
+                                        min="1"
+                                        onkeyup="
                                     let gram = this.value;
                                     if(gram == ''){
                                         const price = ({{ $prices->gram_in_inr }} - (({{ $prices->gram_in_inr }} * 8)/100)) * 1;
@@ -529,61 +515,46 @@
                                         }
                                     }
                                 "
-                                                style="width: 100%;" />
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        style="width: 100%;" />
+                                </td>
+                                <div class="mt-4 text-sm text-gray-500">
+                                    <i class="fas fa-check-circle text-green-500 mr-1"></i> Premium Quality
+                                </div>
+                            </div>
                         </div>
 
+                        {{-- gold 20K --}}
+                        <div class=" rounded-2xl overflow-hidden card-shadow bg-white border-2 border-yellow-400 mb-4">
+                            <div class="gold-gradient p-4">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold text-gray-900">Gold 20K</h3>
+                                    <span class="bg-white text-gray-900 text-xs rounded-full px-2 py-1 font-semibold">
+                                        Premium
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-5 text-center">
+                                <td class="p-h ph product-rate border-b border-yellow-800 rounded-xl py-2">
+                                    @php
+                                        $percent = $goldDiscount20k?->percent;
 
+                                        $caretWisePrice = $prices->gram_in_inr - ($prices->gram_in_inr * 16.7) / 100;
 
-
-                        <div
-                            class="content-cover bg-gradient-to-r from-yellow-50 to-white shadow-xl rounded-2xl p-2 mb-6 border border-yellow-200">
-                            <table class="left-side-table">
-                                <tbody>
-                                    <tr
-                                        class="ligh-white border-b border-yellow-200 hover:bg-yellow-100 transition duration-200 ease-in-out rounded-2xl">
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <div
-                                                class="text-2xl font-bold text-yellow-700 flex items-center justify-center gap-2">
-                                                {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4m16 0l-4 4m4-4l-4-4" />
-                        </svg> --}}
-                                                Gold <span class="text-yellow-900">₹</span>
-                                            </div>
-                                        </td>
-                                        <!-- Carat -->
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <span
-                                                class="inline-block bg-yellow-100 text-yellow-900 text-sm font-semibold px-1 py-1 rounded-full shadow-md tracking-wide">
-                                                20K
-                                            </span>
-                                        </td>
-                                        <td class="p-h ph product-rate border-b border-yellow-800"
-                                            style="width: 25%; text-align: center;">
-                                            @php
-                                                $percent = $goldDiscount20k?->percent;
-
-                                                $caretWisePrice =
-                                                    $prices->gram_in_inr - ($prices->gram_in_inr * 16.7) / 100;
-
-                                                $dis = ($caretWisePrice * $percent) / 100;
-                                                if ($goldDiscount20k?->type == 0) {
-                                                    $finalPrice = $caretWisePrice - $dis;
-                                                } else {
-                                                    $finalPrice = $caretWisePrice + $dis;
-                                                }
-                                            @endphp
-                                            <div class="mn-rate-cover"><span class="bgm e"
-                                                    id="20kGold">{{ round($finalPrice, 2) }}/gm</span></div>
-                                        </td>
-                                        <td class="p-h ph product-rate border-b border-yellow-800"
-                                            style="width: 25%; text-align: center;">
-                                            <input type="number" class="border border-yellow-800" name="gram"
-                                                min="1"
-                                                onkeyup="
+                                        $dis = ($caretWisePrice * $percent) / 100;
+                                        if ($goldDiscount20k?->type == 0) {
+                                            $finalPrice = $caretWisePrice - $dis;
+                                        } else {
+                                            $finalPrice = $caretWisePrice + $dis;
+                                        }
+                                    @endphp
+                                    <div class="mn-rate-cover"><span class="bgm e"
+                                            id="20kGold">{{ round($finalPrice, 2) }}/gm</span></div>
+                                </td>
+                                <td class="p-h ph product-rate border-b border-yellow-800"
+                                    style="width: 25%; text-align: center;">
+                                    <input type="number" class="border border-yellow-800 rounded-xl py-2" name="gram"
+                                        min="1"
+                                        onkeyup="
                                     let gram = this.value;
                                     if(gram == ''){
                                         const price = ({{ $prices->gram_in_inr }} - (({{ $prices->gram_in_inr }} * 16.7)/100)) * 1;
@@ -610,60 +581,48 @@
                                         }
                                     }
                                 "
-                                                style="width: 100%;" />
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
+                                        style="width: 100%;" />
+                                </td>
+                                <div class="mt-4 text-sm text-gray-500">
+                                    <i class="fas fa-check-circle text-green-500 mr-1"></i> Standard Quality
+                                </div>
+                            </div>
                         </div>
 
 
-                        <div
-                            class="content-cover bg-gradient-to-r from-yellow-50 to-white shadow-xl rounded-2xl p-2 mb-6 border border-yellow-200">
-                            <table class="left-side-table">
-                                <tbody>
-                                    <tr
-                                        class="ligh-white border-b border-yellow-200 hover:bg-yellow-100 transition duration-200 ease-in-out rounded-2xl">
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <div
-                                                class="text-2xl font-bold text-yellow-700 flex items-center justify-center gap-2">
-                                                {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4m16 0l-4 4m4-4l-4-4" />
-                        </svg> --}}
-                                                Gold <span class="text-yellow-900">₹</span>
-                                            </div>
-                                        </td>
-                                        <!-- Carat -->
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <span
-                                                class="inline-block bg-yellow-100 text-yellow-900 text-sm font-semibold px-1 py-1 rounded-full shadow-md tracking-wide">
-                                                18K
-                                            </span>
-                                        </td>
-                                        <td class="p-h ph product-rate border-b border-yellow-800"
-                                            style="width: 25%; text-align: center;">
-                                            @php
-                                                $percent = $goldDiscount18k?->percent;
 
-                                                $caretWisePrice =
-                                                    $prices->gram_in_inr - ($prices->gram_in_inr * 21) / 100;
+                        <!-- Gold 18K Card -->
+                        <div class="rounded-2xl overflow-hidden card-shadow bg-white border-2 border-yellow-400 mb-4">
+                            <div class="gold-gradient p-4">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold text-gray-900">Gold 18K</h3>
+                                    <span class="bg-white text-gray-900 text-xs rounded-full px-2 py-1 font-semibold">
+                                        Jewelry
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-5 text-center">
+                                <td class="p-h ph product-rate border-b border-yellow-800 rounded-xl py-2">
+                                    @php
+                                        $percent = $goldDiscount18k?->percent;
 
-                                                $dis = ($caretWisePrice * $percent) / 100;
-                                                if ($goldDiscount18k?->type == 0) {
-                                                    $finalPrice = $caretWisePrice - $dis;
-                                                } else {
-                                                    $finalPrice = $caretWisePrice + $dis;
-                                                }
-                                            @endphp
-                                            <div class="mn-rate-cover"><span class="bgm e"
-                                                    id="18kGold">{{ round($finalPrice, 2) }}/gm</span></div>
-                                        </td>
-                                        <td class="p-h ph product-rate border-b border-yellow-800"
-                                            style="width: 25%; text-align: center;">
-                                            <input type="number" class="border border-yellow-800" name="gram"
-                                                min="1"
-                                                onkeyup="
+                                        $caretWisePrice = $prices->gram_in_inr - ($prices->gram_in_inr * 21) / 100;
+
+                                        $dis = ($caretWisePrice * $percent) / 100;
+                                        if ($goldDiscount18k?->type == 0) {
+                                            $finalPrice = $caretWisePrice - $dis;
+                                        } else {
+                                            $finalPrice = $caretWisePrice + $dis;
+                                        }
+                                    @endphp
+                                    <div class="mn-rate-cover"><span class="bgm e"
+                                            id="18kGold">{{ round($finalPrice, 2) }}/gm</span></div>
+                                </td>
+                                <td class="p-h ph product-rate border-b border-yellow-800"
+                                    style="width: 25%; text-align: center;">
+                                    <input type="number" class="border border-yellow-800 rounded-xl py-2" name="gram"
+                                        min="1"
+                                        onkeyup="
                                     let gram = this.value;
                                     if(gram == ''){
                                         const price = ({{ $prices->gram_in_inr }} - (({{ $prices->gram_in_inr }} * 21)/100)) * 1;
@@ -690,58 +649,49 @@
                                         }
                                     }
                                 "
-                                                style="width: 100%;" />
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        style="width: 100%;" />
+                                </td>
+                                <div class="mt-4 text-sm text-gray-500">
+                                    <i class="fas fa-check-circle text-green-500 mr-1"></i> Jewelry Grade
+                                </div>
+                            </div>
                         </div>
 
-                        <div
-                            class="content-cover bg-gradient-to-r from-yellow-50 to-white shadow-xl rounded-2xl p-2 mb-6 border border-yellow-200">
-                            <table class="left-side-table">
-                                <tbody>
-                                    <tr
-                                        class="ligh-white border-b border-yellow-200 hover:bg-yellow-100 transition duration-200 ease-in-out rounded-2xl">
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <div
-                                                class="text-2xl font-bold text-yellow-700 flex items-center justify-center gap-2">
-                                                {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4m16 0l-4 4m4-4l-4-4" />
-                        </svg> --}}
-                                                Gold <span class="text-yellow-900">₹</span>
-                                            </div>
-                                        </td>
-                                        <!-- Carat -->
-                                        <td class="text-center w-[20%] px-1 py-1">
-                                            <span
-                                                class="inline-block bg-yellow-100 text-yellow-900 text-sm font-semibold px-1 py-1 rounded-full shadow-md tracking-wide">
-                                                24K
-                                            </span>
-                                        </td>
-                                        <td class="p-h ph product-rate border-b border-yellow-800"
-                                            style="width: 25%; text-align: center;">
-                                            @php
-                                                if ($silverDiscount?->percent) {
-                                                    $percent = $silverDiscount?->percent;
-                                                } else {
-                                                    $percent = 0;
-                                                }
-                                                $dis = ($prices->silver_gram_in_inr * $percent) / 100;
-                                                if ($silverDiscount?->type == 0) {
-                                                    $finalPrice = $prices->silver_gram_in_inr - $dis;
-                                                } else {
-                                                    $finalPrice = $prices->silver_gram_in_inr + $dis;
-                                                }
-                                            @endphp
-                                            <div class="mn-rate-cover"><span class="bgm e"
-                                                    id="24Silver">{{ round($finalPrice, 2) }}/gm</span></div>
-                                        </td>
-                                        <td class="p-h ph product-rate border-b border-yellow-800"
-                                            style="width: 25%; text-align: center;">
-                                            <input type="number" class="border border-yellow-800" name="gram"
-                                                min="1"
-                                                onkeyup="
+
+
+                        {{-- gold 24k --}}
+                        <div class="rounded-2xl overflow-hidden card-shadow bg-white border-2 border-yellow-400 mb-4">
+                            <div class="gold-gradient p-4">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-xl font-bold text-gray-900">Gold 24K</h3>
+                                    <span class="bg-white text-gray-900 text-xs rounded-full px-2 py-1 font-semibold">
+                                        Hallmark
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-5 text-center">
+                                <td class="p-h ph product-rate border-b border-yellow-800 rounded-xl py-2">
+                                    @php
+                                        if ($silverDiscount?->percent) {
+                                            $percent = $silverDiscount?->percent;
+                                        } else {
+                                            $percent = 0;
+                                        }
+                                        $dis = ($prices->silver_gram_in_inr * $percent) / 100;
+                                        if ($silverDiscount?->type == 0) {
+                                            $finalPrice = $prices->silver_gram_in_inr - $dis;
+                                        } else {
+                                            $finalPrice = $prices->silver_gram_in_inr + $dis;
+                                        }
+                                    @endphp
+                                    <div class="mn-rate-cover"><span class="bgm e"
+                                            id="24Silver">{{ round($finalPrice, 2) }}/gm</span></div>
+                                </td>
+                                <td class="p-h ph product-rate border-b border-yellow-800"
+                                    style="width: 25%; text-align: center;">
+                                    <input type="number" class="border border-yellow-800 rounded-xl py-2" name="gram"
+                                        min="1"
+                                        onkeyup="
                                     let gram = this.value;
                                     if(gram == ''){
                                         const price = {{ $prices->silver_gram_in_inr }} * 1;
@@ -767,12 +717,16 @@
                                         }
                                     }
                                 "
-                                                style="width: 100%;" />
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        style="width: 100%;" />
+                                </td>
+                                <div class="mt-4 text-sm text-gray-500">
+                                    <i class="fas fa-check-circle text-green-500 mr-1"></i> Premium Quality
+                                </div>
+                            </div>
                         </div>
+
+
+
 
                     </div>
                 </div>
@@ -843,7 +797,8 @@
             </div>
         </div> --}}
 
-            <div class="right-side px-4 py-6">
+{{-- original --}}
+            {{-- <div class="right-side px-4 py-6">
                 <div class="max-w-4xl mx-auto">
                     <div class="space-y-6">
                         <!-- Header Table -->
@@ -905,7 +860,73 @@
                         </div>
                     </div>
                 </div>
+            </div> --}}
+
+            {{-- test --}}
+<div class="right-side px-4 py-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          
+
+            <!-- Price Details Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                <div class="bg-gradient-to-r from-amber-600 to-amber-500 px-4 py-3">
+                    <h3 class="text-white font-bold text-lg">Live Precious Metals Prices</h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm md:text-base">
+                        <thead class="bg-amber-50">
+                            <tr>
+                                <th class="py-3 px-4 text-left text-amber-800 font-semibold">Commodity</th>
+                                <th class="py-3 px-4 text-right text-amber-800 font-semibold">Bid</th>
+                                <th class="py-3 px-4 text-right text-amber-800 font-semibold">Ask</th>
+                                <th class="py-3 px-4 text-right text-amber-800 font-semibold">High / Low</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-amber-50/50">
+                                <td class="py-3 px-4 font-semibold text-amber-800 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    Gold
+                                </td>
+                                <td class="py-3 px-4 text-right font-mono text-green-600">{{ $prices->ounce_price_bid }}</td>
+                                <td class="py-3 px-4 text-right font-mono text-red-600">{{ $prices->ounce_price_ask }}</td>
+                                <td class="py-3 px-4 text-right font-mono text-gray-700">{{ $prices->ounce_price_usd_today_low }} / {{ $prices->ounce_price_usd_today_high }}</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50/50">
+                                <td class="py-3 px-4 font-semibold text-amber-800 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.736 6.979C9.208 6.193 9.696 6 10 6c.304 0 .792.193 1.264.979a1 1 0 001.715-1.029C12.279 4.784 11.232 4 10 4s-2.279.784-2.979 1.95c-.285.475-.507 1-.67 1.55H6a1 1 0 000 2h.013a9.358 9.358 0 000 1H6a1 1 0 100 2h.351c.163.55.385 1.075.67 1.55C7.721 15.216 8.768 16 10 16s2.279-.784 2.979-1.95a1 1 0 10-1.715-1.029c-.472.786-.96.979-1.264.979-.304 0-.792-.193-1.264-.979a4.265 4.265 0 01-.264-.521H10a1 1 0 100-2H8.017a7.36 7.36 0 010-1H10a1 1 0 100-2H8.472c.08-.185.167-.36.264-.521z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    Silver
+                                </td>
+                                <td class="py-3 px-4 text-right font-mono text-green-600">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</td>
+                                <td class="py-3 px-4 text-right font-mono text-red-600">{{ round($silverPrices->silver_ounce_price_ask_usd, 2) }}</td>
+                                <td class="py-3 px-4 text-right font-mono text-gray-700">{{ round($silverPrices->silver_ounce_price_usd_today_low_usd, 2) }} / {{ round($silverPrices->silver_ounce_price_usd_today_high_usd, 2) }}</td>
+                            </tr>
+                            <tr class="hover:bg-amber-50/50">
+                                <td class="py-3 px-4 font-semibold text-amber-800 flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    INR ₹
+                                </td>
+                                <td colspan="2" class="py-3 px-4 text-right font-mono text-blue-600">{{ $prices->usd_to_inr }}</td>
+                                <td class="py-3 px-4 text-right">
+                                    <span class="font-mono text-gray-700">{{ $prices->gram_in_usd }}</span><br>
+                                    <span class="text-xs text-gray-500">{{ $prices->usd_to_inr }}/{{ $prices->gram_in_usd }}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
 
             <!-- Contact Card -->
             <div class="bg-white rounded-2xl overflow-hidden card-shadow w-full">
@@ -1252,7 +1273,7 @@
                 });
 
                 function isWorkingHours() {
-                
+
                     const now = new Date();
                     const day = now.getDay(); // 0 (Sunday) to 6 (Saturday)
                     const hours = now.getHours();
@@ -1430,4 +1451,3 @@
             setInterval(clock, 1000);
         </script>
     @endsection
-  

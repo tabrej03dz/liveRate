@@ -119,7 +119,7 @@
 @yield('content')
 
 <footer class="bg-gray-100 text-gray-700 pt-10 border-t border-gray-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
+    <div class="md:w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
         <!-- Company Info -->
         <div>
             <img src="{{ asset('asset/images/logo.png') }}" alt="Shristi Jewellers Logo" class="w-32 mb-4">
