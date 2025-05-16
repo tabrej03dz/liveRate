@@ -37,7 +37,7 @@
     <div class="bg-amber-800 text-yellow-100 py-2 overflow-hidden shadow-sm">
         <div class="container mx-auto px-4">
             <marquee class="text-sm md:text-base font-medium">
-                विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर वा चांदी की ज्वेलरी
+                विशेष ~ chandan yadav आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर वा चांदी की ज्वेलरी
                 पायल
                 मूर्ति बर्तन सिक्के संपूर्ण रेंज एवं विशाल संग्रह के साथ ( बहुत ही उचित मूल्य ) पर उपलब्ध हैं हमेशा की
                 तरह आपके
