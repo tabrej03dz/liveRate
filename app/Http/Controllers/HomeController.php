@@ -56,4 +56,8 @@ class HomeController extends Controller
         return view('front.index', compact( 'prices', 'goldDiscount22k', 'goldDiscount20k', 'goldDiscount18k', 'silverDiscount', 'silverPrices'));
     }
 
+
+    public function test(){
+        return view('front.test');
+    }
 }
