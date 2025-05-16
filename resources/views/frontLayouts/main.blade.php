@@ -118,43 +118,65 @@
 
 @yield('content')
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-section about">
-            <img src="{{asset('asset/images/logo.png')}}" alt="Shristi Jewellers Logo" class="footer-logo">
-            <p>About Company</p>
+<footer class="bg-gray-100 text-gray-700 pt-10 border-t border-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
+        <!-- Company Info -->
+        <div>
+            <img src="{{ asset('asset/images/logo.png') }}" alt="Shristi Jewellers Logo" class="w-32 mb-4">
+            <p class="text-sm">About Company</p>
         </div>
-        <div class="footer-section menu">
-            <h3>MENU</h3>
-            <ul>
-                <li><a href="{{route('abouts')}}">About</a></li>
-                <li><a href="{{route('home')}}">Live Rate</a></li>
-                <li><a href="{{route('coinsRate')}}">Coins Rates</a></li>
-                <li><a href="{{route('updates')}}">Update</a></li>
-                <li><a href="{{route('bankDetail')}}">Bank Detail</a></li>
-                <li><a href="{{route('calendar')}}">Calendar</a></li>
-                <li><a href="{{route('contacts')}}">Contact Us</a></li>
+
+        <!-- Navigation Menu -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3">Menu</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="{{ route('abouts') }}" class="hover:text-yellow-700 transition">About</a></li>
+                <li><a href="{{ route('home') }}" class="hover:text-yellow-700 transition">Live Rate</a></li>
+                <li><a href="{{ route('coinsRate') }}" class="hover:text-yellow-700 transition">Coins Rates</a></li>
+                <li><a href="{{ route('updates') }}" class="hover:text-yellow-700 transition">Update</a></li>
+                <li><a href="{{ route('bankDetail') }}" class="hover:text-yellow-700 transition">Bank Detail</a></li>
+                <li><a href="{{ route('calendar') }}" class="hover:text-yellow-700 transition">Calendar</a></li>
+                <li><a href="{{ route('contacts') }}" class="hover:text-yellow-700 transition">Contact Us</a></li>
             </ul>
         </div>
-        <div class="footer-section contact">
-            <h3>Contact Us</h3>
-            <p class="text-dark">{!! $contact?->full_address ?? '' !!}</p>
-            <p><a href="mailto:{{$contact?->email ?? ''}}">{{$contact?->email ?? ''}}</a></p>
-            <p><a href="tel:+91{{$contact?->phone ?? '9414400331'}}">+91 {{$contact?->phone ?? '9414400331'}}</a></p>
+
+        <!-- Contact Info -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3">Contact Us</h3>
+            <div class="text-sm space-y-2">
+                @if($contact?->full_address)
+                    <p>{!! $contact->full_address !!}</p>
+                @endif
+                @if($contact?->email)
+                    <p><a href="mailto:{{ $contact->email }}" class="hover:text-yellow-700 transition">{{ $contact->email }}</a></p>
+                @endif
+                <p><a href="tel:+91{{ $contact->phone ?? '9414400331' }}" class="hover:text-yellow-700 transition">
+                    +91 {{ $contact->phone ?? '9414400331' }}
+                </a></p>
+            </div>
         </div>
-        <div class="footer-section app-links">
-{{--            <img src="{{asset('asset/images/mobile.webp')}}" alt="Phone" class="phone">--}}
-            <div class="app-buttons">
-                <a href="https://play.google.com/store/apps/details?id=co.median.android.obkpkk&pcampaignid=web_share"><img src="{{asset('asset/images/android.webp')}}" alt="Get it on Google Play"></a>
-                {{-- <a href="#"><img src="{{asset('asset/images/ios.webp')}}" alt="Download on the App Store"></a> --}}
+
+        <!-- App Download -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3">Get Our App</h3>
+            <div class="flex items-center gap-3">
+                <a href="https://play.google.com/store/apps/details?id=co.median.android.obkpkk&pcampaignid=web_share" target="_blank" rel="noopener">
+                    <img src="{{ asset('asset/images/android.webp') }}" alt="Get it on Google Play" class="w-32">
+                </a>
+                {{-- Uncomment if iOS app is available
+                <a href="#"><img src="{{ asset('asset/images/ios.webp') }}" alt="Download on the App Store" class="w-32"></a>
+                --}}
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <p>&copy; {{Carbon\Carbon::today()->format('Y')}} Shristi Jewellers</p>
-        <p>Design & Develop By <a href="https://realvictorygroups.com/">Real Victory Groups</a></p>
+
+    <!-- Bottom Footer -->
+    <div class="bg-gray-200 py-4 text-center text-sm text-gray-600">
+        <p>&copy; {{ now()->year }} Shristi Jewellers. All Rights Reserved.</p>
+        <p>Design & Developed by <a href="https://realvictorygroups.com/" class="text-yellow-700 hover:underline" target="_blank" rel="noopener">Real Victory Groups</a></p>
     </div>
 </footer>
+
 @include('frontLayouts.footer')
 
 <script src="{{asset('asset/js/script.js')}}"></script>
