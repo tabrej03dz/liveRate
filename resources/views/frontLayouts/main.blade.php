@@ -150,8 +150,8 @@
         </ul>
         <div class="social-media">
             <p>Follow on Social Account</p>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-facebook p-2"></i></a>
+            <a href="#"><i class="fa fa-instagram p-2"></i></a>
         </div>
     </aside>
 
