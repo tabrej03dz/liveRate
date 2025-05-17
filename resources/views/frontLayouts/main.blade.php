@@ -91,14 +91,14 @@
     <div class="menu-icon bg-gradient-to-r from-[#E29938] via-[#FAF3BC] to-[#E29938] rounded-full p-3 w-12 h-12 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" id="menu-icon">
         &#9776;
     </div>
-    
+
     <!-- Logo - Centered with balanced margins -->
     <div class="logo flex-1 text-center mx-4 md:mx-8">
         <a href="{{ route('home') }}" class="inline-block">
             <img src="{{ asset('asset/images/logo.png') }}" alt="Company Logo" class="h-14 md:h-16 object-contain mx-auto">
         </a>
     </div>
-    
+
     <!-- Contact Info - Better right alignment -->
     <div class="contact-info ml-auto md:ml-0">
         <h2 class="text-xs md:text-sm font-semibold text-gray-600 flex items-center justify-end gap-2">
@@ -148,15 +148,11 @@
             <li><a href="#"><i class="fa fa-share-alt"></i> Share</a></li>
             <li><a href="#"><i class="fa fa-star"></i> Rate Our App</a></li>
         </ul>
-
-        ```
         <div class="social-media">
             <p>Follow on Social Account</p>
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
-        ```
-
     </aside>
 
     <!-- Overlay -->
