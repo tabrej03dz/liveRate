@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Layout</title>
     <!-- or for .png -->
-<link rel="icon" href="{{asset('asset/images/logo.png')}}" type="image/png">
+    <link rel="icon" href="{{ asset('asset/images/logo.png') }}" type="image/png">
 
     <link rel="stylesheet" href="{{ asset('asset/css/main-style.css') }}">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -86,32 +86,36 @@
         $contact = \App\Models\Contact::first();
     @endphp
     <!-- Header Top Container -->
-<div class="header-top container mx-auto flex items-center justify-between py-3 px-4 md:py-4 md:px-6 bg-white shadow-sm">
-    <!-- Menu Icon -->
-    <div class="menu-icon bg-gradient-to-r from-[#E29938] via-[#FAF3BC] to-[#E29938] rounded-full p-3 w-12 h-12 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" id="menu-icon">
-        &#9776;
-    </div>
+    <div
+        class="header-top container mx-auto flex items-center justify-between py-3 px-4 md:py-4 md:px-6 bg-white shadow-sm">
+        <!-- Menu Icon -->
+        <div class="menu-icon bg-gradient-to-r from-[#E29938] via-[#FAF3BC] to-[#E29938] rounded-full p-3 w-12 h-12 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity"
+            id="menu-icon">
+            &#9776;
+        </div>
 
-    <!-- Logo - Centered with balanced margins -->
-    <div class="logo flex-1 text-center mx-4 md:mx-8">
-        <a href="{{ route('home') }}" class="inline-block">
-            <img src="{{ asset('asset/images/logo.png') }}" alt="Company Logo" class="h-14 md:h-16 object-contain mx-auto">
-        </a>
-    </div>
-
-    <!-- Contact Info - Better right alignment -->
-    <div class="contact-info ml-auto md:ml-0">
-        <h2 class="text-xs md:text-sm font-semibold text-gray-600 flex items-center justify-end gap-2">
-            <i class="fas fa-phone text-[#E29938] text-sm md:text-base"></i> CONTACT NUMBER
-        </h2>
-        <p class="mt-1 space-y-0.5">
-            <a href="tel:+91{{ $contact?->phone ?? '9414400331' }}" class="text-base md:text-lg font-bold text-gray-800 hover:text-[#E29938] transition-colors">
-                <span class="bookingno2 block">+91-{{ $contact?->phone ?? '9414400331' }}</span>
-                <span class="bookingno2 block">+91-7014137278</span>
+        <!-- Logo - Centered with balanced margins -->
+        <div class="logo flex-1 text-center mx-4 md:mx-8">
+            <a href="{{ route('home') }}" class="inline-block">
+                <img src="{{ asset('asset/images/logo.png') }}" alt="Company Logo"
+                    class="h-14 md:h-16 object-contain mx-auto">
             </a>
-        </p>
+        </div>
+
+        <!-- Contact Info - Better right alignment -->
+        <div class="contact-info ml-auto md:ml-0">
+            <h2 class="text-xs md:text-sm font-semibold text-gray-600 flex items-center justify-end gap-2">
+                <i class="fas fa-phone text-[#E29938] text-sm md:text-base"></i> CONTACT NUMBER
+            </h2>
+            <p class="mt-1 space-y-0.5">
+                <a href="tel:+91{{ $contact?->phone ?? '9414400331' }}"
+                    class="text-base md:text-lg font-bold text-gray-800 hover:text-[#E29938] transition-colors">
+                    <span class="bookingno2 block">+91-{{ $contact?->phone ?? '9414400331' }}</span>
+                    <span class="bookingno2 block">+91-7014137278</span>
+                </a>
+            </p>
+        </div>
     </div>
-</div>
 
     <!-- Header Main -->
 
@@ -161,62 +165,66 @@
 
     @yield('content')
 
-<footer class="bg-gray-100 text-gray-700 pt-6 border-t border-gray-300 mx-auto mb-16">
-  <div class="w-full max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
-    <!-- Company Info -->
-    <div>
-      <img src="{{ asset('asset/images/logo.png') }}" alt="Shristi Jewellers Logo" class="w-32 mb-4">
-      <p class="text-sm">About Company</p>
-    </div>
-    <!-- Navigation Menu -->
-    <div>
-      <h3 class="text-lg font-semibold mb-3">Menu</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="{{ route('abouts') }}" class="hover:text-yellow-700 transition">About</a></li>
-        <li><a href="{{ route('home') }}" class="hover:text-yellow-700 transition">Live Rate</a></li>
-        <li><a href="{{ route('coinsRate') }}" class="hover:text-yellow-700 transition">Coins Rates</a></li>
-        <li><a href="{{ route('updates') }}" class="hover:text-yellow-700 transition">Update</a></li>
-        <li><a href="{{ route('bankDetail') }}" class="hover:text-yellow-700 transition">Bank Detail</a></li>
-        <li><a href="{{ route('calendar') }}" class="hover:text-yellow-700 transition">Calendar</a></li>
-        <li><a href="{{ route('contacts') }}" class="hover:text-yellow-700 transition">Contact Us</a></li>
-      </ul>
-    </div>
-    <!-- Contact Info -->
-    <div>
-      <h3 class="text-lg font-semibold mb-3">Contact Us</h3>
-      <div class="text-sm space-y-2">
-        @if ($contact?->full_address)
-          <p>{!! $contact->full_address !!}</p>
-        @endif
-        @if ($contact?->email)
-          <p><a href="mailto:{{ $contact->email }}" class="hover:text-yellow-700 transition">{{ $contact->email }}</a></p>
-        @endif
-        <p><a href="tel:+91{{ $contact->phone ?? '9414400331' }}" class="hover:text-yellow-700 transition">
-          +91 {{ $contact->phone ?? '9414400331' }}
-        </a></p>
-      </div>
-    </div>
-    <!-- App Download -->
-    <div>
-      <h3 class="text-lg font-semibold mb-3">Get Our App</h3>
-      <div class="flex items-center gap-3">
-        <a href="https://play.google.com/store/apps/details?id=co.median.android.obkpkk&pcampaignid=web_share"
-           target="_blank" rel="noopener">
-          <img src="{{ asset('asset/images/android.webp') }}" alt="Get it on Google Play" class="w-32">
-        </a>
-        {{-- Uncomment if iOS app is available
+    <footer class="bg-gray-100 text-gray-700 pt-6 border-t border-gray-300 mx-auto mb-16">
+        <div class="w-full max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
+            <!-- Company Info -->
+            <div>
+                <img src="{{ asset('asset/images/logo.png') }}" alt="Shristi Jewellers Logo" class="w-32 mb-4">
+                <p class="text-sm">About Company</p>
+            </div>
+            <!-- Navigation Menu -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Menu</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="{{ route('abouts') }}" class="hover:text-yellow-700 transition">About</a></li>
+                    <li><a href="{{ route('home') }}" class="hover:text-yellow-700 transition">Live Rate</a></li>
+                    <li><a href="{{ route('coinsRate') }}" class="hover:text-yellow-700 transition">Coins Rates</a>
+                    </li>
+                    <li><a href="{{ route('updates') }}" class="hover:text-yellow-700 transition">Update</a></li>
+                    <li><a href="{{ route('bankDetail') }}" class="hover:text-yellow-700 transition">Bank Detail</a>
+                    </li>
+                    <li><a href="{{ route('calendar') }}" class="hover:text-yellow-700 transition">Calendar</a></li>
+                    <li><a href="{{ route('contacts') }}" class="hover:text-yellow-700 transition">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Contact Us</h3>
+                <div class="text-sm space-y-2">
+                    @if ($contact?->full_address)
+                        <p>{!! $contact->full_address !!}</p>
+                    @endif
+                    @if ($contact?->email)
+                        <p><a href="mailto:{{ $contact->email }}"
+                                class="hover:text-yellow-700 transition">{{ $contact->email }}</a></p>
+                    @endif
+                    <p><a href="tel:+91{{ $contact->phone ?? '9414400331' }}" class="hover:text-yellow-700 transition">
+                            +91 {{ $contact->phone ?? '9414400331' }}
+                        </a></p>
+                </div>
+            </div>
+            <!-- App Download -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3">Get Our App</h3>
+                <div class="flex items-center gap-3">
+                    <a href="https://play.google.com/store/apps/details?id=co.median.android.obkpkk&pcampaignid=web_share"
+                        target="_blank" rel="noopener">
+                        <img src="{{ asset('asset/images/android.webp') }}" alt="Get it on Google Play"
+                            class="w-32">
+                    </a>
+                    {{-- Uncomment if iOS app is available
         <a href="#"><img src="{{ asset('asset/images/ios.webp') }}" alt="Download on the App Store" class="w-32"></a>
         --}}
-      </div>
-    </div>
-  </div>
-  <!-- Bottom Footer -->
-  <div class="bg-gray-200 py-4 text-center text-sm text-gray-600">
-    <p>&copy; {{ now()->year }} Shristi Jewellers. All Rights Reserved.</p>
-    <p>Design & Developed by <a href="https://realvictorygroups.com/" class="text-yellow-700 hover:underline"
-        target="_blank" rel="noopener">Real Victory Groups</a></p>
-  </div>
-</footer>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Footer -->
+        <div class="bg-gray-200 py-4 text-center text-sm text-gray-600">
+            <p>&copy; {{ now()->year }} Shristi Jewellers. All Rights Reserved.</p>
+            <p>Design & Developed by <a href="https://realvictorygroups.com/" class="text-yellow-700 hover:underline"
+                    target="_blank" rel="noopener">Real Victory Groups</a></p>
+        </div>
+    </footer>
 
 
     @include('frontLayouts.footer')

@@ -466,7 +466,7 @@
                     class="bg-white rounded-2xl overflow-hidden shadow-lg p-6 mt-6 flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">
                     <div class="w-full">
                         <h3 class="font-semibold text-gray-800 mb-6 text-2xl">Follow Us</h3>
-                        <div class="grid grid-cols-3 sm:grid-cols-5 gap-5 justify-items-center">
+                        <div class="grid grid-cols-5 gap-5 justify-items-center">
                             <a href="#"
                                 class="bg-blue-100 text-blue-600 p-4 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
                                 <i class="fab fa-facebook-f text-lg"></i>
