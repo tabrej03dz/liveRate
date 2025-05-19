@@ -764,47 +764,51 @@
             }, 3600000); // Check every hour
         });
     </script>
+    {{-- time::: --}}
     <script>
-        // date time of header
-        // Example: update timestamp dynamically
-        const updateTimeElement = document.getElementById('update-time');
-        const now = new Date();
-        const formatted = now.toLocaleString('en-US', {
-            dateStyle: 'medium',
-            timeStyle: 'short'
-        });
-        updateTimeElement.textContent = formatted;
-        updateTimeElement.setAttribute('datetime', now.toISOString());
-        // end date time of header
-        function clock() {
-            let hours = document.getElementById('hours');
-            let minutes = document.getElementById('minutes');
-            let period = document.getElementById('period');
-            let seconds = document.getElementById('seconds');
-
-            let d = new Date();
-
-            let h = d.getHours();
-            let m = d.getMinutes();
-            let s = d.getSeconds();
-
-
-
-            let ampm = h >= 12 ? "PM" : "AM";
-
-            if (h > 12) {
-                h = h - 12;
+        // Function to update the datetime in the header
+        function updateHeaderTime() {
+            const updateTimeElement = document.getElementById('update-time');
+            if (updateTimeElement) {
+                const now = new Date();
+                const formatted = now.toLocaleString('en-US', {
+                    dateStyle: 'medium',
+                    timeStyle: 'short'
+                });
+                updateTimeElement.textContent = formatted;
+                updateTimeElement.setAttribute('datetime', now.toISOString());
             }
+        }
 
-            h = (h < 10) ? "0" + h : h;
-            m = (m < 10) ? "0" + m : m;
-            s = (s < 10) ? "0" + s : s;
+        // Function to update the clock
+        function clock() {
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            const periodEl = document.getElementById('period');
 
-            hours.innerHTML = h;
-            minutes.innerHTML = m;
-            seconds.innerHTML = s;
-            period.innerHTML = ampm;
-        };
-        setInterval(clock, 1000);
+            if (hoursEl && minutesEl && secondsEl && periodEl) {
+                const d = new Date();
+                let h = d.getHours();
+                const m = d.getMinutes();
+                const s = d.getSeconds();
+
+                const ampm = h >= 12 ? "PM" : "AM";
+                h = h % 12 || 12; // Convert to 12-hour format and handle midnight (0 -> 12)
+
+                hoursEl.textContent = h.toString().padStart(2, '0');
+                minutesEl.textContent = m.toString().padStart(2, '0');
+                secondsEl.textContent = s.toString().padStart(2, '0');
+                periodEl.textContent = ampm;
+            }
+        }
+
+        // Initialize both date and clock on load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateHeaderTime();
+            clock();
+            setInterval(clock, 1000);
+        });
     </script>
+
 @endsection
