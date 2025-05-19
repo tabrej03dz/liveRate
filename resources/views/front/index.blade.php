@@ -257,11 +257,11 @@
                             </div>
                         </div>
 
-                        <!-- Gold 24K (Silver) Card -->
-                        <div class="rounded-2xl overflow-hidden shadow-lg bg-white border-2 border-yellow-400">
-                            <div class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 p-4">
+                        <!-- Gold  (Silver) Card -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg bg-white border-2 border-gray-400">
+                            <div class="bg-gradient-to-r from-gray-300 via-white to-gray-300 p-4">
                                 <div class="flex justify-between items-center">
-                                    <h3 class="text-xl font-bold text-gray-900">Gold 24K</h3>
+                                    <h3 class="text-xl font-bold text-gray-900">Silver</h3>
                                     <span class="bg-white text-gray-900 text-xs rounded-full px-2 py-1 font-semibold">
                                         Hallmark
                                     </span>
