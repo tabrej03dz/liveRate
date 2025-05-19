@@ -420,7 +420,9 @@
                             </div>
                             <div>
                                 <h3 class="text-gray-900 font-semibold text-lg">Phone</h3>
-                                <p class="text-gray-600 mt-1">+91 98765 43210</p>
+                                <p class="text-gray-600 mt-1">9414400331
+                                    </p>
+                                    <p class="text-gray-600 mt-1">7014137278</p>
                                 <p class="text-xs text-gray-500 mt-2">Available Mon-Sat (10 AM - 7 PM)</p>
                             </div>
                         </div>
@@ -432,7 +434,7 @@
                             </div>
                             <div>
                                 <h3 class="text-gray-900 font-semibold text-lg">Email</h3>
-                                <p class="text-gray-600 mt-1">info@shristijewellers.com</p>
+                                <p class="text-gray-600 mt-1">Naveensoni111@ymail.com</p>
                                 <p class="text-xs text-gray-500 mt-2">We respond within 24 hours</p>
                             </div>
                         </div>
@@ -444,7 +446,7 @@
                             </div>
                             <div>
                                 <h3 class="text-gray-900 font-semibold text-lg">Address</h3>
-                                <p class="text-gray-600 mt-1">123 Jewellery Street, Mumbai, India - 400001</p>
+                                <p class="text-gray-600 mt-1">MFV7+G5M Sujangarh, Rajasthan</p>
                                 <p class="text-xs text-gray-500 mt-2">Visit our showroom</p>
                             </div>
                         </div>
@@ -467,11 +469,11 @@
                     <div class="w-full">
                         <h3 class="font-semibold text-gray-800 mb-6 text-2xl">Follow Us</h3>
                         <div class="grid grid-cols-5 gap-5 justify-items-center">
-                            <a href="#"
+                            <a href="https://www.facebook.com/share/18tfcJRbk3/"
                                 class="bg-blue-100 text-blue-600 p-4 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
                                 <i class="fab fa-facebook-f text-lg"></i>
                             </a>
-                            <a href="#"
+                            <a href="https://www.instagram.com/shristijewellers?utm_source=qr&igsh=MTZzaHkzMHk4YnN4cQ=="
                                 class="bg-pink-100 text-pink-600 p-4 rounded-full hover:bg-pink-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
                                 <i class="fab fa-instagram text-lg"></i>
                             </a>

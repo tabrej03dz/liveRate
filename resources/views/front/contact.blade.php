@@ -1,413 +1,125 @@
 @extends('frontLayouts.main')
+
 @section('content')
 
-    <style>
-        .contact-us {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .contact-us h2 {
-            color: #b38b00;
-            margin-bottom: 20px;
-            font-size: 40px;
-        }
-
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-items: stretch;
-        }
-
-        .contact-box {
-            background-color: white;
-            border: 10px solid #b38b00;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            width: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        .contact-box .icon {
-            background-color: #b38b00;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .contact-box .icon img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .contact-box h3 {
-            color: #b38b00;
-            margin-bottom: 10px;
-        }
-
-        .contact-box p {
-            color: #333;
-            margin: 5px 0;
-            text-align: center;
-        }
-
-        .contact-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .contact-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-box {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        /*Contact Us End*/
-
-        /*Form Start*/
-
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-        .form-container-main {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .form-container {
-            background-color: #fff;
-            border: 10px solid #d8a941;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .form-header {
-            background-color: #d8a941;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-        }
-
-        .form-body {
-            padding: 20px;
-        }
-
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-
-        .form-group {
-            position: relative;
-            width: 50%;
-            padding: 0 10px;
-            margin-bottom: 15px;
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            font-family: inherit;
-            resize: none;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #d8a941;
-            box-shadow: 0 0 5px rgba(216, 169, 65, 0.3);
-        }
-
-        .form-label {
-            position: absolute;
-            top: -8px;
-            left: 15px;
-            background-color: #fff;
-            padding: 0 5px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .form-submit {
-            background-color: #d8a941;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .form-submit:hover {
-            background-color: #c59a3a;
-        }
-
-        @media (max-width: 480px) {
-            .form-group {
-                width: 100%;
-            }
-        }
-
-        /*Form End*/
-
-
-
-        .contact-icon-container-main {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .contact-icon-container {
-            background-color: #fff;
-            border: 10px solid goldenrod;
-            border-radius: 10px;
-            padding: 40px 20px;
-            max-width: 800px;
-            width: 100%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .contact-header h1 {
-            margin: 0 0 30px;
-            font-size: 28px;
-            color: goldenrod;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .icon {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
-            font-size: 24px;
-            color: #fff;
-            background-color: goldenrod;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-        }
-
-        .icon:hover {
-            background-color: #b38a40;
-        }
-
-        .facebook {
-            background-color: #3b5998;
-        }
-
-        .twitter {
-            background-color: #1da1f2;
-        }
-
-        .instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-        }
-
-        .linkedin {
-            background-color: #0077b5;
-        }
-
-        .youtube {
-            background-color: #ff0000;
-        }
-
-        @media (max-width: 480px) {
-            .contact-icon-container-main {
-                width: 95%;
-            }
-
-            .contact-icon-container {
-                padding: 30px 15px;
-            }
-
-            .contact-header h1 {
-                font-size: 24px;
-            }
-
-            .icon {
-                font-size: 20px;
-                width: 40px;
-                height: 40px;
-            }
-        }
-    </style>
-
-
-
-<div class="header-top-marquee">
-    <div class="container-fluid">
-        <marquee class="marquee1">विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/ 18K Hallmark जेवर
-            वा चांदी की ज्वेलरी पायल मूर्ति बर्तन सिक्के संपूर्ण रेंज एवं विशाल संग्रह के साथ ( बहुत ही उचित मूल्य )
-            पर उपलब्ध हैं हमेशा की तरह आपके साथ और सहयोग की कामना करते हैं | Working Hours: 10:00 AM - 08:00 PM
+<div class="bg-yellow-100 text-yellow-800 py-2">
+    <div class="container mx-auto px-4">
+        <marquee behavior="scroll" direction="left" class="text-sm font-medium">
+            विशेष ~ आपकी सेवा में हमने एक नई कड़ी और जोड़ दी है सोने के 20k/18K Hallmark जेवर
+            वा चांदी की ज्वेलरी पायल मूर्ति बर्तन सिक्के संपूर्ण रेंज एवं विशाल संग्रह के साथ
+            (बहुत ही उचित मूल्य) पर उपलब्ध हैं हमेशा की तरह आपके साथ और सहयोग की कामना करते हैं |
+            Working Hours: 10:00 AM - 08:00 PM
         </marquee>
     </div>
 </div>
 
-<!--Header End-->
-
-
-
-<!--Main Start-->
-
-<main>
-
-    <div class="contact-us">
-        <h2>CONTACT US</h2>
-        @if ($contact)
-        <div class="contact-box">
-            <div class="icon">
-                <img src="{{asset('asset/images/phone-solid.svg')}}" alt="Phone Icon">
-            </div>
-            <h3>NUMBER</h3>
-            <p>{{ $contact->phone }}</p>
-            <p>{{ $contact->phone1 }}</p>
-        </div>
-        <div class="contact-box">
-            <div class="icon">
-                <img src="{{asset('asset/images/location-dot-solid.svg')}}" alt="Location Icon">
-            </div>
-            <h3>ADDRESS</h3>
-            <p>{!! $contact->full_address !!}</p>
-        </div>
-        <div class="contact-box">
-            <div class="icon">
-                <img src="{{asset('asset/images/envelope-solid.svg')}}" alt="Email Icon">
-            </div>
-            <h3>E-MAIL</h3>
-            <p>{{ $contact->email }}</p>
-        </div>
-    @else
-        <p>No contact information available.</p>
-    @endif
-    
-    </div>
-
-    <!--Form Start-->
-
-    <div class="form-container-main">
-        <div class="form-container">
-            <div class="form-header">INQUIRY FORM</div>
-            <div class="form-body">
-                <form action="{{route('inquiry.store')}}" method="POST">
-                    @csrf
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Please enter your Name" class="form-input" required>
-                            <span class="form-label">Name *</span>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Please enter your email" class="form-input" required>
-                            <span class="form-label">Email *</span>
-                        </div>
+<main class="py-10 px-4">
+    <section class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-yellow-700 uppercase tracking-wide mb-6">Contact Us</h2>
+        @if($contact)
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="w-72 bg-white border-4 border-yellow-700 rounded-xl shadow p-6 flex flex-col items-center">
+                    <div class="bg-yellow-700 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <img src="{{ asset('asset/images/phone-solid.svg') }}" alt="Phone" class="w-5 h-5">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Please enter your phone" class="form-input" required>
-                            <span class="form-label">Phone *</span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="subject" placeholder="Please enter Subject" class="form-input">
-                            <span class="form-label">Subject</span>
-                        </div>
+                    <h3 class="text-yellow-700 font-semibold text-lg mb-2">Number</h3>
+                    <p>{{ $contact->phone }}</p>
+                    <p>{{ $contact->phone1 }}</p>
+                </div>
+                <div class="w-72 bg-white border-4 border-yellow-700 rounded-xl shadow p-6 flex flex-col items-center">
+                    <div class="bg-yellow-700 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <img src="{{ asset('asset/images/location-dot-solid.svg') }}" alt="Address" class="w-5 h-5">
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Message for me *" name="message" class="form-textarea" required></textarea>
-                        <span class="form-label">Message *</span>
+                    <h3 class="text-yellow-700 font-semibold text-lg mb-2">Address</h3>
+                    <p>{!! $contact->full_address !!}</p>
+                </div>
+                <div class="w-72 bg-white border-4 border-yellow-700 rounded-xl shadow p-6 flex flex-col items-center">
+                    <div class="bg-yellow-700 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <img src="{{ asset('asset/images/envelope-solid.svg') }}" alt="Email" class="w-5 h-5">
                     </div>
-                    <div class="form-row">
-                        <button type="submit" class="form-submit">Submit</button>
-                    </div>
-                </form>
-                @if(session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </div>
-
-    <!--Form End-->
-
-
-    <!--contact-icon-container Start-->
-    <div class="contact-icon-container-main">
-        <div class="contact-icon-container">
-            <div class="contact-header">
-                <h1>follow us</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="icon twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/shristijewellers?igsh=Z3ZhaGNzeG1oMWtw"
-                       class="icon instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="icon linkedin">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="icon youtube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <h3 class="text-yellow-700 font-semibold text-lg mb-2">E-mail</h3>
+                    <p>{{ $contact->email }}</p>
                 </div>
             </div>
+        @else
+            <p class="text-gray-600">No contact information available.</p>
+        @endif
+    </section>
+
+    <!-- Inquiry Form -->
+    <section class="max-w-5xl mx-auto bg-white border-4 border-yellow-500 rounded-xl shadow-md">
+        <div class="bg-yellow-500 text-white text-center py-4 text-xl font-bold rounded-t-xl">
+            Inquiry Form
         </div>
-    </div>
+        <div class="p-6">
+            <form action="{{ route('inquiry.store') }}" method="POST" class="space-y-6">
+                @csrf
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                        <input type="text" name="name" required placeholder="Enter your name"
+                               class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <input type="email" name="email" required placeholder="Enter your email"
+                               class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                        <input type="tel" name="phone" required placeholder="Enter your phone"
+                               class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" name="subject" placeholder="Enter subject"
+                               class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                    <textarea name="message" required rows="4" placeholder="Enter your message"
+                              class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                            class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded transition duration-300">
+                        Submit
+                    </button>
+                </div>
+                @if(session('success'))
+                    <div class="mt-4 bg-green-100 text-green-800 px-4 py-2 rounded">
+                        {{ session('success') }}
+                    </div>
+                @endif
+            </form>
+        </div>
+    </section>
 
-    <!--contact-icon-container End-->
-
+    <!-- Social Media Section -->
+    <section class="mt-12 flex justify-center">
+        <div class="w-full max-w-2xl bg-white border-4 border-yellow-500 rounded-xl p-6 shadow text-center">
+            <h2 class="text-2xl font-bold text-yellow-700 uppercase mb-6">Follow Us</h2>
+            <div class="flex justify-center space-x-4 text-white text-xl">
+                <a href="#" class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center hover:bg-blue-800 transition">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.facebook.com/share/18tfcJRbk3/" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/shristijewellers?utm_source=qr&igsh=MTZzaHkzMHk4YnN4cQ=="
+                   class="w-10 h-10 bg-gradient-to-tr from-yellow-300 via-pink-500 to-purple-700 rounded-full flex items-center justify-center hover:opacity-90 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 </main>
-
-<!--Main End-->
 
 @endsection
