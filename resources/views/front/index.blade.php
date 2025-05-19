@@ -522,7 +522,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script>
+    {{-- <script>
         document.addEventListener("DOMContentLoaded", function() {
 
             const priceElements = [{
@@ -614,7 +614,87 @@
             setInterval(updatePrices, 5000);
 
         });
-    </script>
+    </script> --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const priceElements = [
+                { id: '22kGold', basePrice: null, currentPrice: null },
+                { id: '20kGold', basePrice: null, currentPrice: null },
+                { id: '18kGold', basePrice: null, currentPrice: null },
+                { id: '24Silver', basePrice: null, currentPrice: null }
+            ];
+
+            // Initialize prices from HTML
+            priceElements.forEach(item => {
+                const priceElement = document.getElementById(item.id);
+                if (priceElement) {
+                    let initialText = priceElement.innerText.trim();
+                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
+                    item.basePrice = initialPrice;
+                    item.currentPrice = initialPrice;
+                }
+            });
+
+            // Random change between 1-2 Rs
+            function getRandomPriceChange() {
+                return Math.floor(Math.random() * 2) + 1;
+            }
+
+            // Check if current time is within allowed range
+            function isWithinWorkingHours() {
+                const now = new Date();
+                const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+
+                // Working days: Monday (1) to Friday (5)
+                if (day < 1 || day > 5) return false;
+
+                // Working hours: 9:00 AM to 4:15 PM
+                const startMinutes = 9 * 60; // 540
+                const endMinutes = 16 * 60 + 15; // 975
+                const currentMinutes = hours * 60 + minutes;
+
+                return currentMinutes >= startMinutes && currentMinutes <= endMinutes;
+            }
+
+            function updatePrices() {
+                if (!isWithinWorkingHours()) return;
+
+                priceElements.forEach(item => {
+                    const priceElement = document.getElementById(item.id);
+                    if (!priceElement) return;
+
+                    const priceChange = getRandomPriceChange();
+                    const isIncrease = Math.random() > 0.5;
+
+                    item.currentPrice += isIncrease ? priceChange : -priceChange;
+
+                    // Limit within ±2 Rs of base
+                    const maxPrice = item.basePrice + 2;
+                    const minPrice = item.basePrice - 2;
+                    item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);
+
+                    // Color update
+                    if (item.currentPrice > item.basePrice) {
+                        priceElement.style.color = "green";
+                    } else if (item.currentPrice < item.basePrice) {
+                        priceElement.style.color = "red";
+                    } else {
+                        priceElement.style.color = "black";
+                    }
+
+                    priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
+
+                    const uniqueClass = `price-update-${Date.now()}`;
+                    priceElement.className = `bgm e ${uniqueClass}`;
+                });
+            }
+
+            // Update every 5 seconds during working hours
+            setInterval(updatePrices, 5000);
+        });
+        </script>
 
 
 
