@@ -446,7 +446,7 @@
                             </div>
                             <div>
                                 <h3 class="text-gray-900 font-semibold text-lg">Address</h3>
-                                <p class="text-gray-600 mt-1">MFV7+G5M Sujangarh, Rajasthan</p>
+                                <p class="text-gray-600 mt-1">Shristi jewellers Soni Road, Nayabase, sujangarh 331507 Rajasthan</p>
                                 <p class="text-xs text-gray-500 mt-2">Visit our showroom</p>
                             </div>
                         </div>
