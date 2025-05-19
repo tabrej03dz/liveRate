@@ -366,7 +366,7 @@
 
                                     <!-- Silver Row -->
                                     <tr class="hover:bg-gray-50">
-                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Silver $</td>
+                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Silver ₹</td>
                                         <td class="py-3 px-2">
                                             <span
                                                 class="silver-bid font-mono text-green-600">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</span>
