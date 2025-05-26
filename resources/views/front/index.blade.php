@@ -91,52 +91,45 @@
                                 </div>
                             </div>
                             <div class="p-5 text-center">
-                                <div class="p-h ph product-rate border border-yellow-900 mb-4" style="text-align: center;">
+                                <div class="p-h ph product-rate border border-yellow-900 mb-4 text-center">
                                     @php
-                                        $percent = $goldDiscount22k?->percent;
-                                        $caretWisePrice = $prices->gram_in_inr - ($prices->gram_in_inr * 8) / 100;
-                                        $dis = ($caretWisePrice * $percent) / 100;
-                                        if ($goldDiscount22k?->type == 0) {
-                                            $finalPrice = $caretWisePrice - $dis;
-                                        } else {
-                                            $finalPrice = $caretWisePrice + $dis;
-                                        }
+                                        $percent = $goldDiscount22k?->percent ?? 0;
+                                        $basePrice = $prices->gram_in_inr;
+                                        $caretWisePrice = $basePrice - ($basePrice * 8) / 100;
+                                        $discount = ($caretWisePrice * $percent) / 100;
+                                        $finalPrice =
+                                            $goldDiscount22k?->type == 0
+                                                ? $caretWisePrice - $discount
+                                                : $caretWisePrice + $discount;
                                     @endphp
-                                    <div class="mn-rate-cover"><span class="bgm e"
-                                            id="22kGold">{{ round($finalPrice, 2) }}/gm</span></div>
+                                    <div class="mn-rate-cover">
+                                        <span class="bgm e" id="22kGold">{{ round($finalPrice, 2) }}/gm</span>
+                                    </div>
                                 </div>
+
                                 <div class="p-h ph product-rate">
-                                    <input type="number" class="border border-yellow-600 rounded-xl py-2 px-4 w-full"
-                                        name="gram" min="1"
-                                        onkeyup="
-                                    let gram = this.value;
-                                    if(gram == ''){
-                                        const price = ({{ $prices->gram_in_inr }} - (({{ $prices->gram_in_inr }} * 8)/100)) * 1;
-                                        const discount = (price * {{ $percent }})/100;
-                                        if({{ $goldDiscount22k?->type }} == 0){
-                                            let finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
-                                        }else{
-                                            let finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
-                                        }
-                                    }else{
-                                        const price = ({{ $prices->gram_in_inr }} - (({{ $prices->gram_in_inr }} * 8)/100)) * gram;
-                                        const discount = (price * {{ $percent }})/100;
-                                        if({{ $goldDiscount22k?->type }} == 0){
-                                            const finalPrice = price - discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
-                                        }else{
-                                            const finalPrice = price + discount;
-                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + gram + 'gm';
-                                        }
-                                    }"
-                                        placeholder="Enter grams" />
+                                    <input type="number" step="0.01" min="0.01"
+                                        class="border border-yellow-600 rounded-xl py-2 px-4 w-full" name="gram"
+                                        placeholder="Enter grams"
+                                        oninput="
+                                            let gram = parseFloat(this.value);
+                                            let basePrice = {{ $prices->gram_in_inr }};
+                                            let percent = {{ $percent }};
+                                            let type = {{ $goldDiscount22k?->type ?? 0 }};
+                                            let caretWisePrice = basePrice - (basePrice * 8 / 100);
+                                            let price = caretWisePrice * (isNaN(gram) ? 1 : gram);
+                                            let discount = price * percent / 100;
+                                            let finalPrice = type == 0 ? price - discount : price + discount;
+                                            let displayGram = isNaN(gram) ? 1 : gram;
+                                            document.getElementById('22kGold').innerText = finalPrice.toFixed(2) + '/' + displayGram + 'gm';
+                                        " />
                                 </div>
+
                                 <div class="mt-4 text-sm text-gray-500">
                                     <i class="fas fa-check-circle text-green-500 mr-1"></i> Premium Quality
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- Gold 20K Card -->
@@ -421,8 +414,8 @@
                             <div>
                                 <h3 class="text-gray-900 font-semibold text-lg">Phone</h3>
                                 <p class="text-gray-600 mt-1">9414400331
-                                    </p>
-                                    <p class="text-gray-600 mt-1">7014137278</p>
+                                </p>
+                                <p class="text-gray-600 mt-1">7014137278</p>
                                 <p class="text-xs text-gray-500 mt-2">Available Mon-Sat (10 AM - 7 PM)</p>
                             </div>
                         </div>
@@ -446,7 +439,8 @@
                             </div>
                             <div>
                                 <h3 class="text-gray-900 font-semibold text-lg">Address</h3>
-                                <p class="text-gray-600 mt-1">Shristi jewellers Soni Road, Nayabase, sujangarh 331507 Rajasthan</p>
+                                <p class="text-gray-600 mt-1">Shristi jewellers Soni Road, Nayabase, sujangarh 331507
+                                    Rajasthan</p>
                                 <p class="text-xs text-gray-500 mt-2">Visit our showroom</p>
                             </div>
                         </div>
@@ -618,7 +612,7 @@
         });
     </script> --}}
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const priceElements = [
                 { id: '22kGold', basePrice: null, currentPrice: null },
                 { id: '20kGold', basePrice: null, currentPrice: null },
@@ -637,9 +631,10 @@
                 }
             });
 
-            // Random change between 1-2 Rs
+            // Random decimal change between -2.00 to +2.00 Rs
             function getRandomPriceChange() {
-                return Math.floor(Math.random() * 2) + 1;
+                // Random number between -2.00 and +2.00 with 2 decimal places
+                return (Math.random() * 4 - 2).toFixed(2);
             }
 
             // Check if current time is within allowed range
@@ -667,36 +662,52 @@
                     const priceElement = document.getElementById(item.id);
                     if (!priceElement) return;
 
-                    const priceChange = getRandomPriceChange();
-                    const isIncrease = Math.random() > 0.5;
+                    const priceChange = parseFloat(getRandomPriceChange());
+                    item.currentPrice += priceChange;
 
-                    item.currentPrice += isIncrease ? priceChange : -priceChange;
-
-                    // Limit within ±2 Rs of base
+                    // Limit within ±2 Rs of base (with decimals)
                     const maxPrice = item.basePrice + 2;
                     const minPrice = item.basePrice - 2;
                     item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);
 
                     // Color update
-                    if (item.currentPrice > item.basePrice) {
+                    if (priceChange > 0) {
                         priceElement.style.color = "green";
-                    } else if (item.currentPrice < item.basePrice) {
+                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-up"></i>`;
+                    } else if (priceChange < 0) {
                         priceElement.style.color = "red";
+                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-down"></i>`;
                     } else {
                         priceElement.style.color = "black";
+                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm`;
                     }
 
-                    priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
-
-                    const uniqueClass = `price-update-${Date.now()}`;
-                    priceElement.className = `bgm e ${uniqueClass}`;
+                    // Add animation class
+                    priceElement.classList.add('price-update-animation');
+                    setTimeout(() => {
+                        priceElement.classList.remove('price-update-animation');
+                    }, 1000);
                 });
             }
 
-            // Update every 5 seconds during working hours
-            setInterval(updatePrices, 5000);
+            // Update every 10 seconds during working hours
+            setInterval(updatePrices, 10000);
+
+            // Initial update
+            updatePrices();
         });
-        </script>
+    </script>
+
+    <style>
+        .price-update-animation {
+            transition: all 0.5s ease;
+            transform: scale(1.05);
+        }
+        .bgm.e {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
 
 
 
@@ -892,5 +903,4 @@
             setInterval(clock, 1000);
         });
     </script>
-
 @endsection
