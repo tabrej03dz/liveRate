@@ -316,191 +316,191 @@
             </div>
 
             <!-- Right Column - Market Data -->
-            <div class="lg:col-span-1 mt-8">
-                <div class="space-y-6">
-                    <!-- Market Data Header -->
-                    <div
-                        class="bg-gradient-to-r from-amber-600 via-[#FAF3BC] to-amber-600 text-black border border-yellow-200 rounded-xl shadow-md overflow-hidden">
-                        <table class="w-full text-center text-sm md:text-base font-semibold">
-                            <thead>
-                                <tr>
-                                    <th class="py-3 px-4">Spot</th>
-                                    <th class="py-3 px-4">Bid</th>
-                                    <th class="py-3 px-4">Ask</th>
-                                    <th class="py-3 px-4">High / Low</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
+{{--            <div class="lg:col-span-1 mt-8">--}}
+{{--                <div class="space-y-6">--}}
+{{--                    <!-- Market Data Header -->--}}
+{{--                    <div--}}
+{{--                        class="bg-gradient-to-r from-amber-600 via-[#FAF3BC] to-amber-600 text-black border border-yellow-200 rounded-xl shadow-md overflow-hidden">--}}
+{{--                        <table class="w-full text-center text-sm md:text-base font-semibold">--}}
+{{--                            <thead>--}}
+{{--                                <tr>--}}
+{{--                                    <th class="py-3 px-4">Spot</th>--}}
+{{--                                    <th class="py-3 px-4">Bid</th>--}}
+{{--                                    <th class="py-3 px-4">Ask</th>--}}
+{{--                                    <th class="py-3 px-4">High / Low</th>--}}
+{{--                                </tr>--}}
+{{--                            </thead>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
 
-                    <!-- Price Details Table -->
-                    <div class="bg-white border border-gray-200 rounded-xl shadow-md p-4">
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm md:text-base text-gray-700">
-                                <tbody class="divide-y divide-gray-100">
-                                    <!-- Gold Row -->
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Gold</td>
-                                        <td class="py-3 px-2">
-                                            <span
-                                                class="gold-bid font-mono text-green-600">{{ $prices->ounce_price_bid }}</span>
-                                        </td>
-                                        <td class="py-3 px-2">
-                                            <span
-                                                class="gold-ask font-mono text-red-600">{{ $prices->ounce_price_ask }}</span>
-                                        </td>
-                                        <td class="py-3 px-2 whitespace-nowrap">
-                                            <span class="gold-high-low">
-                                                {{ $prices->ounce_price_usd_today_low }} /
-                                                {{ $prices->ounce_price_usd_today_high }}
-                                            </span>
-                                        </td>
-                                    </tr>
+{{--                    <!-- Price Details Table -->--}}
+{{--                    <div class="bg-white border border-gray-200 rounded-xl shadow-md p-4">--}}
+{{--                        <div class="overflow-x-auto">--}}
+{{--                            <table class="w-full text-sm md:text-base text-gray-700">--}}
+{{--                                <tbody class="divide-y divide-gray-100">--}}
+{{--                                    <!-- Gold Row -->--}}
+{{--                                    <tr class="hover:bg-gray-50">--}}
+{{--                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Gold</td>--}}
+{{--                                        <td class="py-3 px-2">--}}
+{{--                                            <span--}}
+{{--                                                class="gold-bid font-mono text-green-600">{{ $prices->ounce_price_bid }}</span>--}}
+{{--                                        </td>--}}
+{{--                                        <td class="py-3 px-2">--}}
+{{--                                            <span--}}
+{{--                                                class="gold-ask font-mono text-red-600">{{ $prices->ounce_price_ask }}</span>--}}
+{{--                                        </td>--}}
+{{--                                        <td class="py-3 px-2 whitespace-nowrap">--}}
+{{--                                            <span class="gold-high-low">--}}
+{{--                                                {{ $prices->ounce_price_usd_today_low }} /--}}
+{{--                                                {{ $prices->ounce_price_usd_today_high }}--}}
+{{--                                            </span>--}}
+{{--                                        </td>--}}
+{{--                                    </tr>--}}
 
-                                    <!-- Silver Row -->
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Silver ₹</td>
-                                        <td class="py-3 px-2">
-                                            <span
-                                                class="silver-bid font-mono text-green-600">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</span>
-                                        </td>
-                                        <td class="py-3 px-2">
-                                            <span
-                                                class="silver-ask font-mono text-red-600">{{ round($silverPrices->silver_ounce_price_ask_usd, 2) }}</span>
-                                        </td>
-                                        <td class="py-3 px-2 whitespace-nowrap">
-                                            <span class="silver-high-low">
-                                                {{ round($silverPrices->silver_ounce_price_usd_today_low_usd, 2) }} /
-                                                {{ round($silverPrices->silver_ounce_price_usd_today_high_usd, 2) }}
-                                            </span>
-                                        </td>
-                                    </tr>
+{{--                                    <!-- Silver Row -->--}}
+{{--                                    <tr class="hover:bg-gray-50">--}}
+{{--                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Silver ₹</td>--}}
+{{--                                        <td class="py-3 px-2">--}}
+{{--                                            <span--}}
+{{--                                                class="silver-bid font-mono text-green-600">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</span>--}}
+{{--                                        </td>--}}
+{{--                                        <td class="py-3 px-2">--}}
+{{--                                            <span--}}
+{{--                                                class="silver-ask font-mono text-red-600">{{ round($silverPrices->silver_ounce_price_ask_usd, 2) }}</span>--}}
+{{--                                        </td>--}}
+{{--                                        <td class="py-3 px-2 whitespace-nowrap">--}}
+{{--                                            <span class="silver-high-low">--}}
+{{--                                                {{ round($silverPrices->silver_ounce_price_usd_today_low_usd, 2) }} /--}}
+{{--                                                {{ round($silverPrices->silver_ounce_price_usd_today_high_usd, 2) }}--}}
+{{--                                            </span>--}}
+{{--                                        </td>--}}
+{{--                                    </tr>--}}
 
-                                    <!-- INR Row -->
-                                    <tr class="hover:bg-gray-50">
-                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">INR ₹</td>
-                                        <td class="py-3 px-2" colspan="2">
-                                            <span class="inr-usd font-mono">{{ $prices->usd_to_inr }}</span>
-                                        </td>
-                                        <td class="py-3 px-2">
-                                            <div class="flex flex-col">
-                                                <span class="gram-usd font-mono">{{ $prices->gram_in_usd }}</span>
-                                                <span class="inr-gram-pair text-xs text-gray-500">
-                                                    {{ $prices->usd_to_inr }}/{{ $prices->gram_in_usd }}
-                                                </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+{{--                                    <!-- INR Row -->--}}
+{{--                                    <tr class="hover:bg-gray-50">--}}
+{{--                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">INR ₹</td>--}}
+{{--                                        <td class="py-3 px-2" colspan="2">--}}
+{{--                                            <span class="inr-usd font-mono">{{ $prices->usd_to_inr }}</span>--}}
+{{--                                        </td>--}}
+{{--                                        <td class="py-3 px-2">--}}
+{{--                                            <div class="flex flex-col">--}}
+{{--                                                <span class="gram-usd font-mono">{{ $prices->gram_in_usd }}</span>--}}
+{{--                                                <span class="inr-gram-pair text-xs text-gray-500">--}}
+{{--                                                    {{ $prices->usd_to_inr }}/{{ $prices->gram_in_usd }}--}}
+{{--                                                </span>--}}
+{{--                                            </div>--}}
+{{--                                        </td>--}}
+{{--                                    </tr>--}}
+{{--                                </tbody>--}}
+{{--                            </table>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Contact Card -->
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl mt-6">
-                    <div class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 p-6">
-                        <h2 class="text-2xl font-bold text-black flex items-center">
-                            <i class="fas fa-address-card mr-3"></i> Contact Us
-                        </h2>
-                    </div>
-                    <div class="p-6 space-y-6">
-                        <!-- Phone -->
-                        <div class="flex items-start gap-5">
-                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">
-                                <i class="fas fa-phone-alt text-amber-600 text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-gray-900 font-semibold text-lg">Phone</h3>
-                                <p class="text-gray-600 mt-1">9414400331
-                                </p>
-                                <p class="text-gray-600 mt-1">7014137278</p>
-                                <p class="text-xs text-gray-500 mt-2">Available Mon-Sat (10 AM - 7 PM)</p>
-                            </div>
-                        </div>
+{{--                <!-- Contact Card -->--}}
+{{--                <div--}}
+{{--                    class="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl mt-6">--}}
+{{--                    <div class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 p-6">--}}
+{{--                        <h2 class="text-2xl font-bold text-black flex items-center">--}}
+{{--                            <i class="fas fa-address-card mr-3"></i> Contact Us--}}
+{{--                        </h2>--}}
+{{--                    </div>--}}
+{{--                    <div class="p-6 space-y-6">--}}
+{{--                        <!-- Phone -->--}}
+{{--                        <div class="flex items-start gap-5">--}}
+{{--                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">--}}
+{{--                                <i class="fas fa-phone-alt text-amber-600 text-lg"></i>--}}
+{{--                            </div>--}}
+{{--                            <div>--}}
+{{--                                <h3 class="text-gray-900 font-semibold text-lg">Phone</h3>--}}
+{{--                                <p class="text-gray-600 mt-1">9414400331--}}
+{{--                                </p>--}}
+{{--                                <p class="text-gray-600 mt-1">7014137278</p>--}}
+{{--                                <p class="text-xs text-gray-500 mt-2">Available Mon-Sat (10 AM - 7 PM)</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!-- Email -->
-                        <div class="flex items-start gap-5">
-                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">
-                                <i class="fas fa-envelope text-amber-600 text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-gray-900 font-semibold text-lg">Email</h3>
-                                <p class="text-gray-600 mt-1">Naveensoni111@ymail.com</p>
-                                <p class="text-xs text-gray-500 mt-2">We respond within 24 hours</p>
-                            </div>
-                        </div>
+{{--                        <!-- Email -->--}}
+{{--                        <div class="flex items-start gap-5">--}}
+{{--                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">--}}
+{{--                                <i class="fas fa-envelope text-amber-600 text-lg"></i>--}}
+{{--                            </div>--}}
+{{--                            <div>--}}
+{{--                                <h3 class="text-gray-900 font-semibold text-lg">Email</h3>--}}
+{{--                                <p class="text-gray-600 mt-1">Naveensoni111@ymail.com</p>--}}
+{{--                                <p class="text-xs text-gray-500 mt-2">We respond within 24 hours</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!-- Address -->
-                        <div class="flex items-start gap-5">
-                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-amber-600 text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-gray-900 font-semibold text-lg">Address</h3>
-                                <p class="text-gray-600 mt-1">Shristi jewellers Soni Road, Nayabase, sujangarh 331507
-                                    Rajasthan</p>
-                                <p class="text-xs text-gray-500 mt-2">Visit our showroom</p>
-                            </div>
-                        </div>
+{{--                        <!-- Address -->--}}
+{{--                        <div class="flex items-start gap-5">--}}
+{{--                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">--}}
+{{--                                <i class="fas fa-map-marker-alt text-amber-600 text-lg"></i>--}}
+{{--                            </div>--}}
+{{--                            <div>--}}
+{{--                                <h3 class="text-gray-900 font-semibold text-lg">Address</h3>--}}
+{{--                                <p class="text-gray-600 mt-1">Shristi jewellers Soni Road, Nayabase, sujangarh 331507--}}
+{{--                                    Rajasthan</p>--}}
+{{--                                <p class="text-xs text-gray-500 mt-2">Visit our showroom</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!-- Button -->
-                        <div class="pt-2">
-                            <button
-                                class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 text-black py-3 px-6 rounded-lg w-full font-medium hover:shadow-lg transition duration-300 flex items-center justify-center group">
-                                <i
-                                    class="far fa-comment-dots mr-3 transform group-hover:scale-110 transition-transform"></i>
-                                Contact Sales Team
-                            </button>
-                        </div>
-                    </div>
-                </div>
+{{--                        <!-- Button -->--}}
+{{--                        <div class="pt-2">--}}
+{{--                            <button--}}
+{{--                                class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 text-black py-3 px-6 rounded-lg w-full font-medium hover:shadow-lg transition duration-300 flex items-center justify-center group">--}}
+{{--                                <i--}}
+{{--                                    class="far fa-comment-dots mr-3 transform group-hover:scale-110 transition-transform"></i>--}}
+{{--                                Contact Sales Team--}}
+{{--                            </button>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Social Media Card -->
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-lg p-6 mt-6 flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">
-                    <div class="w-full">
-                        <h3 class="font-semibold text-gray-800 mb-6 text-2xl">Follow Us</h3>
-                        <div class="grid grid-cols-5 gap-5 justify-items-center">
-                            <a href="https://www.facebook.com/share/18tfcJRbk3/"
-                                class="bg-blue-100 text-blue-600 p-4 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                                <i class="fab fa-facebook-f text-lg"></i>
-                            </a>
-                            <a href="https://www.instagram.com/shristijewellers?utm_source=qr&igsh=MTZzaHkzMHk4YnN4cQ=="
-                                class="bg-pink-100 text-pink-600 p-4 rounded-full hover:bg-pink-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                                <i class="fab fa-instagram text-lg"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-sky-100 text-sky-600 p-4 rounded-full hover:bg-sky-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                                <i class="fab fa-twitter text-lg"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-red-100 text-red-600 p-4 rounded-full hover:bg-red-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                                <i class="fab fa-youtube text-lg"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-green-100 text-green-600 p-4 rounded-full hover:bg-green-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                                <i class="fab fa-whatsapp text-lg"></i>
-                            </a>
-                        </div>
+{{--                <!-- Social Media Card -->--}}
+{{--                <div--}}
+{{--                    class="bg-white rounded-2xl overflow-hidden shadow-lg p-6 mt-6 flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">--}}
+{{--                    <div class="w-full">--}}
+{{--                        <h3 class="font-semibold text-gray-800 mb-6 text-2xl">Follow Us</h3>--}}
+{{--                        <div class="grid grid-cols-5 gap-5 justify-items-center">--}}
+{{--                            <a href="https://www.facebook.com/share/18tfcJRbk3/"--}}
+{{--                                class="bg-blue-100 text-blue-600 p-4 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
+{{--                                <i class="fab fa-facebook-f text-lg"></i>--}}
+{{--                            </a>--}}
+{{--                            <a href="https://www.instagram.com/shristijewellers?utm_source=qr&igsh=MTZzaHkzMHk4YnN4cQ=="--}}
+{{--                                class="bg-pink-100 text-pink-600 p-4 rounded-full hover:bg-pink-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
+{{--                                <i class="fab fa-instagram text-lg"></i>--}}
+{{--                            </a>--}}
+{{--                            <a href="#"--}}
+{{--                                class="bg-sky-100 text-sky-600 p-4 rounded-full hover:bg-sky-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
+{{--                                <i class="fab fa-twitter text-lg"></i>--}}
+{{--                            </a>--}}
+{{--                            <a href="#"--}}
+{{--                                class="bg-red-100 text-red-600 p-4 rounded-full hover:bg-red-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
+{{--                                <i class="fab fa-youtube text-lg"></i>--}}
+{{--                            </a>--}}
+{{--                            <a href="#"--}}
+{{--                                class="bg-green-100 text-green-600 p-4 rounded-full hover:bg-green-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
+{{--                                <i class="fab fa-whatsapp text-lg"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
 
-                        <div class="my-6 border-t border-gray-100"></div>
+{{--                        <div class="my-6 border-t border-gray-100"></div>--}}
 
-                        <div class="mt-4">
-                            <h4 class="text-gray-700 font-medium mb-3">Subscribe to our newsletter</h4>
-                            <div class="flex">
-                                <input type="email" placeholder="Your email"
-                                    class="flex-grow px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-300">
-                                <button
-                                    class="bg-amber-500 text-white px-4 py-2 rounded-r-lg hover:bg-amber-600 transition">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--                        <div class="mt-4">--}}
+{{--                            <h4 class="text-gray-700 font-medium mb-3">Subscribe to our newsletter</h4>--}}
+{{--                            <div class="flex">--}}
+{{--                                <input type="email" placeholder="Your email"--}}
+{{--                                    class="flex-grow px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-300">--}}
+{{--                                <button--}}
+{{--                                    class="bg-amber-500 text-white px-4 py-2 rounded-r-lg hover:bg-amber-600 transition">--}}
+{{--                                    <i class="fas fa-paper-plane"></i>--}}
+{{--                                </button>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
 
         <!-- Disclaimer Marquee -->
