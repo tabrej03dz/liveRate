@@ -719,7 +719,7 @@
             });
 
             function getRandomPriceChange() {
-                return parseFloat((Math.random() * 4 - 2).toFixed(2)); // between -2.00 and +2.00
+                return parseFloat((Math.random() * 1 - 0.5).toFixed(2)); // between -1.00 and +1.00
             }
 
             function isWithinWorkingHours() {
@@ -741,8 +741,8 @@
                     const priceChange = getRandomPriceChange();
                     item.currentPrice += priceChange;
 
-                    const maxPrice = item.basePrice + 0.6;
-                    const minPrice = item.basePrice - 0.6;
+                    const maxPrice = item.basePrice + 2;
+                    const minPrice = item.basePrice - 2;
                     item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);
 
                     const totalPrice = item.currentPrice * gram;
