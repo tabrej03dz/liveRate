@@ -741,8 +741,8 @@
                     const priceChange = getRandomPriceChange();
                     item.currentPrice += priceChange;
 
-                    const maxPrice = item.basePrice + 2;
-                    const minPrice = item.basePrice - 2;
+                    const maxPrice = item.basePrice + 0.6;
+                    const minPrice = item.basePrice - 0.6;
                     item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);
 
                     const totalPrice = item.currentPrice * gram;
