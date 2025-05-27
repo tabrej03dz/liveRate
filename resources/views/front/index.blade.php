@@ -108,7 +108,7 @@
                                 </div>
 
                                 <div class="p-h ph product-rate">
-                                    <input type="number" step="0.01" min="0.01"
+                                    <input type="number" step="0.01" min="0.01" id="22kGoldInput" value="10"
                                         class="border border-yellow-600 rounded-xl py-2 px-4 w-full" name="gram"
                                         placeholder="Enter grams"
                                         oninput="
@@ -129,7 +129,6 @@
                                     <i class="fas fa-check-circle text-green-500 mr-1"></i> Premium Quality
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- Gold 20K Card -->
@@ -158,7 +157,7 @@
                                             id="20kGold">{{ round($finalPrice, 2) }}/gm</span></div>
                                 </div>
                                 <div class="p-h ph product-rate">
-                                    <input type="number" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
+                                    <input type="number" id="20kGoldInput" value="10" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
                                         name="gram" min="1"
                                         onkeyup="
                                     let gram = this.value;
@@ -217,7 +216,7 @@
                                             id="18kGold">{{ round($finalPrice, 2) }}/gm</span></div>
                                 </div>
                                 <div class="p-h ph product-rate">
-                                    <input type="number" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
+                                    <input type="number" id="18kGoldInput" value="10" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
                                         name="gram" min="1"
                                         onkeyup="
                                     let gram = this.value;
@@ -279,7 +278,7 @@
                                             id="24Silver">{{ round($finalPrice, 2) }}/gm</span></div>
                                 </div>
                                 <div class="p-h ph product-rate">
-                                    <input type="number" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
+                                    <input type="number" id="24SilverInput" value="10" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
                                         name="gram" min="1"
                                         onkeyup="
                                     let gram = this.value;
@@ -397,110 +396,110 @@
 {{--                    </div>--}}
 {{--                </div>--}}
 
-{{--                <!-- Contact Card -->--}}
-{{--                <div--}}
-{{--                    class="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl mt-6">--}}
-{{--                    <div class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 p-6">--}}
-{{--                        <h2 class="text-2xl font-bold text-black flex items-center">--}}
-{{--                            <i class="fas fa-address-card mr-3"></i> Contact Us--}}
-{{--                        </h2>--}}
-{{--                    </div>--}}
-{{--                    <div class="p-6 space-y-6">--}}
-{{--                        <!-- Phone -->--}}
-{{--                        <div class="flex items-start gap-5">--}}
-{{--                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">--}}
-{{--                                <i class="fas fa-phone-alt text-amber-600 text-lg"></i>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <h3 class="text-gray-900 font-semibold text-lg">Phone</h3>--}}
-{{--                                <p class="text-gray-600 mt-1">9414400331--}}
-{{--                                </p>--}}
-{{--                                <p class="text-gray-600 mt-1">7014137278</p>--}}
-{{--                                <p class="text-xs text-gray-500 mt-2">Available Mon-Sat (10 AM - 7 PM)</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                <!-- Contact Card -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl mt-6">
+                    <div class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 p-6">
+                        <h2 class="text-2xl font-bold text-black flex items-center">
+                            <i class="fas fa-address-card mr-3"></i> Contact Us
+                        </h2>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <!-- Phone -->
+                        <div class="flex items-start gap-5">
+                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">
+                                <i class="fas fa-phone-alt text-amber-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-900 font-semibold text-lg">Phone</h3>
+                                <p class="text-gray-600 mt-1">9414400331
+                                </p>
+                                <p class="text-gray-600 mt-1">7014137278</p>
+                                <p class="text-xs text-gray-500 mt-2">Available Mon-Sat (10 AM - 7 PM)</p>
+                            </div>
+                        </div>
 
-{{--                        <!-- Email -->--}}
-{{--                        <div class="flex items-start gap-5">--}}
-{{--                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">--}}
-{{--                                <i class="fas fa-envelope text-amber-600 text-lg"></i>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <h3 class="text-gray-900 font-semibold text-lg">Email</h3>--}}
-{{--                                <p class="text-gray-600 mt-1">Naveensoni111@ymail.com</p>--}}
-{{--                                <p class="text-xs text-gray-500 mt-2">We respond within 24 hours</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        <!-- Email -->
+                        <div class="flex items-start gap-5">
+                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">
+                                <i class="fas fa-envelope text-amber-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-900 font-semibold text-lg">Email</h3>
+                                <p class="text-gray-600 mt-1">Naveensoni111@ymail.com</p>
+                                <p class="text-xs text-gray-500 mt-2">We respond within 24 hours</p>
+                            </div>
+                        </div>
 
-{{--                        <!-- Address -->--}}
-{{--                        <div class="flex items-start gap-5">--}}
-{{--                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">--}}
-{{--                                <i class="fas fa-map-marker-alt text-amber-600 text-lg"></i>--}}
-{{--                            </div>--}}
-{{--                            <div>--}}
-{{--                                <h3 class="text-gray-900 font-semibold text-lg">Address</h3>--}}
-{{--                                <p class="text-gray-600 mt-1">Shristi jewellers Soni Road, Nayabase, sujangarh 331507--}}
-{{--                                    Rajasthan</p>--}}
-{{--                                <p class="text-xs text-gray-500 mt-2">Visit our showroom</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        <!-- Address -->
+                        <div class="flex items-start gap-5">
+                            <div class="bg-amber-100 p-3 rounded-full flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-amber-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-900 font-semibold text-lg">Address</h3>
+                                <p class="text-gray-600 mt-1">Shristi jewellers Soni Road, Nayabase, sujangarh 331507
+                                    Rajasthan</p>
+                                <p class="text-xs text-gray-500 mt-2">Visit our showroom</p>
+                            </div>
+                        </div>
 
-{{--                        <!-- Button -->--}}
-{{--                        <div class="pt-2">--}}
-{{--                            <button--}}
-{{--                                class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 text-black py-3 px-6 rounded-lg w-full font-medium hover:shadow-lg transition duration-300 flex items-center justify-center group">--}}
-{{--                                <i--}}
-{{--                                    class="far fa-comment-dots mr-3 transform group-hover:scale-110 transition-transform"></i>--}}
-{{--                                Contact Sales Team--}}
-{{--                            </button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                        <!-- Button -->
+                        <div class="pt-2">
+                            <button
+                                class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 text-black py-3 px-6 rounded-lg w-full font-medium hover:shadow-lg transition duration-300 flex items-center justify-center group">
+                                <i
+                                    class="far fa-comment-dots mr-3 transform group-hover:scale-110 transition-transform"></i>
+                                Contact Sales Team
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-{{--                <!-- Social Media Card -->--}}
-{{--                <div--}}
-{{--                    class="bg-white rounded-2xl overflow-hidden shadow-lg p-6 mt-6 flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">--}}
-{{--                    <div class="w-full">--}}
-{{--                        <h3 class="font-semibold text-gray-800 mb-6 text-2xl">Follow Us</h3>--}}
-{{--                        <div class="grid grid-cols-5 gap-5 justify-items-center">--}}
-{{--                            <a href="https://www.facebook.com/share/18tfcJRbk3/"--}}
-{{--                                class="bg-blue-100 text-blue-600 p-4 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
-{{--                                <i class="fab fa-facebook-f text-lg"></i>--}}
-{{--                            </a>--}}
-{{--                            <a href="https://www.instagram.com/shristijewellers?utm_source=qr&igsh=MTZzaHkzMHk4YnN4cQ=="--}}
-{{--                                class="bg-pink-100 text-pink-600 p-4 rounded-full hover:bg-pink-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
-{{--                                <i class="fab fa-instagram text-lg"></i>--}}
-{{--                            </a>--}}
-{{--                            <a href="#"--}}
-{{--                                class="bg-sky-100 text-sky-600 p-4 rounded-full hover:bg-sky-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
-{{--                                <i class="fab fa-twitter text-lg"></i>--}}
-{{--                            </a>--}}
-{{--                            <a href="#"--}}
-{{--                                class="bg-red-100 text-red-600 p-4 rounded-full hover:bg-red-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
-{{--                                <i class="fab fa-youtube text-lg"></i>--}}
-{{--                            </a>--}}
-{{--                            <a href="#"--}}
-{{--                                class="bg-green-100 text-green-600 p-4 rounded-full hover:bg-green-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
-{{--                                <i class="fab fa-whatsapp text-lg"></i>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
+                <!-- Social Media Card -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg p-6 mt-6 flex flex-col justify-between transition-transform duration-300 hover:shadow-xl">
+                    <div class="w-full">
+                        <h3 class="font-semibold text-gray-800 mb-6 text-2xl">Follow Us</h3>
+                        <div class="grid grid-cols-5 gap-5 justify-items-center">
+                            <a href="https://www.facebook.com/share/18tfcJRbk3/"
+                                class="bg-blue-100 text-blue-600 p-4 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="https://www.instagram.com/shristijewellers?utm_source=qr&igsh=MTZzaHkzMHk4YnN4cQ=="
+                                class="bg-pink-100 text-pink-600 p-4 rounded-full hover:bg-pink-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-sky-100 text-sky-600 p-4 rounded-full hover:bg-sky-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-red-100 text-red-600 p-4 rounded-full hover:bg-red-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-youtube text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-green-100 text-green-600 p-4 rounded-full hover:bg-green-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                        </div>
 
-{{--                        <div class="my-6 border-t border-gray-100"></div>--}}
+                        <div class="my-6 border-t border-gray-100"></div>
 
-{{--                        <div class="mt-4">--}}
-{{--                            <h4 class="text-gray-700 font-medium mb-3">Subscribe to our newsletter</h4>--}}
-{{--                            <div class="flex">--}}
-{{--                                <input type="email" placeholder="Your email"--}}
-{{--                                    class="flex-grow px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-300">--}}
-{{--                                <button--}}
-{{--                                    class="bg-amber-500 text-white px-4 py-2 rounded-r-lg hover:bg-amber-600 transition">--}}
-{{--                                    <i class="fas fa-paper-plane"></i>--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+                        <div class="mt-4">
+                            <h4 class="text-gray-700 font-medium mb-3">Subscribe to our newsletter</h4>
+                            <div class="flex">
+                                <input type="email" placeholder="Your email"
+                                    class="flex-grow px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-300">
+                                <button
+                                    class="bg-amber-500 text-white px-4 py-2 rounded-r-lg hover:bg-amber-600 transition">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Disclaimer Marquee -->
@@ -611,13 +610,101 @@
 
         });
     </script> --}}
+{{--    <script>--}}
+{{--        document.addEventListener("DOMContentLoaded", function() {--}}
+{{--            const priceElements = [--}}
+{{--                { id: '22kGold', basePrice: null, currentPrice: null },--}}
+{{--                { id: '20kGold', basePrice: null, currentPrice: null },--}}
+{{--                { id: '18kGold', basePrice: null, currentPrice: null },--}}
+{{--                { id: '24Silver', basePrice: null, currentPrice: null }--}}
+{{--            ];--}}
+
+{{--            // Initialize prices from HTML--}}
+{{--            priceElements.forEach(item => {--}}
+{{--                const priceElement = document.getElementById(item.id);--}}
+{{--                if (priceElement) {--}}
+{{--                    let initialText = priceElement.innerText.trim();--}}
+{{--                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;--}}
+{{--                    item.basePrice = initialPrice;--}}
+{{--                    item.currentPrice = initialPrice;--}}
+{{--                }--}}
+{{--            });--}}
+
+{{--            // Random decimal change between -2.00 to +2.00 Rs--}}
+{{--            function getRandomPriceChange() {--}}
+{{--                // Random number between -2.00 and +2.00 with 2 decimal places--}}
+{{--                return (Math.random() * 4 - 2).toFixed(2);--}}
+{{--            }--}}
+
+{{--            // Check if current time is within allowed range--}}
+{{--            function isWithinWorkingHours() {--}}
+{{--                const now = new Date();--}}
+{{--                const day = now.getDay(); // 0 = Sunday, 6 = Saturday--}}
+{{--                const hours = now.getHours();--}}
+{{--                const minutes = now.getMinutes();--}}
+
+{{--                // Working days: Monday (1) to Friday (5)--}}
+{{--                if (day < 1 || day > 5) return false;--}}
+
+{{--                // Working hours: 9:00 AM to 4:15 PM--}}
+{{--                const startMinutes = 9 * 60; // 540--}}
+{{--                const endMinutes = 16 * 60 + 15; // 975--}}
+{{--                const currentMinutes = hours * 60 + minutes;--}}
+
+{{--                return currentMinutes >= startMinutes && currentMinutes <= endMinutes;--}}
+{{--            }--}}
+
+{{--            function updatePrices() {--}}
+{{--                if (!isWithinWorkingHours()) return;--}}
+
+{{--                priceElements.forEach(item => {--}}
+{{--                    const priceElement = document.getElementById(item.id);--}}
+{{--                    if (!priceElement) return;--}}
+
+{{--                    const priceChange = parseFloat(getRandomPriceChange());--}}
+{{--                    item.currentPrice += priceChange;--}}
+
+{{--                    // Limit within ±2 Rs of base (with decimals)--}}
+{{--                    const maxPrice = item.basePrice + 2;--}}
+{{--                    const minPrice = item.basePrice - 2;--}}
+{{--                    item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);--}}
+
+{{--                    // Color update--}}
+{{--                    if (priceChange > 0) {--}}
+{{--                        priceElement.style.color = "green";--}}
+{{--                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-up"></i>`;--}}
+{{--                    } else if (priceChange < 0) {--}}
+{{--                        priceElement.style.color = "red";--}}
+{{--                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-down"></i>`;--}}
+{{--                    } else {--}}
+{{--                        priceElement.style.color = "black";--}}
+{{--                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm`;--}}
+{{--                    }--}}
+
+{{--                    // Add animation class--}}
+{{--                    priceElement.classList.add('price-update-animation');--}}
+{{--                    setTimeout(() => {--}}
+{{--                        priceElement.classList.remove('price-update-animation');--}}
+{{--                    }, 1000);--}}
+{{--                });--}}
+{{--            }--}}
+
+{{--            // Update every 10 seconds during working hours--}}
+{{--            setInterval(updatePrices, 10000);--}}
+
+{{--            // Initial update--}}
+{{--            updatePrices();--}}
+{{--        });--}}
+{{--    </script>--}}
+
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const priceElements = [
-                { id: '22kGold', basePrice: null, currentPrice: null },
-                { id: '20kGold', basePrice: null, currentPrice: null },
-                { id: '18kGold', basePrice: null, currentPrice: null },
-                { id: '24Silver', basePrice: null, currentPrice: null }
+                { id: '22kGold', inputId: '22kGoldInput', basePrice: null, currentPrice: null },
+                { id: '20kGold', inputId: '20kGoldInput', basePrice: null, currentPrice: null },
+                { id: '18kGold', inputId: '18kGoldInput', basePrice: null, currentPrice: null },
+                { id: '24Silver', inputId: '24SilverInput', basePrice: null, currentPrice: null }
             ];
 
             // Initialize prices from HTML
@@ -631,28 +718,15 @@
                 }
             });
 
-            // Random decimal change between -2.00 to +2.00 Rs
             function getRandomPriceChange() {
-                // Random number between -2.00 and +2.00 with 2 decimal places
-                return (Math.random() * 4 - 2).toFixed(2);
+                return parseFloat((Math.random() * 4 - 2).toFixed(2)); // between -2.00 and +2.00
             }
 
-            // Check if current time is within allowed range
             function isWithinWorkingHours() {
                 const now = new Date();
                 const day = now.getDay(); // 0 = Sunday, 6 = Saturday
-                const hours = now.getHours();
-                const minutes = now.getMinutes();
-
-                // Working days: Monday (1) to Friday (5)
-                if (day < 1 || day > 5) return false;
-
-                // Working hours: 9:00 AM to 4:15 PM
-                const startMinutes = 9 * 60; // 540
-                const endMinutes = 16 * 60 + 15; // 975
-                const currentMinutes = hours * 60 + minutes;
-
-                return currentMinutes >= startMinutes && currentMinutes <= endMinutes;
+                const currentMinutes = now.getHours() * 60 + now.getMinutes();
+                return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 975); // 9:00–16:15
             }
 
             function updatePrices() {
@@ -660,29 +734,32 @@
 
                 priceElements.forEach(item => {
                     const priceElement = document.getElementById(item.id);
-                    if (!priceElement) return;
+                    const inputElement = document.getElementById(item.inputId);
+                    if (!priceElement || !inputElement) return;
 
-                    const priceChange = parseFloat(getRandomPriceChange());
+                    const gram = parseFloat(inputElement.value) || 1;
+                    const priceChange = getRandomPriceChange();
                     item.currentPrice += priceChange;
 
-                    // Limit within ±2 Rs of base (with decimals)
                     const maxPrice = item.basePrice + 2;
                     const minPrice = item.basePrice - 2;
                     item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);
 
-                    // Color update
+                    const totalPrice = item.currentPrice * gram;
+                    let arrow = '', color = 'black';
+
                     if (priceChange > 0) {
-                        priceElement.style.color = "green";
-                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-up"></i>`;
+                        color = "green";
+                        arrow = `<i class="fas fa-arrow-up"></i>`;
                     } else if (priceChange < 0) {
-                        priceElement.style.color = "red";
-                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-down"></i>`;
-                    } else {
-                        priceElement.style.color = "black";
-                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm`;
+                        color = "red";
+                        arrow = `<i class="fas fa-arrow-down"></i>`;
                     }
 
-                    // Add animation class
+                    priceElement.innerHTML = `${totalPrice.toFixed(2)}/${gram}gm ${arrow}`;
+                    priceElement.style.color = color;
+
+                    // Animation effect
                     priceElement.classList.add('price-update-animation');
                     setTimeout(() => {
                         priceElement.classList.remove('price-update-animation');
@@ -690,10 +767,8 @@
                 });
             }
 
-            // Update every 10 seconds during working hours
+            // Trigger update every 10 seconds
             setInterval(updatePrices, 10000);
-
-            // Initial update
             updatePrices();
         });
     </script>
