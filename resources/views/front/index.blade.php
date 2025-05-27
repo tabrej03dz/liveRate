@@ -698,6 +698,82 @@
 {{--    </script>--}}
 
 
+{{--    <script>--}}
+{{--        document.addEventListener("DOMContentLoaded", function () {--}}
+{{--            const priceElements = [--}}
+{{--                { id: '22kGold', inputId: '22kGoldInput', basePrice: null, currentPrice: null },--}}
+{{--                { id: '20kGold', inputId: '20kGoldInput', basePrice: null, currentPrice: null },--}}
+{{--                { id: '18kGold', inputId: '18kGoldInput', basePrice: null, currentPrice: null },--}}
+{{--                { id: '24Silver', inputId: '24SilverInput', basePrice: null, currentPrice: null }--}}
+{{--            ];--}}
+
+{{--            // Initialize prices from HTML--}}
+{{--            priceElements.forEach(item => {--}}
+{{--                const priceElement = document.getElementById(item.id);--}}
+{{--                if (priceElement) {--}}
+{{--                    let initialText = priceElement.innerText.trim();--}}
+{{--                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;--}}
+{{--                    item.basePrice = initialPrice;--}}
+{{--                    item.currentPrice = initialPrice;--}}
+{{--                }--}}
+{{--            });--}}
+
+{{--            function getRandomPriceChange() {--}}
+{{--                return parseFloat((Math.random() * 1 - 0.5).toFixed(2)); // between -1.00 and +1.00--}}
+{{--            }--}}
+
+{{--            function isWithinWorkingHours() {--}}
+{{--                const now = new Date();--}}
+{{--                const day = now.getDay(); // 0 = Sunday, 6 = Saturday--}}
+{{--                const currentMinutes = now.getHours() * 60 + now.getMinutes();--}}
+{{--                return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 975); // 9:00–16:15--}}
+{{--            }--}}
+
+{{--            function updatePrices() {--}}
+{{--                if (!isWithinWorkingHours()) return;--}}
+
+{{--                priceElements.forEach(item => {--}}
+{{--                    const priceElement = document.getElementById(item.id);--}}
+{{--                    const inputElement = document.getElementById(item.inputId);--}}
+{{--                    if (!priceElement || !inputElement) return;--}}
+
+{{--                    const gram = parseFloat(inputElement.value) || 10;--}}
+{{--                    const priceChange = getRandomPriceChange();--}}
+{{--                    item.currentPrice += priceChange;--}}
+
+{{--                    const maxPrice = item.basePrice + 2;--}}
+{{--                    const minPrice = item.basePrice - 2;--}}
+{{--                    item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);--}}
+
+{{--                    const totalPrice = item.currentPrice * gram;--}}
+{{--                    let arrow = '', color = 'black';--}}
+
+{{--                    if (priceChange > 0) {--}}
+{{--                        color = "green";--}}
+{{--                        arrow = `<i class="fas fa-arrow-up"></i>`;--}}
+{{--                    } else if (priceChange < 0) {--}}
+{{--                        color = "red";--}}
+{{--                        arrow = `<i class="fas fa-arrow-down"></i>`;--}}
+{{--                    }--}}
+
+{{--                    priceElement.innerHTML = `${totalPrice.toFixed(2)}/${gram}gm ${arrow}`;--}}
+{{--                    priceElement.style.color = color;--}}
+
+{{--                    // Animation effect--}}
+{{--                    priceElement.classList.add('price-update-animation');--}}
+{{--                    setTimeout(() => {--}}
+{{--                        priceElement.classList.remove('price-update-animation');--}}
+{{--                    }, 1000);--}}
+{{--                });--}}
+{{--            }--}}
+
+{{--            // Trigger update every 10 seconds--}}
+{{--            setInterval(updatePrices, 10000);--}}
+{{--            updatePrices();--}}
+{{--        });--}}
+{{--    </script>--}}
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const priceElements = [
@@ -718,8 +794,11 @@
                 }
             });
 
+            let increaseNext = true; // Toggle flag
+
             function getRandomPriceChange() {
-                return parseFloat((Math.random() * 1 - 0.5).toFixed(2)); // between -1.00 and +1.00
+                const change = parseFloat((Math.random()).toFixed(2)); // between 0.00 and 1.00
+                return increaseNext ? change : -change;
             }
 
             function isWithinWorkingHours() {
@@ -765,10 +844,12 @@
                         priceElement.classList.remove('price-update-animation');
                     }, 1000);
                 });
+
+                increaseNext = !increaseNext; // Toggle for next call
             }
 
             // Trigger update every 10 seconds
-            setInterval(updatePrices, 10000);
+            setInterval(updatePrices, 20000);
             updatePrices();
         });
     </script>
