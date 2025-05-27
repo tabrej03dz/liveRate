@@ -108,7 +108,7 @@
                                 </div>
 
                                 <div class="p-h ph product-rate">
-                                    <input type="number" step="0.01" min="0.01" id="22kGoldInput" value="10"
+                                    <input type="number" step="0.01" min="0.01" id="22kGoldInput"
                                         class="border border-yellow-600 rounded-xl py-2 px-4 w-full" name="gram"
                                         placeholder="Enter grams"
                                         oninput="
@@ -157,7 +157,7 @@
                                             id="20kGold">{{ round($finalPrice, 2) }}/gm</span></div>
                                 </div>
                                 <div class="p-h ph product-rate">
-                                    <input type="number" id="20kGoldInput" value="10" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
+                                    <input type="number" id="20kGoldInput" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
                                         name="gram" min="1"
                                         onkeyup="
                                     let gram = this.value;
@@ -216,7 +216,7 @@
                                             id="18kGold">{{ round($finalPrice, 2) }}/gm</span></div>
                                 </div>
                                 <div class="p-h ph product-rate">
-                                    <input type="number" id="18kGoldInput" value="10" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
+                                    <input type="number" id="18kGoldInput" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
                                         name="gram" min="1"
                                         onkeyup="
                                     let gram = this.value;
@@ -278,7 +278,7 @@
                                             id="24Silver">{{ round($finalPrice, 2) }}/gm</span></div>
                                 </div>
                                 <div class="p-h ph product-rate">
-                                    <input type="number" id="24SilverInput" value="10" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
+                                    <input type="number" id="24SilverInput" class="border border-yellow-800 rounded-xl py-2 px-4 w-full"
                                         name="gram" min="1"
                                         onkeyup="
                                     let gram = this.value;
@@ -737,7 +737,7 @@
                     const inputElement = document.getElementById(item.inputId);
                     if (!priceElement || !inputElement) return;
 
-                    const gram = parseFloat(inputElement.value) || 1;
+                    const gram = parseFloat(inputElement.value) || 10;
                     const priceChange = getRandomPriceChange();
                     item.currentPrice += priceChange;
 
