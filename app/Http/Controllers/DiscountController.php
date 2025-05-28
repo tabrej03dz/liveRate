@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DiscountController extends Controller
 {
     public function index(){
-        $discounts = Discount::where('percent', '!=', 0)->get();
+        $discounts = Discount::all();
         return view('discount.index', compact('discounts'));
     }
 
