@@ -368,15 +368,15 @@
                         <div class="bg-white border border-green-400 rounded-xl shadow-md p-4">
                             <h3 class="text-lg font-bold text-green-700 mb-3">INR Spot</h3>
                             <div class="space-y-2">
-                                <div><span class="font-semibold text-gray-700">USD to INR:</span> <span class="inr-usd font-mono">{{ $prices->usd_to_inr }}</span></div>
+                                <div><span class="font-semibold text-gray-700">Bid:</span> <span class="inr-bid font-mono">{{ $prices->usd_to_inr }}</span></div>
 {{--                                <div><span class="font-semibold text-gray-700">Gram in USD:</span> <span class="gram-usd font-mono">{{ $prices->gram_in_usd }}</span></div>--}}
-                                <div><span class="font-semibold text-gray-700">Gram in USD:</span> <span class="gram-usd font-mono">{{ $prices->usd_to_inr }}</span></div>
+                                <div><span class="font-semibold text-gray-700">Ask:</span> <span class="inr-ask font-mono">{{ $prices->usd_to_inr }}</span></div>
 {{--                                <div class="text-xs text-gray-500">--}}
 {{--                                    Pair: {{ $prices->usd_to_inr }}/{{ $prices->usd_to_inr }}--}}
 {{--                                </div>--}}
                                 <div><span class="font-semibold text-gray-700">Low/High:</span>
                                     <span class="inr-high-low font-mono">
-                                        {{ round($prices->usd_to_inr, 2) }} / {{ round($prices->usd_to_inr, 2) }}
+                                        {{ round($prices->usd_to_inr , 2) }} / {{ round($prices->usd_to_inr + 0.1, 2) }}
                                     </span>
                                 </div>
                             </div>
@@ -536,11 +536,12 @@
             }
 
             function isWithinWorkingHours() {
-                const now = new Date();
-                const day = now.getDay(); // 0 = Sunday, 6 = Saturday
-                const currentMinutes = now.getHours() * 60 + now.getMinutes();
-                // return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 975); // 9:00–16:15
-                return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 1095); // 9:00–16:15
+                // const now = new Date();
+                // const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+                // const currentMinutes = now.getHours() * 60 + now.getMinutes();
+                // // return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 975); // 9:00–16:15
+                // return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 1095); // 9:00–16:15
+                return true;
             }
 
             function updatePrices() {
@@ -868,8 +869,8 @@
                 { selector: ".silver-bid", value: null },
                 { selector: ".silver-ask", value: null },
                 { selector: ".silver-high-low", value: null },
-                { selector: ".inr-usd", value: null },
-                { selector: ".gram-usd", value: null },
+                { selector: ".inr-ask", value: null },
+                { selector: ".inr-bid", value: null },
                 { selector: ".inr-high-low", value: null },
             ];
 
@@ -913,10 +914,11 @@
                     const element = document.querySelector(item.selector);
                     if (!element) return;
 
-                    const change = +(Math.random() * (1 - 0.01) + 0.01).toFixed(2); // 0.01 to 1.00
+                    // const change = +(Math.random() * (1 - 0.01) + 0.01).toFixed(2); // 0.01 to 1.00
+                    const change = +(Math.random() * (0.1 - 0.01) + 0.01).toFixed(3);
                     const direction = Math.random() < 0.5 ? -1 : 1; // random add or subtract
 
-                    if (item.selector.includes("high-low") || item.selector.includes("inr-gram-pair")) {
+                    if (item.selector.includes("high-low") || item.selector.includes("inr-high-low")) {
                         const parts = element.innerText.split("/");
                         if (parts.length === 2) {
                             let oldLow = parseFloat(parts[0].trim()) || 100;
