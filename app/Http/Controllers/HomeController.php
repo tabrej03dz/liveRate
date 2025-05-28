@@ -6,8 +6,10 @@ use App\Models\About;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Contact;
+use App\Models\GoldMetalPrice;
 use App\Models\Plan;
 use App\Models\Service;
+use App\Models\SilverMetalPrice;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Services\GoldApiService;
@@ -27,13 +29,15 @@ class HomeController extends Controller
     public function index(){
 
         $response = $this->priceService->goldPrice();
-//        $goldPrice = $this->goldApiService->goldPrice();
+        $goldPrice = $this->goldApiService->goldPrice();
         $silverResponse = $this->priceService->silverPriceUSD();
 
 //        dd($response);
 
-        $silverPrices = json_decode($silverResponse);
-        $prices = json_decode($response);
+//        $silverPrices = json_decode($silverResponse);
+        $silverPrices = SilverMetalPrice::latest()->first();
+//        $prices = json_decode($response);
+        $prices = GoldMetalPrice::latest()->first();
 
         $goldDiscount22k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '22'])->first();
         if ($goldDiscount22k == null){

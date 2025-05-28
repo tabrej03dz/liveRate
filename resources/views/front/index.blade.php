@@ -315,9 +315,9 @@
             </div>
 
             <!-- Right Column - Market Data -->
-{{--            <div class="lg:col-span-1 mt-8">--}}
-{{--                <div class="space-y-6">--}}
-{{--                    <!-- Market Data Header -->--}}
+            <div class="lg:col-span-1 mt-8">
+                <div class="space-y-6">
+                    <!-- Market Data Header -->
 {{--                    <div--}}
 {{--                        class="bg-gradient-to-r from-amber-600 via-[#FAF3BC] to-amber-600 text-black border border-yellow-200 rounded-xl shadow-md overflow-hidden">--}}
 {{--                        <table class="w-full text-center text-sm md:text-base font-semibold">--}}
@@ -332,69 +332,59 @@
 {{--                        </table>--}}
 {{--                    </div>--}}
 
-{{--                    <!-- Price Details Table -->--}}
-{{--                    <div class="bg-white border border-gray-200 rounded-xl shadow-md p-4">--}}
-{{--                        <div class="overflow-x-auto">--}}
-{{--                            <table class="w-full text-sm md:text-base text-gray-700">--}}
-{{--                                <tbody class="divide-y divide-gray-100">--}}
-{{--                                    <!-- Gold Row -->--}}
-{{--                                    <tr class="hover:bg-gray-50">--}}
-{{--                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Gold</td>--}}
-{{--                                        <td class="py-3 px-2">--}}
-{{--                                            <span--}}
-{{--                                                class="gold-bid font-mono text-green-600">{{ $prices->ounce_price_bid }}</span>--}}
-{{--                                        </td>--}}
-{{--                                        <td class="py-3 px-2">--}}
-{{--                                            <span--}}
-{{--                                                class="gold-ask font-mono text-red-600">{{ $prices->ounce_price_ask }}</span>--}}
-{{--                                        </td>--}}
-{{--                                        <td class="py-3 px-2 whitespace-nowrap">--}}
-{{--                                            <span class="gold-high-low">--}}
-{{--                                                {{ $prices->ounce_price_usd_today_low }} /--}}
-{{--                                                {{ $prices->ounce_price_usd_today_high }}--}}
-{{--                                            </span>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
+                    <!-- Price Details Table -->
+                    <!-- Price Spot Boxes -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-{{--                                    <!-- Silver Row -->--}}
-{{--                                    <tr class="hover:bg-gray-50">--}}
-{{--                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">Silver ₹</td>--}}
-{{--                                        <td class="py-3 px-2">--}}
-{{--                                            <span--}}
-{{--                                                class="silver-bid font-mono text-green-600">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</span>--}}
-{{--                                        </td>--}}
-{{--                                        <td class="py-3 px-2">--}}
-{{--                                            <span--}}
-{{--                                                class="silver-ask font-mono text-red-600">{{ round($silverPrices->silver_ounce_price_ask_usd, 2) }}</span>--}}
-{{--                                        </td>--}}
-{{--                                        <td class="py-3 px-2 whitespace-nowrap">--}}
-{{--                                            <span class="silver-high-low">--}}
-{{--                                                {{ round($silverPrices->silver_ounce_price_usd_today_low_usd, 2) }} /--}}
-{{--                                                {{ round($silverPrices->silver_ounce_price_usd_today_high_usd, 2) }}--}}
-{{--                                            </span>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
+                        <!-- Gold Spot -->
+                        <div class="bg-white border border-yellow-400 rounded-xl shadow-md p-4">
+                            <h3 class="text-lg font-bold text-yellow-800 mb-3">Gold Spot</h3>
+                            <div class="space-y-2">
+                                <div><span class="font-semibold text-gray-700">Bid:</span> <span class="gold-bid text-green-600 font-mono">{{ $prices->ounce_price_bid }}</span></div>
+                                <div><span class="font-semibold text-gray-700">Ask:</span> <span class="gold-ask text-red-600 font-mono">{{ $prices->ounce_price_ask }}</span></div>
+                                <div><span class="font-semibold text-gray-700">Low/High:</span>
+                                    <span class="gold-high-low font-mono">
+                    {{ $prices->ounce_price_usd_today_low }} / {{ $prices->ounce_price_usd_today_high }}
+                </span>
+                                </div>
+                            </div>
+                        </div>
 
-{{--                                    <!-- INR Row -->--}}
-{{--                                    <tr class="hover:bg-gray-50">--}}
-{{--                                        <td class="py-3 px-2 font-semibold text-yellow-800 whitespace-nowrap">INR ₹</td>--}}
-{{--                                        <td class="py-3 px-2" colspan="2">--}}
-{{--                                            <span class="inr-usd font-mono">{{ $prices->usd_to_inr }}</span>--}}
-{{--                                        </td>--}}
-{{--                                        <td class="py-3 px-2">--}}
-{{--                                            <div class="flex flex-col">--}}
-{{--                                                <span class="gram-usd font-mono">{{ $prices->gram_in_usd }}</span>--}}
-{{--                                                <span class="inr-gram-pair text-xs text-gray-500">--}}
-{{--                                                    {{ $prices->usd_to_inr }}/{{ $prices->gram_in_usd }}--}}
-{{--                                                </span>--}}
-{{--                                            </div>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                </tbody>--}}
-{{--                            </table>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                        <!-- Silver Spot -->
+                        <div class="bg-white border border-gray-300 rounded-xl shadow-md p-4">
+                            <h3 class="text-lg font-bold text-gray-700 mb-3">Silver Spot</h3>
+                            <div class="space-y-2">
+                                <div><span class="font-semibold text-gray-700">Bid:</span> <span class="silver-bid text-green-600 font-mono">{{ round($silverPrices->silver_ounce_price_bid_usd, 2) }}</span></div>
+                                <div><span class="font-semibold text-gray-700">Ask:</span> <span class="silver-ask text-red-600 font-mono">{{ round($silverPrices->silver_ounce_price_ask_usd, 2) }}</span></div>
+                                <div><span class="font-semibold text-gray-700">Low/High:</span>
+                                    <span class="silver-high-low font-mono">
+                    {{ round($silverPrices->silver_ounce_price_usd_today_low_usd, 2) }} / {{ round($silverPrices->silver_ounce_price_usd_today_high_usd, 2) }}
+                </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- INR Spot -->
+                        <div class="bg-white border border-green-400 rounded-xl shadow-md p-4">
+                            <h3 class="text-lg font-bold text-green-700 mb-3">INR Spot</h3>
+                            <div class="space-y-2">
+                                <div><span class="font-semibold text-gray-700">USD to INR:</span> <span class="inr-usd font-mono">{{ $prices->usd_to_inr }}</span></div>
+{{--                                <div><span class="font-semibold text-gray-700">Gram in USD:</span> <span class="gram-usd font-mono">{{ $prices->gram_in_usd }}</span></div>--}}
+                                <div><span class="font-semibold text-gray-700">Gram in USD:</span> <span class="gram-usd font-mono">{{ $prices->usd_to_inr }}</span></div>
+{{--                                <div class="text-xs text-gray-500">--}}
+{{--                                    Pair: {{ $prices->usd_to_inr }}/{{ $prices->usd_to_inr }}--}}
+{{--                                </div>--}}
+                                <div><span class="font-semibold text-gray-700">Low/High:</span>
+                                    <span class="inr-high-low font-mono">
+                                        {{ round($prices->usd_to_inr, 2) }} / {{ round($prices->usd_to_inr, 2) }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
 
                 <!-- Contact Card -->
                 <div
@@ -517,262 +507,6 @@
     </div>
 
     <!-- JavaScript -->
-    {{-- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
-            const priceElements = [{
-                    id: '22kGold',
-                    basePrice: null,
-                    currentPrice: null
-                },
-                {
-                    id: '20kGold',
-                    basePrice: null,
-                    currentPrice: null
-                },
-                {
-                    id: '18kGold',
-                    basePrice: null,
-                    currentPrice: null
-                },
-                {
-                    id: '24Silver',
-                    basePrice: null,
-                    currentPrice: null
-                }
-            ];
-
-            // Initialize prices (read initial prices from HTML)
-            priceElements.forEach(item => {
-                const priceElement = document.getElementById(item.id);
-                if (priceElement) {
-                    let initialText = priceElement.innerText.trim();
-                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;
-                    item.basePrice = initialPrice; // Actual starting price
-                    item.currentPrice = initialPrice; // Price that will fluctuate
-                }
-            });
-
-            // Function to randomly decide increase or decrease (1 to 2 Rs only)
-            function getRandomPriceChange() {
-                return Math.floor(Math.random() * (2 - 1 + 1)) + 1; // 1 to 2 Rs change
-            }
-
-            // Update price logic — stays within ±2 Rs of actual price
-            function updatePrices() {
-                const today = new Date().getDay();
-                if (today === 0 || today === 6) return; // Stop updates on Sunday (0) or Saturday (6)
-
-                priceElements.forEach(item => {
-                    const priceElement = document.getElementById(item.id);
-                    if (!priceElement) return;
-
-                    const priceChange = getRandomPriceChange();
-                    const isIncrease = Math.random() > 0.5;
-
-                    // Apply the price change (either add or subtract 1-2 Rs)
-                    if (isIncrease) {
-                        item.currentPrice += priceChange;
-                    } else {
-                        item.currentPrice -= priceChange;
-                    }
-
-                    // Constrain the price so it doesn't move more than ±2 Rs from the base price
-                    const maxPrice = item.basePrice + 2;
-                    const minPrice = item.basePrice - 2;
-
-                    if (item.currentPrice > maxPrice) {
-                        item.currentPrice = maxPrice;
-                    } else if (item.currentPrice < minPrice) {
-                        item.currentPrice = minPrice;
-                    }
-
-                    // Change color based on price movement
-                    if (item.currentPrice > item.basePrice) {
-                        priceElement.style.color = "green"; // price went up
-                    } else if (item.currentPrice < item.basePrice) {
-                        priceElement.style.color = "red"; // price went down
-                    } else {
-                        priceElement.style.color = "black"; // unchanged
-                    }
-
-                    // Update displayed price (preserve /gm)
-                    priceElement.innerText = `${item.currentPrice.toFixed(2)}/gm`;
-
-                    // Add a unique class if needed for CSS tracking
-                    const uniqueClass = `price-update-${Date.now()}`;
-                    priceElement.className = `bgm e ${uniqueClass}`;
-                });
-            }
-
-            // Set interval to update prices every 5 seconds
-            setInterval(updatePrices, 5000);
-
-        });
-    </script> --}}
-{{--    <script>--}}
-{{--        document.addEventListener("DOMContentLoaded", function() {--}}
-{{--            const priceElements = [--}}
-{{--                { id: '22kGold', basePrice: null, currentPrice: null },--}}
-{{--                { id: '20kGold', basePrice: null, currentPrice: null },--}}
-{{--                { id: '18kGold', basePrice: null, currentPrice: null },--}}
-{{--                { id: '24Silver', basePrice: null, currentPrice: null }--}}
-{{--            ];--}}
-
-{{--            // Initialize prices from HTML--}}
-{{--            priceElements.forEach(item => {--}}
-{{--                const priceElement = document.getElementById(item.id);--}}
-{{--                if (priceElement) {--}}
-{{--                    let initialText = priceElement.innerText.trim();--}}
-{{--                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;--}}
-{{--                    item.basePrice = initialPrice;--}}
-{{--                    item.currentPrice = initialPrice;--}}
-{{--                }--}}
-{{--            });--}}
-
-{{--            // Random decimal change between -2.00 to +2.00 Rs--}}
-{{--            function getRandomPriceChange() {--}}
-{{--                // Random number between -2.00 and +2.00 with 2 decimal places--}}
-{{--                return (Math.random() * 4 - 2).toFixed(2);--}}
-{{--            }--}}
-
-{{--            // Check if current time is within allowed range--}}
-{{--            function isWithinWorkingHours() {--}}
-{{--                const now = new Date();--}}
-{{--                const day = now.getDay(); // 0 = Sunday, 6 = Saturday--}}
-{{--                const hours = now.getHours();--}}
-{{--                const minutes = now.getMinutes();--}}
-
-{{--                // Working days: Monday (1) to Friday (5)--}}
-{{--                if (day < 1 || day > 5) return false;--}}
-
-{{--                // Working hours: 9:00 AM to 4:15 PM--}}
-{{--                const startMinutes = 9 * 60; // 540--}}
-{{--                const endMinutes = 16 * 60 + 15; // 975--}}
-{{--                const currentMinutes = hours * 60 + minutes;--}}
-
-{{--                return currentMinutes >= startMinutes && currentMinutes <= endMinutes;--}}
-{{--            }--}}
-
-{{--            function updatePrices() {--}}
-{{--                if (!isWithinWorkingHours()) return;--}}
-
-{{--                priceElements.forEach(item => {--}}
-{{--                    const priceElement = document.getElementById(item.id);--}}
-{{--                    if (!priceElement) return;--}}
-
-{{--                    const priceChange = parseFloat(getRandomPriceChange());--}}
-{{--                    item.currentPrice += priceChange;--}}
-
-{{--                    // Limit within ±2 Rs of base (with decimals)--}}
-{{--                    const maxPrice = item.basePrice + 2;--}}
-{{--                    const minPrice = item.basePrice - 2;--}}
-{{--                    item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);--}}
-
-{{--                    // Color update--}}
-{{--                    if (priceChange > 0) {--}}
-{{--                        priceElement.style.color = "green";--}}
-{{--                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-up"></i>`;--}}
-{{--                    } else if (priceChange < 0) {--}}
-{{--                        priceElement.style.color = "red";--}}
-{{--                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm <i class="fas fa-arrow-down"></i>`;--}}
-{{--                    } else {--}}
-{{--                        priceElement.style.color = "black";--}}
-{{--                        priceElement.innerHTML = `${item.currentPrice.toFixed(2)}/gm`;--}}
-{{--                    }--}}
-
-{{--                    // Add animation class--}}
-{{--                    priceElement.classList.add('price-update-animation');--}}
-{{--                    setTimeout(() => {--}}
-{{--                        priceElement.classList.remove('price-update-animation');--}}
-{{--                    }, 1000);--}}
-{{--                });--}}
-{{--            }--}}
-
-{{--            // Update every 10 seconds during working hours--}}
-{{--            setInterval(updatePrices, 10000);--}}
-
-{{--            // Initial update--}}
-{{--            updatePrices();--}}
-{{--        });--}}
-{{--    </script>--}}
-
-
-{{--    <script>--}}
-{{--        document.addEventListener("DOMContentLoaded", function () {--}}
-{{--            const priceElements = [--}}
-{{--                { id: '22kGold', inputId: '22kGoldInput', basePrice: null, currentPrice: null },--}}
-{{--                { id: '20kGold', inputId: '20kGoldInput', basePrice: null, currentPrice: null },--}}
-{{--                { id: '18kGold', inputId: '18kGoldInput', basePrice: null, currentPrice: null },--}}
-{{--                { id: '24Silver', inputId: '24SilverInput', basePrice: null, currentPrice: null }--}}
-{{--            ];--}}
-
-{{--            // Initialize prices from HTML--}}
-{{--            priceElements.forEach(item => {--}}
-{{--                const priceElement = document.getElementById(item.id);--}}
-{{--                if (priceElement) {--}}
-{{--                    let initialText = priceElement.innerText.trim();--}}
-{{--                    let initialPrice = parseFloat(initialText.split('/')[0].replace(/[^0-9.]/g, '')) || 100;--}}
-{{--                    item.basePrice = initialPrice;--}}
-{{--                    item.currentPrice = initialPrice;--}}
-{{--                }--}}
-{{--            });--}}
-
-{{--            function getRandomPriceChange() {--}}
-{{--                return parseFloat((Math.random() * 1 - 0.5).toFixed(2)); // between -1.00 and +1.00--}}
-{{--            }--}}
-
-{{--            function isWithinWorkingHours() {--}}
-{{--                const now = new Date();--}}
-{{--                const day = now.getDay(); // 0 = Sunday, 6 = Saturday--}}
-{{--                const currentMinutes = now.getHours() * 60 + now.getMinutes();--}}
-{{--                return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 975); // 9:00–16:15--}}
-{{--            }--}}
-
-{{--            function updatePrices() {--}}
-{{--                if (!isWithinWorkingHours()) return;--}}
-
-{{--                priceElements.forEach(item => {--}}
-{{--                    const priceElement = document.getElementById(item.id);--}}
-{{--                    const inputElement = document.getElementById(item.inputId);--}}
-{{--                    if (!priceElement || !inputElement) return;--}}
-
-{{--                    const gram = parseFloat(inputElement.value) || 10;--}}
-{{--                    const priceChange = getRandomPriceChange();--}}
-{{--                    item.currentPrice += priceChange;--}}
-
-{{--                    const maxPrice = item.basePrice + 2;--}}
-{{--                    const minPrice = item.basePrice - 2;--}}
-{{--                    item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);--}}
-
-{{--                    const totalPrice = item.currentPrice * gram;--}}
-{{--                    let arrow = '', color = 'black';--}}
-
-{{--                    if (priceChange > 0) {--}}
-{{--                        color = "green";--}}
-{{--                        arrow = `<i class="fas fa-arrow-up"></i>`;--}}
-{{--                    } else if (priceChange < 0) {--}}
-{{--                        color = "red";--}}
-{{--                        arrow = `<i class="fas fa-arrow-down"></i>`;--}}
-{{--                    }--}}
-
-{{--                    priceElement.innerHTML = `${totalPrice.toFixed(2)}/${gram}gm ${arrow}`;--}}
-{{--                    priceElement.style.color = color;--}}
-
-{{--                    // Animation effect--}}
-{{--                    priceElement.classList.add('price-update-animation');--}}
-{{--                    setTimeout(() => {--}}
-{{--                        priceElement.classList.remove('price-update-animation');--}}
-{{--                    }, 1000);--}}
-{{--                });--}}
-{{--            }--}}
-
-{{--            // Trigger update every 10 seconds--}}
-{{--            setInterval(updatePrices, 10000);--}}
-{{--            updatePrices();--}}
-{{--        });--}}
-{{--    </script>--}}
-
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -805,7 +539,8 @@
                 const now = new Date();
                 const day = now.getDay(); // 0 = Sunday, 6 = Saturday
                 const currentMinutes = now.getHours() * 60 + now.getMinutes();
-                return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 975); // 9:00–16:15
+                // return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 975); // 9:00–16:15
+                return (day >= 1 && day <= 5) && (currentMinutes >= 540 && currentMinutes <= 1095); // 9:00–16:15
             }
 
             function updatePrices() {
@@ -868,46 +603,277 @@
 
 
     {{-- test --}}
+{{--    <script>--}}
+{{--        document.addEventListener("DOMContentLoaded", function() {--}}
+{{--            // Store initial prices (could come from server-side rendering)--}}
+{{--            const priceElements = [{--}}
+{{--                    selector: ".gold-bid",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".gold-ask",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".gold-high-low",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".silver-bid",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".silver-ask",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".silver-high-low",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".inr-usd",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".gram-usd",--}}
+{{--                    value: null--}}
+{{--                },--}}
+{{--                {--}}
+{{--                    selector: ".inr-gram-pair",--}}
+{{--                    value: null--}}
+{{--                }--}}
+{{--            ];--}}
+
+{{--            // Initialize prices from HTML--}}
+{{--            priceElements.forEach(item => {--}}
+{{--                const element = document.querySelector(item.selector);--}}
+{{--                if (element) {--}}
+{{--                    const text = element.innerText.trim();--}}
+{{--                    const price = parseFloat(text.split('/')[0].replace(/[^0-9.]/g, '')) || 100;--}}
+{{--                    item.value = price;--}}
+{{--                }--}}
+{{--            });--}}
+
+{{--            function isWorkingHours() {--}}
+
+{{--                const now = new Date();--}}
+{{--                const day = now.getDay(); // 0 (Sunday) to 6 (Saturday)--}}
+{{--                const hours = now.getHours();--}}
+
+{{--                // Check if it's a weekday (1-5) and between 9 AM (9) and 4 PM (17)--}}
+{{--                // return (day >= 1 && day <= 5) && (hours >= 9 && hours < 16);--}}
+
+{{--                return (--}}
+{{--                    day >= 1 && day <= 5 && (--}}
+{{--                        (hours > 9 && hours < 16) ||--}}
+{{--                        (hours === 9 && minutes >= 15) ||--}}
+{{--                        (hours === 16 && minutes <= 15)--}}
+{{--                    )--}}
+{{--                );--}}
+
+{{--            }--}}
+
+{{--            function updatePrices() {--}}
+{{--                if (!isWorkingHours()) {--}}
+{{--                    // Clear any active intervals if we're outside working hours--}}
+{{--                    clearInterval(priceUpdateInterval);--}}
+{{--                    return;--}}
+{{--                }--}}
+
+{{--                priceElements.forEach(item => {--}}
+{{--                    const element = document.querySelector(item.selector);--}}
+{{--                    if (!element) return;--}}
+
+{{--                    // Handle high/low specially if needed (for pairs like "100 / 105")--}}
+{{--                    if (item.selector.includes("high-low") || item.selector.includes("inr-gram-pair")) {--}}
+{{--                        const parts = element.innerText.split("/");--}}
+{{--                        if (parts.length === 2) {--}}
+{{--                            let oldLow = parseFloat(parts[0].trim()) || 100;--}}
+{{--                            let oldHigh = parseFloat(parts[1].trim()) || 100;--}}
+
+{{--                            // Simulate new prices--}}
+{{--                            const newLow = (oldLow + (Math.random() * 2 - 1)).toFixed(2);--}}
+{{--                            const newHigh = (oldHigh + (Math.random() * 2 - 1)).toFixed(2);--}}
+
+{{--                            // Update element--}}
+{{--                            element.innerText = `${newLow} / ${newHigh}`;--}}
+
+{{--                            // Coloring logic (based on low price)--}}
+{{--                            if (parseFloat(newLow) > oldLow) {--}}
+{{--                                element.style.color = "green";--}}
+{{--                            } else if (parseFloat(newLow) < oldLow) {--}}
+{{--                                element.style.color = "red";--}}
+{{--                            } else {--}}
+{{--                                element.style.color = "";--}}
+{{--                            }--}}
+{{--                            return;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    // Normal price update for single values--}}
+{{--                    let oldPrice = item.value;--}}
+{{--                    let newPrice = (oldPrice + (Math.random() * 2 - 1)).toFixed(2); // Random price up/down--}}
+
+{{--                    // Update price text--}}
+{{--                    element.innerText = newPrice;--}}
+
+{{--                    // Apply color change--}}
+{{--                    if (parseFloat(newPrice) > oldPrice) {--}}
+{{--                        element.style.color = "green";--}}
+{{--                    } else if (parseFloat(newPrice) < oldPrice) {--}}
+{{--                        element.style.color = "red";--}}
+{{--                    } else {--}}
+{{--                        element.style.color = "";--}}
+{{--                    }--}}
+
+{{--                    // Store new price--}}
+{{--                    item.value = parseFloat(newPrice);--}}
+{{--                });--}}
+{{--            }--}}
+
+{{--            // Start with initial check--}}
+{{--            if (isWorkingHours()) {--}}
+{{--                // Start updating every 3 seconds--}}
+{{--                var priceUpdateInterval = setInterval(updatePrices, 3000);--}}
+{{--            }--}}
+
+{{--            // Also check every hour in case we cross the working hours threshold--}}
+{{--            setInterval(function() {--}}
+{{--                if (isWorkingHours() && !priceUpdateInterval) {--}}
+{{--                    priceUpdateInterval = setInterval(updatePrices, 3000);--}}
+{{--                } else if (!isWorkingHours() && priceUpdateInterval) {--}}
+{{--                    clearInterval(priceUpdateInterval);--}}
+{{--                    priceUpdateInterval = null;--}}
+{{--                }--}}
+{{--            }, 3600000); // Check every hour--}}
+{{--        });--}}
+{{--    </script>--}}
+
+
+{{--    <script>--}}
+{{--        document.addEventListener("DOMContentLoaded", function () {--}}
+{{--            const priceElements = [--}}
+{{--                { selector: ".gold-bid", value: null },--}}
+{{--                { selector: ".gold-ask", value: null },--}}
+{{--                { selector: ".gold-high-low", value: null },--}}
+{{--                { selector: ".silver-bid", value: null },--}}
+{{--                { selector: ".silver-ask", value: null },--}}
+{{--                { selector: ".silver-high-low", value: null },--}}
+{{--                { selector: ".inr-usd", value: null },--}}
+{{--                { selector: ".gram-usd", value: null },--}}
+{{--                { selector: ".inr-high-low", value: null },--}}
+{{--            ];--}}
+
+{{--            let toggleDirection = true; // true = add, false = subtract--}}
+{{--            let priceUpdateInterval = null;--}}
+
+{{--            // Initialize prices from HTML--}}
+{{--            priceElements.forEach(item => {--}}
+{{--                const element = document.querySelector(item.selector);--}}
+{{--                if (element) {--}}
+{{--                    const text = element.innerText.trim();--}}
+{{--                    const price = parseFloat(text.split('/')[0].replace(/[^0-9.]/g, '')) || 100;--}}
+{{--                    item.value = price;--}}
+{{--                }--}}
+{{--            });--}}
+
+{{--            function isWorkingHours() {--}}
+{{--                const now = new Date();--}}
+{{--                const day = now.getDay(); // 0 (Sunday) to 6 (Saturday)--}}
+{{--                const hours = now.getHours();--}}
+{{--                const minutes = now.getMinutes();--}}
+
+{{--                return (--}}
+{{--                    day >= 1 && day <= 5 &&--}}
+{{--                    (--}}
+{{--                        (hours > 9 && hours < 16) ||--}}
+{{--                        (hours === 9 && minutes >= 15) ||--}}
+{{--                        (hours === 16 && minutes <= 15)--}}
+{{--                    )--}}
+{{--                );--}}
+{{--            }--}}
+
+{{--            function updatePrices() {--}}
+{{--                if (!isWorkingHours()) {--}}
+{{--                    clearInterval(priceUpdateInterval);--}}
+{{--                    priceUpdateInterval = null;--}}
+{{--                    return;--}}
+{{--                }--}}
+
+{{--                priceElements.forEach(item => {--}}
+{{--                    const element = document.querySelector(item.selector);--}}
+{{--                    if (!element) return;--}}
+
+{{--                    const change = +(Math.random() * (1 - 0.01) + 0.01).toFixed(2); // Random change between 0.01 and 1.00--}}
+
+{{--                    if (item.selector.includes("high-low") || item.selector.includes("inr-gram-pair")) {--}}
+{{--                        const parts = element.innerText.split("/");--}}
+{{--                        if (parts.length === 2) {--}}
+{{--                            let oldLow = parseFloat(parts[0].trim()) || 100;--}}
+{{--                            let oldHigh = parseFloat(parts[1].trim()) || 100;--}}
+
+{{--                            let newLow = toggleDirection ? oldLow + change : oldLow - change;--}}
+{{--                            let newHigh = toggleDirection ? oldHigh + change : oldHigh - change;--}}
+
+{{--                            element.innerText = `${newLow.toFixed(2)} / ${newHigh.toFixed(2)}`;--}}
+{{--                            element.style.color = toggleDirection ? "green" : "red";--}}
+{{--                            return;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    // Normal price update--}}
+{{--                    let oldPrice = item.value;--}}
+{{--                    let newPrice = toggleDirection ? oldPrice + change : oldPrice - change;--}}
+{{--                    newPrice = newPrice.toFixed(2);--}}
+
+{{--                    element.innerText = newPrice;--}}
+
+{{--                    if (parseFloat(newPrice) > oldPrice) {--}}
+{{--                        element.style.color = "green";--}}
+{{--                    } else if (parseFloat(newPrice) < oldPrice) {--}}
+{{--                        element.style.color = "red";--}}
+{{--                    } else {--}}
+{{--                        element.style.color = "";--}}
+{{--                    }--}}
+
+{{--                    item.value = parseFloat(newPrice);--}}
+{{--                });--}}
+
+{{--                toggleDirection = !toggleDirection; // Alternate next cycle--}}
+{{--            }--}}
+
+{{--            if (isWorkingHours()) {--}}
+{{--                priceUpdateInterval = setInterval(updatePrices, 3000);--}}
+{{--            }--}}
+
+{{--            // Check every hour if we need to start or stop updates--}}
+{{--            setInterval(function () {--}}
+{{--                if (isWorkingHours() && !priceUpdateInterval) {--}}
+{{--                    priceUpdateInterval = setInterval(updatePrices, 3000);--}}
+{{--                } else if (!isWorkingHours() && priceUpdateInterval) {--}}
+{{--                    clearInterval(priceUpdateInterval);--}}
+{{--                    priceUpdateInterval = null;--}}
+{{--                }--}}
+{{--            }, 3600000);--}}
+{{--        });--}}
+{{--    </script>--}}
+
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Store initial prices (could come from server-side rendering)
-            const priceElements = [{
-                    selector: ".gold-bid",
-                    value: null
-                },
-                {
-                    selector: ".gold-ask",
-                    value: null
-                },
-                {
-                    selector: ".gold-high-low",
-                    value: null
-                },
-                {
-                    selector: ".silver-bid",
-                    value: null
-                },
-                {
-                    selector: ".silver-ask",
-                    value: null
-                },
-                {
-                    selector: ".silver-high-low",
-                    value: null
-                },
-                {
-                    selector: ".inr-usd",
-                    value: null
-                },
-                {
-                    selector: ".gram-usd",
-                    value: null
-                },
-                {
-                    selector: ".inr-gram-pair",
-                    value: null
-                }
+        document.addEventListener("DOMContentLoaded", function () {
+            const priceElements = [
+                { selector: ".gold-bid", value: null },
+                { selector: ".gold-ask", value: null },
+                { selector: ".gold-high-low", value: null },
+                { selector: ".silver-bid", value: null },
+                { selector: ".silver-ask", value: null },
+                { selector: ".silver-high-low", value: null },
+                { selector: ".inr-usd", value: null },
+                { selector: ".gram-usd", value: null },
+                { selector: ".inr-high-low", value: null },
             ];
+
+            let priceUpdateInterval = null;
 
             // Initialize prices from HTML
             priceElements.forEach(item => {
@@ -920,28 +886,26 @@
             });
 
             function isWorkingHours() {
-
-                const now = new Date();
-                const day = now.getDay(); // 0 (Sunday) to 6 (Saturday)
-                const hours = now.getHours();
-
-                // Check if it's a weekday (1-5) and between 9 AM (9) and 4 PM (17)
-                // return (day >= 1 && day <= 5) && (hours >= 9 && hours < 16);
-
-                return (
-                    day >= 1 && day <= 5 && (
-                        (hours > 9 && hours < 16) ||
-                        (hours === 9 && minutes >= 15) ||
-                        (hours === 16 && minutes <= 15)
-                    )
-                );
-
+                // const now = new Date();
+                // const day = now.getDay();
+                // const hours = now.getHours();
+                // const minutes = now.getMinutes();
+                //
+                // return (
+                //     day >= 1 && day <= 5 &&
+                //     (
+                //         (hours > 9 && hours < 16) ||
+                //         (hours === 9 && minutes >= 15) ||
+                //         (hours === 16 && minutes <= 15)
+                //     )
+                // );
+                return true;
             }
 
             function updatePrices() {
                 if (!isWorkingHours()) {
-                    // Clear any active intervals if we're outside working hours
                     clearInterval(priceUpdateInterval);
+                    priceUpdateInterval = null;
                     return;
                 }
 
@@ -949,70 +913,51 @@
                     const element = document.querySelector(item.selector);
                     if (!element) return;
 
-                    // Handle high/low specially if needed (for pairs like "100 / 105")
+                    const change = +(Math.random() * (1 - 0.01) + 0.01).toFixed(2); // 0.01 to 1.00
+                    const direction = Math.random() < 0.5 ? -1 : 1; // random add or subtract
+
                     if (item.selector.includes("high-low") || item.selector.includes("inr-gram-pair")) {
                         const parts = element.innerText.split("/");
                         if (parts.length === 2) {
                             let oldLow = parseFloat(parts[0].trim()) || 100;
                             let oldHigh = parseFloat(parts[1].trim()) || 100;
 
-                            // Simulate new prices
-                            const newLow = (oldLow + (Math.random() * 2 - 1)).toFixed(2);
-                            const newHigh = (oldHigh + (Math.random() * 2 - 1)).toFixed(2);
+                            let newLow = oldLow + direction * change;
+                            let newHigh = oldHigh + direction * change;
 
-                            // Update element
-                            element.innerText = `${newLow} / ${newHigh}`;
-
-                            // Coloring logic (based on low price)
-                            if (parseFloat(newLow) > oldLow) {
-                                element.style.color = "green";
-                            } else if (parseFloat(newLow) < oldLow) {
-                                element.style.color = "red";
-                            } else {
-                                element.style.color = "";
-                            }
+                            element.innerText = `${newLow.toFixed(2)} / ${newHigh.toFixed(2)}`;
+                            element.style.color = direction > 0 ? "green" : "red";
                             return;
                         }
                     }
 
-                    // Normal price update for single values
                     let oldPrice = item.value;
-                    let newPrice = (oldPrice + (Math.random() * 2 - 1)).toFixed(2); // Random price up/down
+                    let newPrice = oldPrice + direction * change;
+                    newPrice = newPrice.toFixed(2);
 
-                    // Update price text
                     element.innerText = newPrice;
-
-                    // Apply color change
-                    if (parseFloat(newPrice) > oldPrice) {
-                        element.style.color = "green";
-                    } else if (parseFloat(newPrice) < oldPrice) {
-                        element.style.color = "red";
-                    } else {
-                        element.style.color = "";
-                    }
-
-                    // Store new price
+                    element.style.color = direction > 0 ? "green" : "red";
                     item.value = parseFloat(newPrice);
                 });
             }
 
-            // Start with initial check
             if (isWorkingHours()) {
-                // Start updating every 3 seconds
-                var priceUpdateInterval = setInterval(updatePrices, 3000);
+                priceUpdateInterval = setInterval(updatePrices, 6000);
             }
 
-            // Also check every hour in case we cross the working hours threshold
-            setInterval(function() {
+            setInterval(function () {
                 if (isWorkingHours() && !priceUpdateInterval) {
-                    priceUpdateInterval = setInterval(updatePrices, 3000);
+                    priceUpdateInterval = setInterval(updatePrices, 6000);
                 } else if (!isWorkingHours() && priceUpdateInterval) {
                     clearInterval(priceUpdateInterval);
                     priceUpdateInterval = null;
                 }
-            }, 3600000); // Check every hour
+            }, 3600000);
         });
     </script>
+
+
+
     {{-- time::: --}}
     <script>
         // Function to update the datetime in the header
