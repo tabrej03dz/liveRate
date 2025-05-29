@@ -95,7 +95,7 @@
             </div>
         </form>
         <p class="mt-3 mb-1 text-center">
-            <a href="{{ route('registration') }}" class="btn btn-warning w-100">Register a new user</a>
+{{--            <a href="{{ route('registration') }}" class="btn btn-warning w-100">Register a new user</a>--}}
         </p>
         <p class="mt-3 mb-1 text-center">
             <a href="{{ route('auth.forget') }}" class="btn btn-warning w-100">Forget password</a>

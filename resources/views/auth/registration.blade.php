@@ -68,7 +68,8 @@
                 </ul>
             </div>
         @endif
-        <form action="{{ route('auth-store') }}" method="post">
+{{--        <form action="{{ route('auth-store') }}" method="post">--}}
+        <form action="#" method="post">
             @csrf
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Full name" name="name">
