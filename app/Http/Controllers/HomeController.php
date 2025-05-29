@@ -26,17 +26,15 @@ class HomeController extends Controller
         $this->priceService = $priceService;
         $this->goldApiService = $goldApiService;
     }
-    public function index(){
-
-        $prices = $this->priceService->goldPrice();
+    public function index(Request $request){
 //        $goldPrice = $this->goldApiService->goldPrice();
-        $silverPrices = $this->priceService->silverPriceUSD();
-
-//        dd($response);
-
-//        $silverPrices = json_decode($silverResponse);
-//        $silverPrices = SilverMetalPrice::latest()->first();
-//        $prices = json_decode($response);
+        if ($request->query('auto') == '1'){
+            $prices = GoldMetalPrice::latest()->first();
+            $silverPrices = SilverMetalPrice::latest()->first();
+        }else{
+            $prices = $this->priceService->goldPrice();
+            $silverPrices = $this->priceService->silverPriceUSD();
+        }
 
 
         $goldDiscount22k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '22'])->first();

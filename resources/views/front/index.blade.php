@@ -510,6 +510,28 @@
 
     <!-- JavaScript -->
 
+<script>
+    // Save scroll position before reload
+    setTimeout(function () {
+        // Save scroll Y position in session storage
+        sessionStorage.setItem('scrollY', window.scrollY);
+
+        let url = new URL(window.location.href);
+        url.searchParams.set('auto', '1');
+        window.location.href = url.toString();
+    }, 60000); // every 10 seconds
+
+    // Restore scroll position after reload
+    window.addEventListener('load', function () {
+        const scrollY = sessionStorage.getItem('scrollY');
+        if (scrollY !== null) {
+            window.scrollTo(0, parseInt(scrollY));
+            sessionStorage.removeItem('scrollY'); // optional: clean up
+        }
+    });
+</script>
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const priceElements = [
