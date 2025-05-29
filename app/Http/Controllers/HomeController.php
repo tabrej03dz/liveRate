@@ -28,16 +28,16 @@ class HomeController extends Controller
     }
     public function index(){
 
-        $response = $this->priceService->goldPrice();
-        $goldPrice = $this->goldApiService->goldPrice();
-        $silverResponse = $this->priceService->silverPriceUSD();
+        $prices = $this->priceService->goldPrice();
+//        $goldPrice = $this->goldApiService->goldPrice();
+        $silverPrices = $this->priceService->silverPriceUSD();
 
 //        dd($response);
 
 //        $silverPrices = json_decode($silverResponse);
-        $silverPrices = SilverMetalPrice::latest()->first();
+//        $silverPrices = SilverMetalPrice::latest()->first();
 //        $prices = json_decode($response);
-        $prices = GoldMetalPrice::latest()->first();
+
 
         $goldDiscount22k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '22'])->first();
         if ($goldDiscount22k == null){

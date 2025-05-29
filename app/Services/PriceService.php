@@ -24,13 +24,12 @@ class PriceService{
                 'verify' => false,
             ]);
 
-
             $data = json_decode($response->getBody(), true);
 
             $data = json_decode($data);
             // Check if all expected keys exist to avoid null errors
             if (isset($data->ounce_price_usd)) {
-                GoldMetalPrice::create([
+                $data = GoldMetalPrice::create([
                     'ounce_price_usd' => $data->ounce_price_usd,
                     'gmt_ounce_price_usd_updated' => $data->gmt_ounce_price_usd_updated,
                     'ounce_price_ask' => $data->ounce_price_ask,
@@ -55,24 +54,23 @@ class PriceService{
 
             return $data;
         }catch (RequestException $e){
+            $data = GoldMetalPrice::latest()->first();
             // Log the error and return a friendly response
-            Log::error('Gold API Fetch Failed: ' . $e->getMessage());
+//            Log::error('Gold API Fetch Failed: ' . $e->getMessage());
 
-            return response()->json([
-                'success' => false,
-                'message' => 'API request failed',
-                'error' => $e->getMessage(),
-            ], 200); // Return 200 to avoid crashing the frontend
+            return $data; // Return 200 to avoid crashing the frontend
         }
 
     }
 
     public function silverPriceUSD(){
+
         try {
             $client = new Client();
             $response = $client->request('GET', 'https://goldpricez.com/api/rates/currency/usd/measure/gram/metal/all', [
                 'headers' => [
-                    'X-API-KEY' => 'f9ff4408caeb1712c83e18d611140424f9ff4408',
+//                    'X-API-KEY' => 'f9ff4408caeb1712c83e18d611140424f9ff4408',
+                    'X-API-KEY' => env('API_KEY'),
                 ],
                 'verify' => false,
             ]);
@@ -82,7 +80,7 @@ class PriceService{
             $data = json_decode($data);
 
             if (isset($data->silver_gram_in_usd)) {
-                SilverMetalPrice::create([
+                $data = SilverMetalPrice::create([
                     'ounce_price_usd' => $data->ounce_price_usd,
                     'gmt_ounce_price_usd_updated' => $data->gmt_ounce_price_usd_updated,
                     'ounce_price_ask' => $data->ounce_price_ask,
@@ -103,12 +101,8 @@ class PriceService{
         }catch (RequestException $e){
             // Log the error and return a friendly response
             Log::error('Gold API Fetch Failed: ' . $e->getMessage());
-
-            return response()->json([
-                'success' => false,
-                'message' => 'API request failed',
-                'error' => $e->getMessage(),
-            ], 200); // Return 200 to avoid crashing the frontend
+            $data = SilverMetalPrice::latest()->first();
+            return $data;
         }
 
     }
