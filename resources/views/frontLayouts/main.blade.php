@@ -129,6 +129,11 @@
                 <li><a href="{{ route('bankDetail') }}">Bank Details</a></li>
                 <li><a href="{{ route('calendar') }}">Calendar</a></li>
                 <li><a href="{{ route('contacts') }}">Contact Us</a></li>
+                @if(auth()->check())
+                    <li><a href="{{ route('auth.dashboard') }}">Dashboard</a></li>
+                @else
+                    <li><a href="{{ route('login-form') }}">Login</a></li>
+                @endif
             </ul>
         </nav>
     </header>
