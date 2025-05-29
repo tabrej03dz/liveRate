@@ -24,7 +24,6 @@
 
                             <form action="{{ $rate ? route('rate.update', $rate->id) : route('rate.store') }}" method="POST">
                                 @csrf
-                                @if($rate) @method('PUT') @endif
 
                                 @php
                                     $metals = [
