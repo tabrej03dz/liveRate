@@ -1,5 +1,7 @@
 @extends('frontLayouts.main', ['title' => 'Live Rate'])
 @section('content')
+
+    <meta http-equiv="refresh" content="30">
     {{-- Header Section --}}
     <header class="bg-gradient-to-r from-amber-500 via-[#FAF3BC] to-amber-500 py-4 shadow-md">
         <div class="mb-10 text-center">
@@ -585,7 +587,7 @@
             }
 
             // Trigger update every 10 seconds
-            setInterval(updatePrices, 20000);
+            setInterval(updatePrices, 10000);
             updatePrices();
         });
     </script>
