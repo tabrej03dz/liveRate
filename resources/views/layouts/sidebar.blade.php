@@ -45,6 +45,15 @@
 {{--                </li>--}}
 
                 <li class="nav-item">
+                    <a href="{{route('rate.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-sync"></i>
+                        <p>
+                            Metal Rates
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{route('update.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-sync"></i>
                         <p>

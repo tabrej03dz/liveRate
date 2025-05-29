@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\GoldMetalPrice;
 use App\Models\Plan;
+use App\Models\Rate;
 use App\Models\Service;
 use App\Models\SilverMetalPrice;
 use App\Models\Team;
@@ -26,37 +27,42 @@ class HomeController extends Controller
         $this->priceService = $priceService;
         $this->goldApiService = $goldApiService;
     }
+//    public function index(Request $request){
+////        $goldPrice = $this->goldApiService->goldPrice();
+//        if ($request->query('auto') == '1'){
+//            $prices = GoldMetalPrice::latest()->first();
+//            $silverPrices = SilverMetalPrice::latest()->first();
+//        }else{
+//            $prices = $this->priceService->goldPrice();
+//            $silverPrices = $this->priceService->silverPriceUSD();
+//        }
+//        $goldDiscount22k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '22'])->first();
+//        if ($goldDiscount22k == null){
+//            $goldDiscount22k = Discount::where('percent', 0)->first();
+//        }
+//
+//        $goldDiscount20k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '20'])->first();
+//        if ($goldDiscount20k == null){
+//            $goldDiscount20k = Discount::where('percent', 0)->first();
+//        }
+//
+//        $goldDiscount18k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '18'])->first();
+//        if ($goldDiscount18k == null){
+//            $goldDiscount18k = Discount::where('percent', 0)->first();
+//        }
+//        $silverDiscount = Discount::where(['status' => '1', 'metal' => 'silver'])->first();
+//        if ($silverDiscount == null){
+//            $silverDiscount = Discount::where('percent', 0)->first();
+//        }
+//        return view('front.index', compact( 'prices', 'goldDiscount22k', 'goldDiscount20k', 'goldDiscount18k', 'silverDiscount', 'silverPrices'));
+//    }
+
     public function index(Request $request){
-//        $goldPrice = $this->goldApiService->goldPrice();
-        if ($request->query('auto') == '1'){
-            $prices = GoldMetalPrice::latest()->first();
-            $silverPrices = SilverMetalPrice::latest()->first();
-        }else{
-            $prices = $this->priceService->goldPrice();
-            $silverPrices = $this->priceService->silverPriceUSD();
-        }
-
-
-        $goldDiscount22k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '22'])->first();
-        if ($goldDiscount22k == null){
-            $goldDiscount22k = Discount::where('percent', 0)->first();
-        }
-
-        $goldDiscount20k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '20'])->first();
-        if ($goldDiscount20k == null){
-            $goldDiscount20k = Discount::where('percent', 0)->first();
-        }
-
-        $goldDiscount18k = Discount::where(['status' => '1', 'metal' => 'gold', 'carat' => '18'])->first();
-        if ($goldDiscount18k == null){
-            $goldDiscount18k = Discount::where('percent', 0)->first();
-        }
-        $silverDiscount = Discount::where(['status' => '1', 'metal' => 'silver'])->first();
-        if ($silverDiscount == null){
-            $silverDiscount = Discount::where('percent', 0)->first();
-        }
-        return view('front.index', compact( 'prices', 'goldDiscount22k', 'goldDiscount20k', 'goldDiscount18k', 'silverDiscount', 'silverPrices'));
+        $rate = Rate::first();
+        return view('front.index', compact('rate'));
     }
+
+
 
 
     public function test(){

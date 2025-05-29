@@ -101,6 +101,12 @@ Route::group(['middleware' => ['auth']],function (){
         Route::post('update/{product}', [ProductController::class, 'update'])->name('update');
     });
 
+    Route::controller(\App\Http\Controllers\RateController::class)->prefix('rate')->name('rate.')->group(function(){
+       Route::get('index', 'index')->name('index');
+       Route::post('store', 'store')->name('store');
+       Route::post('update/{rate}', 'update')->name('update');
+    });
+
     Route::prefix('update')->name('update.')->group(function(){
         Route::get('/', [UpdateController::class, 'index'])->name('index');
         Route::get('create', [UpdateController::class, 'create'])->name('create');
