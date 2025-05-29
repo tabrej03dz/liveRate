@@ -168,7 +168,6 @@
                             </div>
                             <div class="p-5 text-center">
                                 <div class="p-h ph product-rate border-b border-yellow-800 mb-4">
-
                                     <div class="mn-rate-cover"><span class="bgm e"
                                                                      id="18kGold">{{ number_format($rate->{'18k_gold'} + ($rate->{'18k_gold'} * $rate->gold_18k_percent/100), 2) }}/gm</span></div>
                                 </div>
@@ -308,16 +307,17 @@
                                class="bg-pink-100 text-pink-600 p-4 rounded-full hover:bg-pink-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
                                 <i class="fab fa-instagram text-lg"></i>
                             </a>
-                            <a href="#"
-                               class="bg-sky-100 text-sky-600 p-4 rounded-full hover:bg-sky-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                                <i class="fab fa-twitter text-lg"></i>
-                            </a>
-                            <a href="#"
-                               class="bg-red-100 text-red-600 p-4 rounded-full hover:bg-red-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                                <i class="fab fa-youtube text-lg"></i>
-                            </a>
-                            <a href="#"
-                               class="bg-green-100 text-green-600 p-4 rounded-full hover:bg-green-600 hover:text-white transition duration-300 transform hover:-translate-y-1">
+{{--                            <a href="#"--}}
+{{--                               class="bg-sky-100 text-sky-600 p-4 rounded-full hover:bg-sky-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
+{{--                                <i class="fab fa-twitter text-lg"></i>--}}
+{{--                            </a>--}}
+{{--                            <a href="#"--}}
+{{--                               class="bg-red-100 text-red-600 p-4 rounded-full hover:bg-red-600 hover:text-white transition duration-300 transform hover:-translate-y-1">--}}
+{{--                                <i class="fab fa-youtube text-lg"></i>--}}
+{{--                            </a>--}}
+                            <a href="https://wa.me/919414400331"
+                               class="bg-green-100 text-green-600 p-4 rounded-full hover:bg-green-600 hover:text-white transition duration-300 transform hover:-translate-y-1"
+                               target="_blank" rel="noopener">
                                 <i class="fab fa-whatsapp text-lg"></i>
                             </a>
                         </div>
@@ -421,12 +421,12 @@
                     const inputElement = document.getElementById(item.inputId);
                     if (!priceElement || !inputElement) return;
 
-                    const gram = parseFloat(inputElement.value) || 10;
+                    const gram = parseFloat(inputElement.value) || item.inputId == '24SilverInput' ? 100 : 10;
                     const priceChange = getRandomPriceChange();
                     item.currentPrice += priceChange;
 
-                    const maxPrice = item.basePrice + 2;
-                    const minPrice = item.basePrice - 2;
+                    const maxPrice = item.basePrice + 1;
+                    const minPrice = item.basePrice - 1;
                     item.currentPrice = Math.min(Math.max(item.currentPrice, minPrice), maxPrice);
 
                     const totalPrice = item.currentPrice * gram;
@@ -454,7 +454,7 @@
             }
 
             // Trigger update every 10 seconds
-            setInterval(updatePrices, 10000);
+            setInterval(updatePrices, 20000);
             updatePrices();
         });
     </script>
